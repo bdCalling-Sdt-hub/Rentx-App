@@ -1,6 +1,6 @@
+import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import '../../../core/app_routes.dart';
 import '../../../utils/app_colors.dart';
@@ -39,37 +39,39 @@ class _CommonBottomNavBarState extends State<CommonBottomNavBar> {
 
   @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView(
-      physics: const NeverScrollableScrollPhysics(),
-      child: Container(
-        width: MediaQuery.of(context).size.width,
-        alignment: Alignment.center,
-        padding: EdgeInsets.all(12.sp),
-        decoration: BoxDecoration(
-            color: AppColors.blueLight,
-            borderRadius: BorderRadius.only(
-                topLeft: Radius.circular(20.r),
-                topRight: Radius.circular(20.r))),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: List.generate(unselectedIcons.length, (index) {
-            return GestureDetector(
-              onTap: () => onTap(index),
-              child: Container(
-                margin: EdgeInsetsDirectional.all(12.sp),
-                child: Column(
-                  children: [
-                    index == bottomNavIndex
-                        ? selectedIcons[index]
-                        : unselectedIcons[index],
-                  ],
-                ),
-              ),
-            );
-          }),
-        ),
-      ),
-    );
+    return CurvedNavigationBar(
+        index: widget.currentIndex > 5 ? 2 : widget.currentIndex,
+        height: 60,
+        onTap: onTap,
+        color: AppColors.white,
+        buttonBackgroundColor: AppColors.s200,
+        backgroundColor: widget.currentIndex == 1
+            ? AppColors.s200
+            : AppColors.transparent,
+        animationCurve: Curves.easeInOut,
+        animationDuration: const Duration(milliseconds: 900),
+        items: [
+          Icon(Icons.home,
+              color: widget.currentIndex == 0
+                  ? AppColors.s200
+                  : AppColors.black),
+          Icon(Icons.location_on_outlined,
+              color: widget.currentIndex == 1
+                  ? AppColors.s200
+                  : AppColors.black),
+          Icon(Icons.add,
+              color: widget.currentIndex == 2
+                  ? AppColors.s200
+                  : AppColors.black),
+          Icon(Icons.settings_outlined,
+              color: widget.currentIndex == 3
+                  ? AppColors.s200
+                  : AppColors.black),
+          Icon(Icons.person,
+              color: widget.currentIndex == 4
+                  ? AppColors.s200
+                  : AppColors.black),
+        ]);
   }
 
   void onTap(int index) async {
@@ -78,7 +80,7 @@ class _CommonBottomNavBarState extends State<CommonBottomNavBar> {
     }
     if (index == 0) {
       if (!(widget.currentIndex == 0)) {
-        Get.toNamed(AppRoutes.setting);
+        Get.toNamed(AppRoutes.home);
       }
     } else if (index == 1) {
       if (!(widget.currentIndex == 1)) {

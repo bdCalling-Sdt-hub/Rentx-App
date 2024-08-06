@@ -1,6 +1,7 @@
 import 'package:get/get.dart';
 import 'package:rentx/view/screen/common_screen/auth/sign%20up/complete_profile.dart';
 import 'package:rentx/view/screen/common_screen/auth/sign%20up/landlord_infomation_screen.dart';
+import 'package:rentx/view/screen/home/home_screen.dart';
 import 'package:rentx/view/screen/selection_role_screen.dart';
 
 import '../view/screen/common_screen/auth/change_password/change_password_screen.dart';
@@ -44,6 +45,7 @@ class AppRoutes {
   static const String setting = "/setting_screen.dart";
   static const String completeProfile = "/complete_profile.dart";
   static const String landlordInformation = "/landlord_infomation_screen.dart";
+  static const String home = "/home_screen.dart";
 
   static List<GetPage> routes = [
     GetPage(
@@ -129,6 +131,11 @@ class AppRoutes {
     GetPage(
         name: landlordInformation,
         page: () => LandlordInformationScreen(),
+        transition: Transition.rightToLeftWithFade),
+
+    GetPage(
+        name: home,
+        page: () => HomeScreen(),
         transition: Transition.rightToLeftWithFade),
   ];
 }

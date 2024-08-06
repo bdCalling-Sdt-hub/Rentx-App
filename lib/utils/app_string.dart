@@ -61,12 +61,15 @@ class AppString {
   static const String contact = "Contact";
   static const String dateOfBirth = "Date of birth";
   static const String age = "Age";
-  static const String aboutMe = "About Me";
+  static const String aboutMe = "About Us";
   static const String gender = "Gender";
   static const String profile = "Profile";
   static const String saveAndChanges = "Save and Changes";
   static const String editProfile = "Edit Profile";
   static const String settings = "Settings";
+  static const String myResidences = "My Residences";
+  static const String myCoupons = "My Coupons";
+  static const String support = "Support";
   static const String logOut = "Log Out";
   static const String privacyPolicy = "Privacy Policy";
   static const String deleteAccount = "Delete account";
