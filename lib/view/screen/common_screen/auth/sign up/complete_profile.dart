@@ -9,76 +9,109 @@ import 'package:rentx/utils/app_colors.dart';
 import 'package:rentx/utils/app_string.dart';
 import 'package:rentx/view/component/text/common_text.dart';
 
+import '../../../../../helpers/other_helper.dart';
 import '../../../../../utils/app_images.dart';
+import '../../../../component/button/common_button.dart';
 import '../../../../component/image/common_image.dart';
+import '../../../../component/text_field/common_text_field.dart';
 
 class CompleteProfile extends StatelessWidget {
-  const CompleteProfile({super.key});
+   CompleteProfile({super.key});
+
+
+  final formKey = GlobalKey<FormState>();
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(),
       body: GetBuilder<SignUpController>(
-        builder: (controller) => Column(
-          children: [
-            const CommonText(
-              text: AppString.completeYour,
-              fontSize: 26,
-              top: 50,
-              fontWeight: FontWeight.w600,
-            ).center,
-            const CommonText(
-              text: AppString.profile,
-              fontSize: 26,
-              color: AppColors.s500,
-              top: 8,
-            ).center,
-            const CommonText(
-              text: AppString.fillInYourInformation,
-              fontSize: 16,
-              top: 8,
-            ).center,
-            20.height,
-            Stack(
-              children: [
-                Center(
-                  child: CircleAvatar(
-                    radius: 50.sp,
-                    backgroundColor: Colors.transparent,
-                    child: ClipOval(
-                      child: controller.image != null
-                          ? Image.file(
-                              File(controller.image!),
-                              width: 100,
-                              height: 100,
-                              fit: BoxFit.fill,
-                            )
-                          : CommonImage(
-                              imageSrc: AppImages.profile,
-                              imageType: ImageType.png,
-                              height: 100,
-                              width: 100,
-                            ),
+        builder: (controller) => SingleChildScrollView(
+          padding: EdgeInsets.symmetric(horizontal: 20),
+          child: Column(
+            children: [
+              const CommonText(
+                text: AppString.completeYour,
+                fontSize: 26,
+                top: 50,
+                fontWeight: FontWeight.w600,
+              ).center,
+              const CommonText(
+                text: AppString.profile,
+                fontSize: 26,
+                color: AppColors.s500,
+                top: 8,
+              ).center,
+              const CommonText(
+                text: AppString.fillInYourInformation,
+                fontSize: 16,
+                top: 8,
+              ).center,
+              Stack(
+                children: [
+                  Center(
+                    child: CircleAvatar(
+                      radius: 90.sp,
+                      backgroundColor: AppColors.transparent,
+                      child: ClipOval(
+                        child: controller.image != null
+                            ? Image.file(
+                                File(controller.image!),
+                                width: 130,
+                                height: 130,
+                                fit: BoxFit.fill,
+                              )
+                            : CommonImage(
+                                imageSrc: AppImages.profile,
+                                imageType: ImageType.png,
+                                height: 180,
+                                width: 180,
+                              ),
+                      ),
                     ),
                   ),
+                  Positioned(
+                      bottom: 25,
+                      left: Get.width * 0.53,
+                      child: IconButton(
+                          style: ButtonStyle(
+                              backgroundColor: WidgetStateColor.resolveWith(
+                            (states) => AppColors.s200,
+                          )),
+                          onPressed: controller.getProfileImage,
+                          icon: const Icon(
+                            Icons.edit,
+                            color: Colors.black,
+                          )))
+                ],
+              ),
+              const CommonText(
+                text: AppString.fullName,
+                fontWeight: FontWeight.w600,
+                bottom: 8,
+              ).start,
+              CommonTextField(
+                prefixIcon: const Icon(
+                  Icons.person_2,
                 ),
-                Positioned(
-                    bottom: 0,
-                    left: Get.width * 0.50,
-                    child: IconButton(
-                        style: ButtonStyle(
-                            backgroundColor: WidgetStateColor.resolveWith(
-                          (states) => Colors.black,
-                        )),
-                        onPressed: controller.getProfileImage,
-                        icon: const Icon(
-                          Icons.edit,
-                          color: Colors.white,
-                        )))
-              ],
-            ),
-          ],
+                hintText: AppString.fullName,
+                controller: controller.nameController,
+                validator: OtherHelper.validator,
+              ),
+
+              150.height,
+              CommonButton(
+                titleText: AppString.signUp,
+                isLoading: controller.isLoading,
+                buttonColor: AppColors.s200,
+                onTap: () {
+                  if (formKey.currentState!.validate()) {
+                    controller.signUpUser();
+                  }
+                },
+              ),
+            ],
+          ),
         ),
       ),
     );
