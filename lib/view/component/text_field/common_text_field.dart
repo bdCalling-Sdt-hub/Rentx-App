@@ -73,11 +73,12 @@ class CommonTextField extends StatelessWidget {
         obscureText: obscureText.value,
         textInputAction: textInputAction,
         maxLength: mexLength,
-        cursorColor: AppColors.white,
+        cursorColor: AppColors.black,
         inputFormatters: inputFormatters,
         style: TextStyle(fontSize: 14, color: textColor),
         onFieldSubmitted: onSubmitted,
         onTap: onTap,
+
         decoration: InputDecoration(
           errorMaxLines: 2,
           filled: true,

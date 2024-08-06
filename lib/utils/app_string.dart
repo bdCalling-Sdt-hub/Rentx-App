@@ -26,6 +26,7 @@ class AppString {
   static const String createNewPassword = "Create New Password";
   static const String createYourNewPassword = "Create Your New Password";
   static const String password = "Password";
+  static const String houseName = "House Name";
   static const String continues = "Continue";
   static const String email = "Email";
   static const String codeHasBeenSendTo = "Code has been send to";
@@ -39,8 +40,14 @@ class AppString {
   static const String signIn = "Sign in";
   static const String doNotHaveAccount = "Don’t have an account";
   static const String signUp = "Sign up";
+  static const String completeProfile = "Complete Profile";
   static const String alreadyHaveAccount = "Already have an account?  ";
   static const String fullName = "Full Name";
+  static const String address = "Address";
+  static const String accountName = "Account Name";
+  static const String accountNumber = "Account Number";
+  static const String bankName = "Bank Name";
+  static const String branchName = "Branch Name";
   static const String createYourAccount = "Welcome Here! \nCreate An Account.";
   static const String fillInYourInformation = "Fill in your information.";
   static const String otpVerify = "OTP Verify";
@@ -84,4 +91,14 @@ class AppString {
       "Agree with Terms and Services.";
   static const String didNotReceiveTheCode = "Didn’t receive the code? ";
   static const String completeYour = "Complete Your";
+  static const String landlordInformation = "Landlord Information";
+  static const String addMore = "Add More";
+  static const String accountInformation = "Account Information";
+  static const String bank = "Bank";
+  static const String card = "Card";
+  static const String digitalPay = "Digital Pay";
+  static const String cardNumber = "Card Number";
+  static const String expiration = "Expiration";
+  static const String cvc = "CVC";
+  static const String country = "Country";
 }

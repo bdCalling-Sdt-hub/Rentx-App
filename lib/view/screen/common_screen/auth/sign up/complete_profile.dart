@@ -16,8 +16,7 @@ import '../../../../component/image/common_image.dart';
 import '../../../../component/text_field/common_text_field.dart';
 
 class CompleteProfile extends StatelessWidget {
-   CompleteProfile({super.key});
-
+  CompleteProfile({super.key});
 
   final formKey = GlobalKey<FormState>();
 
@@ -28,89 +27,91 @@ class CompleteProfile extends StatelessWidget {
       body: GetBuilder<SignUpController>(
         builder: (controller) => SingleChildScrollView(
           padding: EdgeInsets.symmetric(horizontal: 20),
-          child: Column(
-            children: [
-              const CommonText(
-                text: AppString.completeYour,
-                fontSize: 26,
-                top: 50,
-                fontWeight: FontWeight.w600,
-              ).center,
-              const CommonText(
-                text: AppString.profile,
-                fontSize: 26,
-                color: AppColors.s500,
-                top: 8,
-              ).center,
-              const CommonText(
-                text: AppString.fillInYourInformation,
-                fontSize: 16,
-                top: 8,
-              ).center,
-              Stack(
-                children: [
-                  Center(
-                    child: CircleAvatar(
-                      radius: 90.sp,
-                      backgroundColor: AppColors.transparent,
-                      child: ClipOval(
-                        child: controller.image != null
-                            ? Image.file(
-                                File(controller.image!),
-                                width: 130,
-                                height: 130,
-                                fit: BoxFit.fill,
-                              )
-                            : CommonImage(
-                                imageSrc: AppImages.profile,
-                                imageType: ImageType.png,
-                                height: 180,
-                                width: 180,
-                              ),
+          child: Form(
+            key: formKey,
+            child: Column(
+              children: [
+                const CommonText(
+                  text: AppString.completeYour,
+                  fontSize: 26,
+                  top: 50,
+                  fontWeight: FontWeight.w600,
+                ).center,
+                const CommonText(
+                  text: AppString.profile,
+                  fontSize: 26,
+                  color: AppColors.s500,
+                  top: 8,
+                ).center,
+                const CommonText(
+                  text: AppString.fillInYourInformation,
+                  fontSize: 16,
+                  top: 8,
+                ).center,
+                Stack(
+                  children: [
+                    Center(
+                      child: CircleAvatar(
+                        radius: 90.sp,
+                        backgroundColor: AppColors.transparent,
+                        child: ClipOval(
+                          child: controller.image != null
+                              ? Image.file(
+                                  File(controller.image!),
+                                  width: 130,
+                                  height: 130,
+                                  fit: BoxFit.fill,
+                                )
+                              : CommonImage(
+                                  imageSrc: AppImages.profile,
+                                  imageType: ImageType.png,
+                                  height: 180,
+                                  width: 180,
+                                ),
+                        ),
                       ),
                     ),
-                  ),
-                  Positioned(
-                      bottom: 25,
-                      left: Get.width * 0.53,
-                      child: IconButton(
-                          style: ButtonStyle(
-                              backgroundColor: WidgetStateColor.resolveWith(
-                            (states) => AppColors.s200,
-                          )),
-                          onPressed: controller.getProfileImage,
-                          icon: const Icon(
-                            Icons.edit,
-                            color: Colors.black,
-                          )))
-                ],
-              ),
-              const CommonText(
-                text: AppString.fullName,
-                fontWeight: FontWeight.w600,
-                bottom: 8,
-              ).start,
-              CommonTextField(
-                prefixIcon: const Icon(
-                  Icons.person_2,
+                    Positioned(
+                        bottom: 25,
+                        left: Get.width * 0.53,
+                        child: IconButton(
+                            style: ButtonStyle(
+                                backgroundColor: WidgetStateColor.resolveWith(
+                              (states) => AppColors.s200,
+                            )),
+                            onPressed: controller.getProfileImage,
+                            icon: const Icon(
+                              Icons.edit,
+                              color: Colors.black,
+                            )))
+                  ],
                 ),
-                hintText: AppString.fullName,
-                controller: controller.nameController,
-                validator: OtherHelper.validator,
-              ),
-
-              150.height,
-              CommonButton(
-                titleText: AppString.signUp,
-                isLoading: controller.isLoading,
-                buttonColor: AppColors.s200,
-                onTap: () {
-                  if (formKey.currentState!.validate()) {
-                    controller.signUpUser();
-                  }
-                },
-              ),
-            ],
+                const CommonText(
+                  text: AppString.address,
+                  fontWeight: FontWeight.w600,
+                  bottom: 8,
+                ).start,
+                CommonTextField(
+                  prefixIcon: const Icon(
+                    Icons.person_2,
+                  ),
+                  hintText: AppString.address,
+                  controller: controller.addressController,
+                  validator: OtherHelper.validator,
+                ),
+                150.height,
+                CommonButton(
+                  titleText: AppString.completeProfile,
+                  isLoading: controller.isLoading,
+                  buttonColor: AppColors.s200,
+                  onTap: () {
+                    if (formKey.currentState!.validate()) {
+                      controller.signUpUser();
+                    }
+                  },
+                ),
+              ],
+            ),
           ),
         ),
       ),
