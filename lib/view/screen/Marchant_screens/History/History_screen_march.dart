@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+import 'package:rentx/core/app_routes.dart';
 import 'package:rentx/extension/my_extension.dart';
 import 'package:rentx/utils/app_colors.dart';
 import 'package:rentx/utils/app_images.dart';
@@ -25,7 +26,12 @@ class HistoryScreenMarch extends StatelessWidget {
         child: ListView.builder(
           itemCount: 10,
           itemBuilder: (context, index) {
-          return CustomCouponCard();
+          return CustomCouponCard(
+            couponImage: AppImages.cardImage,
+            onTap: () {
+              Get.toNamed(AppRoutes.couponDetailsScreen);
+            },
+          );
         },),
       ),
     );
@@ -36,20 +42,20 @@ class CustomCouponCard extends StatelessWidget {
   CustomCouponCard({
     super.key,
     this.onTap,
+    required this.couponImage
 
   });
 
   VoidCallback? onTap;
+  String couponImage;
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () {
-
-      },
+      onTap: onTap,
       child: Stack(
         children: [
-          CommonImage(imageSrc: AppImages.cardImage, width: Get.width, height: 100),
+          CommonImage(imageSrc: couponImage, width: Get.width, height: 100),
           Positioned(
             top: 0,
             left: 150,
@@ -59,7 +65,7 @@ class CustomCouponCard extends StatelessWidget {
               child: CustomPaint(
                 painter: DottedLinePainter(
                     orientation: LineOrientation.vertical,
-                    color: AppColors.b300,
+                    color: AppColors.b200,
                     strokeWidth: 2,
                     dashLength: 10,
                     dashSpace: 5

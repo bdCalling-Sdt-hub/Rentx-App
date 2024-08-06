@@ -5,6 +5,7 @@ import 'package:rentx/view/screen/Marchant_screens/Profile/profile_screen_march.
 import 'package:rentx/view/screen/common_screen/auth/sign%20up/complete_profile.dart';
 import 'package:rentx/view/screen/selection_role_screen.dart';
 
+import '../view/screen/Marchant_screens/CouponDetails/coupon_details_screen.dart';
 import '../view/screen/Marchant_screens/ScanQR/scan_qr_screen.dart';
 import '../view/screen/common_screen/auth/change_password/change_password_screen.dart';
 import '../view/screen/common_screen/auth/forgot password/create_password.dart';
@@ -53,6 +54,7 @@ class AppRoutes {
   static const String scanQrScreen = "/scan_qr_screen.dart";
   static const String profileScreenMarch = "/profile_screen_march.dart";
   static const String homeScreenMarch = "/home_screen_march.dart";
+  static const String couponDetailsScreen = "/coupon_details_screen.dart";
 
   static List<GetPage> routes = [
     ///<<<================ Merchant Screens=============>>>
@@ -71,6 +73,10 @@ class AppRoutes {
     GetPage(
         name: profileScreenMarch,
         page: () => ProfileScreenMarch(),
+        transition: Transition.rightToLeftWithFade),
+    GetPage(
+        name: couponDetailsScreen,
+        page: () => CouponDetailsScreen(),
         transition: Transition.rightToLeftWithFade),
 
 
