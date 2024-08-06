@@ -28,17 +28,18 @@ class AppString {
   static const String password = "Password";
   static const String houseName = "House Name";
   static const String continues = "Continue";
+  static const String getVerificationCode = "Get Verification Code";
   static const String email = "Email";
   static const String codeHasBeenSendTo = "Code has been send to";
   static const String otpIsInValid = "Otp is inValid";
-  static const String resendCode = "Resend Code";
+  static const String resendCode = "Resend";
   static const String resendCodeIn = "Resend code in";
   static const String minute = "minute";
   static const String verify = "Verify";
-  static const String logIntoYourAccount = "Login to Your Account";
-  static const String forgotThePassword = "Forgot the password";
+  static const String logIntoYourAccount = "Welcome Back! \nLet’s Sign In.";
+  static const String forgotThePassword = "Forgot password";
   static const String signIn = "Sign in";
-  static const String doNotHaveAccount = "Don’t have an account";
+  static const String doNotHaveAccount = "Don’t have an account?  ";
   static const String signUp = "Sign up";
   static const String completeProfile = "Complete Profile";
   static const String alreadyHaveAccount = "Already have an account?  ";
@@ -89,7 +90,7 @@ class AppString {
       "Your RentX Journey Begins Here.";
   static const String agreeWithTermsAndServices =
       "Agree with Terms and Services.";
-  static const String didNotReceiveTheCode = "Didn’t receive the code? ";
+  static const String didNotReceiveTheCode = "Didn’t receive the code?    ";
   static const String completeYour = "Complete Your";
   static const String landlordInformation = "Landlord Information";
   static const String addMore = "Add More";
@@ -101,4 +102,10 @@ class AppString {
   static const String expiration = "Expiration";
   static const String cvc = "CVC";
   static const String country = "Country";
+  static const String rememberMe = "Remember me";
+  static const String enterVerificationCode = "Enter Verification \nCode.";
+  static const String enterTheCodeThatWasSentYourEmail =
+      "Enter the code that was sent to your email.";
+  static const nowResetYour = "Now Reset Your ";
+  static const passwordLength = "Password  must have 6-8 characters.";
 }

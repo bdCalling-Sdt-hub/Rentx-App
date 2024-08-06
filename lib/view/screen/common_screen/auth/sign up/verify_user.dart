@@ -44,13 +44,20 @@ class _VerifyUserState extends State<VerifyUser> {
               key: formKey,
               child: Column(
                 children: [
-                  Center(
+                  const Center(
                     child: CommonText(
-                      text:
-                          "${AppString.codeHasBeenSendTo} ${controller.emailController.text}",
-                      fontSize: 18,
-                      top: 100,
-                      bottom: 60,
+                      text: AppString.enterVerificationCode,
+                      fontSize: 26,
+                      top: 60,
+                      maxLines: 3,
+                    ),
+                  ),
+                  const Center(
+                    child: CommonText(
+                      text: AppString.enterTheCodeThatWasSentYourEmail,
+                      fontSize: 14,
+                      bottom: 20,
+                      top: 12,
                       maxLines: 3,
                     ),
                   ),
@@ -95,15 +102,15 @@ class _VerifyUserState extends State<VerifyUser> {
                     children: [
                       controller.time == '00:00'
                           ? const Center(
-                              child: CommonText(
-                                  text: AppString.didNotReceiveTheCode))
-                          : 0.height   ,
+                          child: CommonText(
+                              text: AppString.didNotReceiveTheCode))
+                          : 0.height,
                       GestureDetector(
                         onTap: controller.time == '00:00'
                             ? () {
-                                controller.startTimer();
-                                controller.signUpUser();
-                              }
+                          controller.startTimer();
+                          controller.signUpUser();
+                        }
                             : () {},
                         child: CommonText(
                           text: controller.time == '00:00'
@@ -114,7 +121,7 @@ class _VerifyUserState extends State<VerifyUser> {
                       ),
                     ],
                   ),
-                  60.height,
+                  100.height,
                   CommonButton(
                       titleText: AppString.verify,
                       isLoading: controller.isLoadingVerify,

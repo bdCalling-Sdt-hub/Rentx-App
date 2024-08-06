@@ -167,7 +167,35 @@ class AccountInfo extends StatelessWidget {
                   validator: OtherHelper.validator,
                 ),
               ],
-            )
+            ),
+          if (controller.selectedOption == AppString.digitalPay)
+            Column(
+              children: [
+                const CommonText(
+                  text: AppString.accountNumber,
+                  fontWeight: FontWeight.w600,
+                  bottom: 8,
+                  top: 16,
+                ).start,
+                CommonTextField(
+                  controller: controller.dAccountNumberController,
+                  hintText: AppString.accountNumber,
+                  validator: OtherHelper.validator,
+                ),
+                const CommonText(
+                  text: AppString.country,
+                  fontWeight: FontWeight.w600,
+                  bottom: 8,
+                  top: 16,
+                ).start,
+                CommonTextField(
+                  controller: controller.dCountryController,
+                  hintText: AppString.country,
+                  keyboardType: TextInputType.number,
+                  validator: OtherHelper.validator,
+                ),
+              ],
+            ),
         ],
       ),
     );

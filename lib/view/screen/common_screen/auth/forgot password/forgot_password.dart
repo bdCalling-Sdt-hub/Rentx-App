@@ -32,11 +32,15 @@ class ForgotPasswordScreen extends StatelessWidget {
             child: Column(
               children: [
                 105.height,
+                const CommonText(
+                  text: AppString.email,
+                  fontWeight: FontWeight.w600,
+                  bottom: 8,
+                ).start,
                 CommonTextField(
                   controller: controller.emailController,
-                  prefixIcon: const Icon(Icons.mail),
-                  labelText: AppString.email,
-                  validator: OtherHelper.emailValidator,
+                  hintText: AppString.email,
+                  validator: OtherHelper.validator,
                 ),
                 100.height,
               ],
@@ -46,7 +50,7 @@ class ForgotPasswordScreen extends StatelessWidget {
         bottomNavigationBar: Padding(
           padding: const EdgeInsets.symmetric(vertical: 30, horizontal: 20),
           child: CommonButton(
-            titleText: AppString.continues,
+            titleText: AppString.getVerificationCode,
             isLoading: controller.isLoadingEmail,
             onTap: () {
               if (formKey.currentState!.validate()) {

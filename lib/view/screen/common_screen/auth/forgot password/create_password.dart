@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:rentx/utils/app_colors.dart';
 import '../../../../../core/app_routes.dart';
 import '../../../../../extension/my_extension.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -37,52 +38,71 @@ class CreatePassword extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   64.height,
-                  Center(
-                    child: CommonImage(
-                      imageSrc: AppImages.noImage,
-                      imageType: ImageType.png,
-                      height: 297,
-                      width: 297,
+                  const Center(
+                    child: CommonText(
+                      text: AppString.nowResetYour,
+                      fontSize: 26,
+                      fontWeight: FontWeight.w600,
+                    ),
+                  ),
+                  const Center(
+                    child: CommonText(
+                      text: AppString.password,
+                      fontSize: 26,
+                      fontWeight: FontWeight.w600,
+                      color: AppColors.s200,
+                    ),
+                  ),
+                  const Center(
+                    child: CommonText(
+                      text: AppString.passwordLength,
+                      fontSize: 14,
+                      top: 12,
+                      bottom: 40,
+                      fontWeight: FontWeight.w600,
                     ),
                   ),
                   const CommonText(
-                    text: AppString.createYourNewPassword,
-                    fontSize: 18,
-                    textAlign: TextAlign.start,
-                    top: 64,
-                    bottom: 24,
-                  ),
+                    text: AppString.password,
+                    fontWeight: FontWeight.w600,
+                    bottom: 8,
+                  ).start,
                   CommonTextField(
                     controller: controller.passwordController,
-                    prefixIcon: const Icon(Icons.lock),
-                    labelText: AppString.password,
+                    hintText: AppString.password,
                     isPassword: true,
                     validator: OtherHelper.passwordValidator,
                   ),
-                  24.height,
+                  const CommonText(
+                    text: AppString.confirmPassword,
+                    fontWeight: FontWeight.w600,
+                    bottom: 8,
+                    top: 16,
+                  ).start,
                   CommonTextField(
                     controller: controller.confirmPasswordController,
-                    prefixIcon: const Icon(Icons.lock),
-                    labelText: AppString.confirmPassword,
+                    hintText: AppString.confirmPassword,
+                    isPassword: true,
                     validator: (value) => OtherHelper.confirmPasswordValidator(
                         value, controller.passwordController),
-                    isPassword: true,
-                  ),
-                  64.height,
-                  CommonButton(
-                    titleText: AppString.continues,
-                    isLoading: controller.isLoadingReset,
-                    onTap: () {
-                      if (formKey.currentState!.validate()) {
-                        controller.resetPasswordRepo();
-                      }
-                    },
                   ),
                 ],
               ),
             ),
           );
         },
+      ),
+      bottomNavigationBar: Padding(
+        padding: const EdgeInsets.symmetric(vertical: 30, horizontal: 20),
+        child: CommonButton(
+          titleText: AppString.continues,
+          isLoading: ForgetPasswordController.instance.isLoadingReset,
+          onTap: () {
+            if (formKey.currentState!.validate()) {
+              ForgetPasswordController.instance.resetPasswordRepo();
+            }
+          },
+        ),
       ),
     );
   }

@@ -1,5 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:rentx/core/app_routes.dart';
 import 'package:rentx/extension/my_extension.dart';
 import 'package:rentx/utils/app_colors.dart';
 import 'package:cupertino_icons/cupertino_icons.dart';
@@ -40,13 +42,16 @@ class LandlordInformationScreen extends StatelessWidget {
               text: AppString.accountInformation,
               fontSize: 20,
               fontWeight: FontWeight.w600,
+              top: 12,
             ).start,
             const Divider(),
+
             const AccountInfo(),
-            20.height,
-            const CommonButton(
+            40.height,
+            CommonButton(
               titleText: AppString.done,
               buttonColor: AppColors.s200,
+              onTap: () => Get.toNamed(AppRoutes.signIn),
             )
           ],
         ),

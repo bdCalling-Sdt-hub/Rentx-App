@@ -31,42 +31,67 @@ class SignInScreen extends StatelessWidget {
                   children: [
                     const CommonText(
                       text: AppString.logIntoYourAccount,
-                      fontSize: 32,
-                      bottom: 20,
+                      fontSize: 26,
+                      bottom: 70,
                       top: 36,
+                      maxLines: 2,
                     ),
-                    20.height,
+                    const CommonText(
+                      text: AppString.email,
+                      fontWeight: FontWeight.w600,
+                      bottom: 8,
+                    ).start,
                     CommonTextField(
                       controller: controller.emailController,
-                      prefixIcon: const Icon(Icons.mail),
-                      labelText: AppString.email,
-                      validator: OtherHelper.emailValidator,
+                      hintText: AppString.email,
+                      validator: OtherHelper.validator,
                     ),
-                    40.height,
+                    const CommonText(
+                      text: AppString.password,
+                      fontWeight: FontWeight.w600,
+                      bottom: 8,
+                      top: 16,
+                    ).start,
                     CommonTextField(
                       controller: controller.passwordController,
-                      prefixIcon: const Icon(Icons.lock),
+                      hintText: AppString.password,
+                      validator: OtherHelper.validator,
                       isPassword: true,
-                      labelText: AppString.password,
-                      validator: OtherHelper.passwordValidator,
                     ),
-                    Align(
-                      alignment: Alignment.centerRight,
-                      child: GestureDetector(
-                        onTap: () => Get.toNamed(AppRoutes.forgotPassword),
-                        child: const CommonText(
-                          text: AppString.forgotThePassword,
-                          top: 10,
-                          bottom: 30,
-                          color: AppColors.primaryColor,
-                          fontSize: 16,
-                          fontWeight: FontWeight.w600,
+                    8.height,
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Row(
+                          children: [
+                            Checkbox(
+                              value: controller.isRemember,
+                              onChanged: controller.selectRemember,
+                            ),
+                            const CommonText(
+                              text: AppString.rememberMe,
+                              fontSize: 14,
+                            ),
+                          ],
                         ),
-                      ),
+                        Flexible(
+                          child: GestureDetector(
+                            onTap: () => Get.toNamed(AppRoutes.forgotPassword),
+                            child: const CommonText(
+                              text: AppString.forgotThePassword,
+                              color: AppColors.primaryColor,
+                              fontSize: 16,
+                              fontWeight: FontWeight.w600,
+                            ),
+                          ),
+                        )
+                      ],
                     ),
+                    40.height,
                     CommonButton(
                       titleText: AppString.signIn,
                       isLoading: controller.isLoading,
+                      buttonColor: AppColors.s200,
                       onTap: () {
                         if (formKey.currentState!.validate()) {
                           controller.signInUser();

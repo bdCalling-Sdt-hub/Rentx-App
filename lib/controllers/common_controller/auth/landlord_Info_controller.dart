@@ -26,6 +26,13 @@ class LandlordInfoController extends GetxController {
   TextEditingController cvcController = TextEditingController();
   TextEditingController countryController = TextEditingController();
 
+
+
+
+  TextEditingController dAccountNumberController = TextEditingController();
+  TextEditingController dCountryController = TextEditingController();
+
+
   selectPaymentOption(int index) {
     selectedOption = paymentOption[index];
     update();
