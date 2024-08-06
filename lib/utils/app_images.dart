@@ -11,8 +11,13 @@ class AppImages {
   static const String logoBlack = "$baseurl/logo_black.png" ;
   static const String onboarding = "$baseurl/onboarding.png" ;
 
+  static const String pizzaHut = "$baseurl/pizzaHut.png" ;
+  static const String detailsCard = "$baseurl/detailsCard.png" ;
 
 
+  ///<<<================= Svg Images ========================>>>
+  static const String cardImage = "$baseurl/cardImage.svg" ;
+  static const String dottedLine = "$baseurl/dottedLine.svg" ;
 
 
 }

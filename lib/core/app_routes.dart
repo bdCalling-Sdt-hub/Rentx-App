@@ -1,7 +1,11 @@
 import 'package:get/get.dart';
+import 'package:rentx/view/screen/Marchant_screens/History/History_screen_march.dart';
+import 'package:rentx/view/screen/Marchant_screens/Home/home_screen_march.dart';
+import 'package:rentx/view/screen/Marchant_screens/Profile/profile_screen_march.dart';
 import 'package:rentx/view/screen/common_screen/auth/sign%20up/complete_profile.dart';
 import 'package:rentx/view/screen/selection_role_screen.dart';
 
+import '../view/screen/Marchant_screens/ScanQR/scan_qr_screen.dart';
 import '../view/screen/common_screen/auth/change_password/change_password_screen.dart';
 import '../view/screen/common_screen/auth/forgot password/create_password.dart';
 import '../view/screen/common_screen/auth/forgot password/forgot_password.dart';
@@ -44,7 +48,32 @@ class AppRoutes {
   static const String setting = "/setting_screen.dart";
   static const String completeProfile = "/complete_profile.dart";
 
+  ///<<<=================== Merchant Screens ====================>>>
+  static const String historyScreenMarch = "/History_screen_march.dart";
+  static const String scanQrScreen = "/scan_qr_screen.dart";
+  static const String profileScreenMarch = "/profile_screen_march.dart";
+  static const String homeScreenMarch = "/home_screen_march.dart";
+
   static List<GetPage> routes = [
+    ///<<<================ Merchant Screens=============>>>
+    GetPage(
+        name: homeScreenMarch,
+        page: () => HomeScreenMarch(),
+        transition: Transition.rightToLeftWithFade),
+    GetPage(
+        name: historyScreenMarch,
+        page: () => HistoryScreenMarch(),
+        transition: Transition.rightToLeftWithFade),
+    GetPage(
+        name: scanQrScreen,
+        page: () => ScanQrScreen(),
+        transition: Transition.rightToLeftWithFade),
+    GetPage(
+        name: profileScreenMarch,
+        page: () => ProfileScreenMarch(),
+        transition: Transition.rightToLeftWithFade),
+
+
     GetPage(
         name: test,
         page: () => TestScreen(),
@@ -126,10 +155,6 @@ class AppRoutes {
         name: completeProfile,
         page: () => CompleteProfile(),
         transition: Transition.rightToLeftWithFade),
-
-
-
-
 
   ];
 }

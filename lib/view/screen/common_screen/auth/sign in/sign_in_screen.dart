@@ -73,6 +73,20 @@ class SignInScreen extends StatelessWidget {
                         }
                       },
                     ),
+
+                    ///<<<================= Merchant Sign In ================>>>
+                    20.height,
+                    CommonButton(
+                      titleText: "Merchant SignIn",
+                      isLoading: controller.isLoading,
+                      onTap: () {
+                        Get.toNamed(AppRoutes.historyScreenMarch);
+                        // if (formKey.currentState!.validate()) {
+                        //   controller.signInUser();
+                        // }
+                      },
+                    ),
+
                     30.height,
                     const DoNotHaveAccount()
                   ],
