@@ -21,6 +21,7 @@ class ForgetPasswordController extends GetxController {
   int start = 0;
   Timer? _timer;
 
+
   String time = "00:00";
 
   TextEditingController emailController =

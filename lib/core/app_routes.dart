@@ -3,6 +3,8 @@ import 'package:rentx/view/screen/Marchant_screens/History/History_screen_march.
 import 'package:rentx/view/screen/Marchant_screens/Home/home_screen_march.dart';
 import 'package:rentx/view/screen/Marchant_screens/Profile/profile_screen_march.dart';
 import 'package:rentx/view/screen/common_screen/auth/sign%20up/complete_profile.dart';
+import 'package:rentx/view/screen/common_screen/auth/sign%20up/landlord_infomation_screen.dart';
+import 'package:rentx/view/screen/home/home_screen.dart';
 import 'package:rentx/view/screen/selection_role_screen.dart';
 
 import '../view/screen/Marchant_screens/CouponDetails/coupon_details_screen.dart';
@@ -26,7 +28,6 @@ import '../view/screen/common_screen/setting/terms_of_services_screen.dart';
 import '../view/screen/common_screen/splash/splash_screen.dart';
 import '../view/screen/test_screen.dart';
 
-
 class AppRoutes {
   static const String test = "/test_screen.dart";
   static const String splash = "/splash_screen.dart";
@@ -48,6 +49,8 @@ class AppRoutes {
   static const String termsOfServices = "/terms_of_services_screen.dart";
   static const String setting = "/setting_screen.dart";
   static const String completeProfile = "/complete_profile.dart";
+  static const String landlordInformation = "/landlord_infomation_screen.dart";
+  static const String home = "/home_screen.dart";
 
   ///<<<=================== Merchant Screens ====================>>>
   static const String historyScreenMarch = "/History_screen_march.dart";
@@ -152,15 +155,22 @@ class AppRoutes {
         name: setting,
         page: () => SettingScreen(),
         transition: Transition.rightToLeftWithFade),
-
-     GetPage(
+    GetPage(
         name: onboarding,
         page: () => OnboardingScreen(),
         transition: Transition.rightToLeftWithFade),
-     GetPage(
+    GetPage(
         name: completeProfile,
         page: () => CompleteProfile(),
         transition: Transition.rightToLeftWithFade),
+    GetPage(
+        name: landlordInformation,
+        page: () => LandlordInformationScreen(),
+        transition: Transition.rightToLeftWithFade),
 
+    GetPage(
+        name: home,
+        page: () => HomeScreen(),
+        transition: Transition.rightToLeftWithFade),
   ];
 }

@@ -2,8 +2,10 @@ import 'package:get/get.dart';
 
 import '../controllers/common_controller/auth/change_password_controller.dart';
 import '../controllers/common_controller/auth/forget_password_controller.dart';
+import '../controllers/common_controller/auth/landlord_Info_controller.dart';
 import '../controllers/common_controller/auth/sign_in_controller.dart';
 import '../controllers/common_controller/auth/sign_up_controller.dart';
+import '../controllers/common_controller/home/home_controller.dart';
 import '../controllers/common_controller/message/chat_controller.dart';
 import '../controllers/common_controller/message/message_controller.dart';
 import '../controllers/common_controller/notifications/notifications_controller.dart';
@@ -26,5 +28,7 @@ class DependencyInjection extends Bindings {
     Get.lazyPut(() => SettingController(), fenix: true);
     Get.lazyPut(() => PrivacyPolicyController(), fenix: true);
     Get.lazyPut(() => TermsOfServicesController(), fenix: true);
+    Get.lazyPut(() => LandlordInfoController(), fenix: true);
+    Get.lazyPut(() => HomeController(), fenix: true);
   }
 }

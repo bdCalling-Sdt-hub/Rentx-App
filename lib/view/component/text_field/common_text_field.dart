@@ -23,7 +23,7 @@ class CommonTextField extends StatelessWidget {
       this.paddingVertical = 14,
       this.borderRadius = 10,
       this.inputFormatters,
-      this.fillColor = AppColors.p500 ,
+      this.fillColor = AppColors.white ,
       this.hintTextColor = AppColors.textFiledColor,
       this.labelTextColor = AppColors.textFiledColor,
       this.textColor = AppColors.black,
@@ -73,11 +73,12 @@ class CommonTextField extends StatelessWidget {
         obscureText: obscureText.value,
         textInputAction: textInputAction,
         maxLength: mexLength,
-        cursorColor: AppColors.white,
+        cursorColor: AppColors.black,
         inputFormatters: inputFormatters,
         style: TextStyle(fontSize: 14, color: textColor),
         onFieldSubmitted: onSubmitted,
         onTap: onTap,
+
         decoration: InputDecoration(
           errorMaxLines: 2,
           filled: true,

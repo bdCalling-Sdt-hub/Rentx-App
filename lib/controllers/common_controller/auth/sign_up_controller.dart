@@ -42,8 +42,8 @@ class SignUpController extends GetxController {
       TextEditingController(text: kDebugMode ? 'hello123' : '');
   TextEditingController confirmPasswordController =
       TextEditingController(text: kDebugMode ? 'hello123' : '');
-  TextEditingController numberController =
-      TextEditingController(text: kDebugMode ? '1865965581' : '');
+  TextEditingController addressController =
+      TextEditingController(text: kDebugMode ? 'Dhaka' : '');
   TextEditingController otpController =
       TextEditingController(text: kDebugMode ? '123456' : '');
 
@@ -78,14 +78,14 @@ class SignUpController extends GetxController {
   }
 
   signUpUser() async {
-    Get.toNamed(AppRoutes.completeProfile);
+    Get.toNamed(AppRoutes.landlordInformation);
     return;
     isLoading = true;
     update();
     Map<String, String> body = {
       "fullName": nameController.text,
       "email": emailController.text,
-      "phoneNumber": numberController.text,
+      "phoneNumber": addressController.text,
       "countryCode": countryCode,
       "password": passwordController.text,
       "role": selectRole.toLowerCase()

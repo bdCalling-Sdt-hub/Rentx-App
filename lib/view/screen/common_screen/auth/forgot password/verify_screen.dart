@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+import 'package:rentx/extension/my_extension.dart';
 import '../../../../../controllers/common_controller/auth/forget_password_controller.dart';
 import '../../../../../utils/app_colors.dart';
 import 'package:pin_code_fields/pin_code_fields.dart';
@@ -42,40 +43,41 @@ class _VerifyScreenState extends State<VerifyScreen> {
             key: formKey,
             child: Column(
               children: [
-                Center(
+                const Center(
                   child: CommonText(
-                    text:
-                        "${AppString.codeHasBeenSendTo} ${controller.emailController.text}",
-                    fontSize: 18,
-                    top: 100,
-                    bottom: 60,
+                    text: AppString.enterVerificationCode,
+                    fontSize: 26,
+                    top: 60,
+                    maxLines: 3,
+                  ),
+                ),
+                const Center(
+                  child: CommonText(
+                    text: AppString.enterTheCodeThatWasSentYourEmail,
+                    fontSize: 14,
+                    bottom: 20,
+                    top: 12,
+                    maxLines: 3,
                   ),
                 ),
                 Flexible(
                   flex: 0,
                   child: PinCodeTextField(
                     controller: controller.otpController,
-                    validator: (value) {
-                      if (value != null && value.length == 6) {
-                        return null;
-                      } else {
-                        return AppString.otpIsInValid;
-                      }
-                    },
                     autoDisposeControllers: false,
                     cursorColor: AppColors.black,
                     appContext: (context),
                     autoFocus: true,
                     pinTheme: PinTheme(
                       shape: PinCodeFieldShape.box,
-                      borderRadius: BorderRadius.circular(8),
                       fieldHeight: 60.h,
-                      fieldWidth: 60.w,
-                      activeFillColor: AppColors.transparent,
-                      selectedFillColor: AppColors.transparent,
-                      inactiveFillColor: AppColors.transparent,
+                      fieldWidth: 44.w,
+                      borderRadius: BorderRadius.circular(6),
+                      activeFillColor: AppColors.primaryColor,
+                      selectedFillColor: AppColors.primaryColor,
+                      inactiveFillColor: AppColors.primaryColor,
                       borderWidth: 0.5.w,
-                      selectedColor: AppColors.primaryColor,
+                      selectedColor: AppColors.highLight,
                       activeColor: AppColors.primaryColor,
                       inactiveColor: AppColors.black,
                     ),
@@ -83,37 +85,56 @@ class _VerifyScreenState extends State<VerifyScreen> {
                     keyboardType: TextInputType.number,
                     autovalidateMode: AutovalidateMode.disabled,
                     enableActiveFill: true,
+                    validator: (value) {
+                      if (value != null && value.length == 6) {
+                        return null;
+                      } else {
+                        return AppString.otpIsInValid;
+                      }
+                    },
                   ),
                 ),
-                GestureDetector(
-                  onTap: controller.time == '00:00'
-                      ? () {
-                          controller.startTimer();
-                          controller.forgotPasswordRepo();
-                        }
-                      : () {},
-                  child: CommonText(
-                    text: controller.time == '00:00'
-                        ? AppString.resendCode
-                        : "${AppString.resendCodeIn}  ${controller.time} ${AppString.minute}",
-                    top: 60,
-                    bottom: 100,
-                    fontSize: 18,
-                  ),
+                100.height,
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    controller.time == '00:00'
+                        ? const Center(
+                            child: CommonText(
+                                text: AppString.didNotReceiveTheCode))
+                        : 0.height,
+                    GestureDetector(
+                      onTap: controller.time == '00:00'
+                          ? () {
+                              controller.startTimer();
+                              controller.forgotPasswordRepo();
+                            }
+                          : () {},
+                      child: CommonText(
+                        text: controller.time == '00:00'
+                            ? AppString.resendCode
+                            : "${AppString.resendCodeIn} ${controller.time} ${AppString.minute}",
+                        fontSize: 18,
+                      ),
+                    ),
+                  ],
                 ),
-                CommonButton(
-                  titleText: AppString.verify,
-                  isLoading: controller.isLoadingVerify,
-                  onTap: () {
-                    if (formKey.currentState!.validate()) {
-                      controller.verifyOtpRepo();
-                    }
-                  },
-                )
               ],
             ),
           ),
         ),
+      ),
+      bottomNavigationBar: Padding(
+        padding: const EdgeInsets.symmetric(vertical: 30, horizontal: 20),
+        child: CommonButton(
+            titleText: AppString.verify,
+            isLoading: ForgetPasswordController.instance.isLoadingVerify,
+            onTap: () {
+              if (formKey.currentState!.validate()) {
+                ForgetPasswordController.instance.verifyOtpRepo();
+              }
+            }),
       ),
     );
   }

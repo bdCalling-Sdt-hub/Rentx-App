@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../../../../../core/app_routes.dart';
 import '../../../../../extension/my_extension.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
@@ -47,8 +48,7 @@ class SignUpScreen extends StatelessWidget {
                     buttonColor: AppColors.s200,
                     onTap: () {
                       if (formKey.currentState!.validate()) {
-                        controller.signUpUser();
-                        PrefsHelper.myRole = controller.selectRole;
+                        Get.toNamed(AppRoutes.completeProfile);
                       }
                     },
                   ),
