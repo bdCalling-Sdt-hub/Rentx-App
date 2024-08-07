@@ -5,6 +5,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:rentx/controllers/common_controller/auth/sign_up_controller.dart';
 import 'package:rentx/extension/my_extension.dart';
+import 'package:rentx/helpers/prefs_helper.dart';
 import 'package:rentx/utils/app_colors.dart';
 import 'package:rentx/utils/app_string.dart';
 import 'package:rentx/view/component/text/common_text.dart';
@@ -48,6 +49,7 @@ class CompleteProfile extends StatelessWidget {
                   fontSize: 16,
                   top: 8,
                 ).center,
+                20.height,
                 Stack(
                   children: [
                     Center(
@@ -72,12 +74,13 @@ class CompleteProfile extends StatelessWidget {
                       ),
                     ),
                     Positioned(
-                        bottom: 25,
-                        left: Get.width * 0.53,
+
+                        bottom: 15,
+                        left: Get.width * 0.55,
                         child: IconButton(
                             style: ButtonStyle(
                                 backgroundColor: WidgetStateColor.resolveWith(
-                              (states) => AppColors.s200,
+                              (states) => AppColors.s500,
                             )),
                             onPressed: controller.getProfileImage,
                             icon: const Icon(
@@ -86,6 +89,27 @@ class CompleteProfile extends StatelessWidget {
                             )))
                   ],
                 ),
+
+                20.height,
+
+                if(PrefsHelper.isMerchant)
+                  const CommonText(
+                  text: AppString.dateOfBirth,
+                  fontWeight: FontWeight.w600,
+                  bottom: 8,
+                ).start,
+
+                if(PrefsHelper.isMerchant)
+                  CommonTextField(
+                  prefixIcon: const Icon(
+                    Icons.calendar_month,
+                  ),
+                  hintText: AppString.birthDay,
+                  controller: controller.dobController,
+                  validator: OtherHelper.validator,
+                ),
+
+                if(PrefsHelper.isMerchant) 12.height,
                 const CommonText(
                   text: AppString.address,
                   fontWeight: FontWeight.w600,
@@ -103,7 +127,7 @@ class CompleteProfile extends StatelessWidget {
                 CommonButton(
                   titleText: AppString.completeProfile,
                   isLoading: controller.isLoading,
-                  buttonColor: AppColors.s200,
+                  buttonColor: AppColors.s500,
                   onTap: () {
                     if (formKey.currentState!.validate()) {
                       controller.signUpUser();

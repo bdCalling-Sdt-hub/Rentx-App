@@ -29,7 +29,7 @@ class CommonButton extends StatelessWidget {
       {this.onTap,
       required this.titleText,
       this.titleColor = AppColors.black,
-      this.buttonColor = AppColors.s200,
+      this.buttonColor = AppColors.s500,
       this.titleSize = 20,
       this.buttonRadius = 10,
       this.titleWeight = FontWeight.w700,

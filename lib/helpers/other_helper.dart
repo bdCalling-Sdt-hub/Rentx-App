@@ -101,12 +101,12 @@ class OtherHelper {
     return "";
   }
 
+
   static Future<String?> openGallery() async {
     final ImagePicker picker = ImagePicker();
     final XFile? getImages =
     await picker.pickImage(source: ImageSource.gallery, imageQuality: 50);
     if (getImages == null) return null;
-
     if (kDebugMode) {
       print(getImages.path);
     }

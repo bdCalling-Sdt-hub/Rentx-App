@@ -14,6 +14,7 @@ import '../../../utils/app_url.dart';
 import '../../../utils/app_utils.dart';
 
 class SignUpController extends GetxController {
+
   bool isPopUpOpen = false;
   bool isLoading = false;
   bool isLoadingVerify = false;
@@ -42,10 +43,17 @@ class SignUpController extends GetxController {
       TextEditingController(text: kDebugMode ? 'hello123' : '');
   TextEditingController confirmPasswordController =
       TextEditingController(text: kDebugMode ? 'hello123' : '');
+
+  TextEditingController dobController =
+  TextEditingController(text: kDebugMode ? '12/07/1999' : '');
   TextEditingController addressController =
       TextEditingController(text: kDebugMode ? 'Dhaka' : '');
   TextEditingController otpController =
       TextEditingController(text: kDebugMode ? '123456' : '');
+
+  TextEditingController shopNameController = TextEditingController(text: kDebugMode ? 'Pizza Burg' : '');
+  TextEditingController shopTypeController = TextEditingController(text: kDebugMode ? 'Dining' : '');
+  TextEditingController shopAddressController = TextEditingController(text: kDebugMode ? 'Banasree, Dhaka' : '');
 
   @override
   void dispose() {
@@ -78,7 +86,7 @@ class SignUpController extends GetxController {
   }
 
   signUpUser() async {
-    Get.toNamed(AppRoutes.landlordInformation);
+    PrefsHelper.isMerchant? Get.toNamed(AppRoutes.completeProfileMerch):Get.toNamed(AppRoutes.landlordInformation);
     return;
     isLoading = true;
     update();
@@ -126,7 +134,7 @@ class SignUpController extends GetxController {
   }
 
   Future<void> verifyOtpRepo() async {
-    Get.toNamed(AppRoutes.signIn);
+    Get.toNamed(AppRoutes.completeProfile);
     return;
     isLoadingVerify = true;
     update();

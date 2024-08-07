@@ -45,12 +45,13 @@ class AppString {
   static const String alreadyHaveAccount = "Already have an account?  ";
   static const String fullName = "Full Name";
   static const String address = "Address";
+  static const String birthDay = "DD/MM/YY";
   static const String accountName = "Account Name";
   static const String accountNumber = "Account Number";
   static const String bankName = "Bank Name";
   static const String branchName = "Branch Name";
   static const String createYourAccount = "Welcome Here! \nCreate An Account.";
-  static const String fillInYourInformation = "Fill in your information.";
+  static const String fillInYourInformation = "Please fill up your information.";
   static const String otpVerify = "OTP Verify";
   static const String inbox = "Inbox";
   static const String searchDoctor = "search a doctor";

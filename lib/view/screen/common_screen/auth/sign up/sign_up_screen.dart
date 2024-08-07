@@ -48,7 +48,7 @@ class SignUpScreen extends StatelessWidget {
                     buttonColor: AppColors.s200,
                     onTap: () {
                       if (formKey.currentState!.validate()) {
-                        Get.toNamed(AppRoutes.completeProfile);
+                        Get.toNamed(AppRoutes.verifyUser);
                       }
                     },
                   ),

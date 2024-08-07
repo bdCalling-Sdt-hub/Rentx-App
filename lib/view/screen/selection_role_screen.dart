@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:rentx/helpers/prefs_helper.dart';
 import 'package:rentx/utils/app_colors.dart';
 import 'package:rentx/view/component/text/common_text.dart';
 import '../../../../../extension/my_extension.dart';
@@ -41,7 +42,10 @@ class SelectionRole extends StatelessWidget {
               buttonIcon: AppImages.merchantIcon,
               titleText: AppString.merchant,
               titleSize: 24,
-              onTap: () => Get.toNamed(AppRoutes.signIn),
+              onTap: () {
+                PrefsHelper.isMerchant = true;
+                Get.toNamed(AppRoutes.signUp);
+              },
             ),
             24.height,
             CommonButton(

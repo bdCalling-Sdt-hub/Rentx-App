@@ -55,7 +55,6 @@ class _SecondPageState extends State<SecondPage> {
                       TextButton(
                           style: ButtonStyle(
                             backgroundColor: WidgetStateProperty.all(AppColors.b100),
-
                           ),
                           onPressed: () {
                             Get.toNamed(AppRoutes.signIn);

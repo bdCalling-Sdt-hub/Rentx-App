@@ -7,6 +7,7 @@ import 'package:rentx/view/screen/common_screen/auth/sign%20up/landlord_infomati
 import 'package:rentx/view/screen/home/home_screen.dart';
 import 'package:rentx/view/screen/selection_role_screen.dart';
 
+import '../view/screen/Marchant_screens/CompleteProfile/complete_profile_merch.dart';
 import '../view/screen/Marchant_screens/CouponDetails/coupon_details_screen.dart';
 import '../view/screen/Marchant_screens/ScanQR/scan_qr_screen.dart';
 import '../view/screen/common_screen/auth/change_password/change_password_screen.dart';
@@ -58,6 +59,7 @@ class AppRoutes {
   static const String profileScreenMarch = "/profile_screen_march.dart";
   static const String homeScreenMarch = "/home_screen_march.dart";
   static const String couponDetailsScreen = "/coupon_details_screen.dart";
+  static const String completeProfileMerch = "/complete_profile_merch.dart";
 
   static List<GetPage> routes = [
     ///<<<================ Merchant Screens=============>>>
@@ -80,6 +82,10 @@ class AppRoutes {
     GetPage(
         name: couponDetailsScreen,
         page: () => CouponDetailsScreen(),
+        transition: Transition.rightToLeftWithFade),
+    GetPage(
+        name: completeProfileMerch,
+        page: () => CompleteProfileMerch(),
         transition: Transition.rightToLeftWithFade),
 
 
