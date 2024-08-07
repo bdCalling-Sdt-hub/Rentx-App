@@ -4,14 +4,12 @@ import 'package:get/get.dart';
 import 'package:rentx/core/app_routes.dart';
 import 'package:rentx/extension/my_extension.dart';
 import 'package:rentx/utils/app_colors.dart';
-import 'package:cupertino_icons/cupertino_icons.dart';
 import 'package:rentx/utils/app_string.dart';
 import 'package:rentx/view/component/button/common_button.dart';
 import 'package:rentx/view/component/text/common_text.dart';
 import 'package:rentx/view/screen/common_screen/auth/sign%20up/widget/landlord_info_all_filed.dart';
 
 import 'widget/account_info.dart';
-import 'widget/button_with_icon.dart';
 
 class LandlordInformationScreen extends StatelessWidget {
   const LandlordInformationScreen({super.key});

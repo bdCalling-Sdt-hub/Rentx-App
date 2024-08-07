@@ -4,9 +4,7 @@ import 'package:get/get.dart';
 import 'package:rentx/view/screen/home/widgets/drawer.dart';
 
 import '../../../controllers/common_controller/home/home_controller.dart';
-import '../../../utils/app_colors.dart';
 import '../../component/bottom_nav_bar/common_bottom_bar.dart';
-import '../../component/text_field/common_text_field.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});

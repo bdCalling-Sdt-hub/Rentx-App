@@ -3,7 +3,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:rentx/extension/my_extension.dart';
 import 'package:rentx/view/component/text/common_text.dart';
-import '../../../../controllers/common_controller/home/home_controller.dart';
 import '../../../../core/app_routes.dart';
 import '../../../../helpers/prefs_helper.dart';
 import '../../../../utils/app_colors.dart';

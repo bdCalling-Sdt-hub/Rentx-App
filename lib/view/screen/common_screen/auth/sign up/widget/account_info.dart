@@ -3,7 +3,6 @@ import 'package:get/get.dart';
 import 'package:rentx/controllers/common_controller/auth/landlord_Info_controller.dart';
 import 'package:rentx/extension/my_extension.dart';
 import 'package:rentx/utils/app_string.dart';
-import 'package:rentx/view/component/button/common_button.dart';
 
 import '../../../../../../helpers/other_helper.dart';
 import '../../../../../../utils/app_colors.dart';

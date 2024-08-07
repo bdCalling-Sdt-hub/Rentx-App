@@ -3,7 +3,6 @@ import 'package:rentx/extension/my_extension.dart';
 import 'package:rentx/utils/app_colors.dart';
 import 'package:rentx/view/component/text/common_text.dart';
 import 'package:get/get.dart';
-import 'package:rentx/view/screen/common_screen/auth/sign%20up/sign_up_screen.dart';
 
 import '../../../core/app_routes.dart';
 import '../../../utils/app_images.dart';
