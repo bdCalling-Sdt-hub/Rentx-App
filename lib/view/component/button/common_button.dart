@@ -3,6 +3,10 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:rentx/extension/my_extension.dart';
+import 'package:rentx/utils/app_images.dart';
+import 'package:rentx/view/component/image/common_image.dart';
+import 'package:rentx/view/component/text/common_text.dart';
 import '../../../utils/app_colors.dart';
 
 class CommonButton extends StatelessWidget {
@@ -17,6 +21,7 @@ class CommonButton extends StatelessWidget {
   final double buttonRadius;
   final double buttonHeight;
   final double buttonWidth;
+  final String? buttonIcon;
 
   final bool isLoading;
 
@@ -33,6 +38,7 @@ class CommonButton extends StatelessWidget {
       this.isLoading = false,
       this.buttonWidth = double.infinity,
       this.borderColor = AppColors.primaryColor,
+      this.buttonIcon,
       super.key});
 
   @override
@@ -57,15 +63,19 @@ class CommonButton extends StatelessWidget {
             ? Platform.isIOS
                 ? const CupertinoActivityIndicator()
                 : const CircularProgressIndicator()
-            : Text(
-                titleText,
-                maxLines: 1,
-                overflow: TextOverflow.ellipsis,
-                textAlign: TextAlign.center,
-                style: GoogleFonts.roboto(
+            : Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  if (buttonIcon != null) CommonImage(imageSrc: "$buttonIcon", imageColor: AppColors.black,),
+                  if (buttonIcon != null) 8.width,
+                  CommonText(
+                    text: titleText,
+                    fontSize: titleSize,
+                    fontWeight: titleWeight,
+                    textAlign: TextAlign.center,
                     color: titleColor,
-                    fontSize: titleSize.sp,
-                    fontWeight: titleWeight),
+                  ),
+                ],
               ),
       ),
     );

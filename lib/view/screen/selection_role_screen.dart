@@ -38,12 +38,14 @@ class SelectionRole extends StatelessWidget {
             ),
             100.height,
             CommonButton(
+              buttonIcon: AppImages.merchantIcon,
               titleText: AppString.merchant,
               titleSize: 24,
               onTap: () => Get.toNamed(AppRoutes.signIn),
             ),
             24.height,
             CommonButton(
+              buttonIcon: AppImages.userIcon,
               titleText: AppString.user,
               titleSize: 24,
               buttonColor: AppColors.s500,

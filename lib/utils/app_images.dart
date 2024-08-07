@@ -18,6 +18,8 @@ class AppImages {
   ///<<<================= Svg Images ========================>>>
   static const String cardImage = "$baseurl/cardImage.svg" ;
   static const String dottedLine = "$baseurl/dottedLine.svg" ;
+  static const String merchantIcon = "$baseurl/merchantIcon.svg" ;
+  static const String userIcon = "$baseurl/userIcon.svg" ;
 
 
 }
