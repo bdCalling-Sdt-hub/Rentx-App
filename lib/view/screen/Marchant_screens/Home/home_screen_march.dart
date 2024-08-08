@@ -60,7 +60,7 @@ class HomeScreenMarch extends StatelessWidget {
                   child: Column(
                     children: [
                       const CommonText(
-                        text: "${AppString.welcome}!",
+                        text: AppString.welcome,
                         fontWeight: FontWeight.w500,
                         fontSize: 16,
                         color: AppColors.s500,
@@ -157,7 +157,7 @@ class HomeScreenMarch extends StatelessWidget {
               ),
             ),
             12.height,
-            Row(
+            const Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 CommonText(text: AppString.myCoupons, color: AppColors.p500),

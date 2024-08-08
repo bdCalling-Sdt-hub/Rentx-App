@@ -122,7 +122,7 @@ class AppString {
   static const personalInformation = "Personal Information";
   static const boostedPackage = "Boosted Package";
   static const languages = "Languages";
-  static const welcome = "Welcome";
+
   static const pointsRedeemed = "Points Redeemed";
   static const coupons = "Coupons";
   static const youHave = "You Have";
