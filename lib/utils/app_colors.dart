@@ -12,6 +12,10 @@ class AppColors {
   static const Color filledColor = Color(0xFFe7e7e7);
   static const Color textFiledColor = Color(0xFF979797);
   static const Color blueLight = Color(0xffe8e8f5);
+  static const Color purple = Color(0xff8367C7);
+  static const Color greenLight = Color(0xffC2F8CB);
+  static const Color offWhite = Color(0xffF0FFF1);
+  static const Color blue = Color(0xff175C99);
 
   ///====================white=========================
 

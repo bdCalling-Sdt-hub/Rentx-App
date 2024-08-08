@@ -35,8 +35,8 @@ class HomeDrawerMerch extends StatelessWidget {
                         radius: 25.sp,
                         child: ClipOval(
                           child: CommonImage(
-                            imageSrc: AppImages.profile,
-                            imageType: ImageType.png,
+                            imageSrc: "https://rb.gy/fpz6t0",
+                            imageType: ImageType.network,
                             height: 170,
                             width: 170,
                             defaultImage: AppImages.profile,

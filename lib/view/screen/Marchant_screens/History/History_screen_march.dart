@@ -27,7 +27,7 @@ class HistoryScreenMarch extends StatelessWidget {
           itemCount: 10,
           itemBuilder: (context, index) {
           return CustomCouponCard(
-            couponImage: AppImages.cardImage,
+            couponImage: AppImages.pizzaHut,
             onTap: () {
               Get.toNamed(AppRoutes.couponDetailsScreen);
             },
@@ -42,12 +42,15 @@ class CustomCouponCard extends StatelessWidget {
   CustomCouponCard({
     super.key,
     this.onTap,
-    required this.couponImage
-
+    required this.couponImage,
+    this.couponHeight,
+    this.couponWidth
   });
 
   VoidCallback? onTap;
   String couponImage;
+  double? couponHeight;
+  double? couponWidth;
 
   @override
   Widget build(BuildContext context) {
@@ -55,13 +58,13 @@ class CustomCouponCard extends StatelessWidget {
       onTap: onTap,
       child: Stack(
         children: [
-          CommonImage(imageSrc: couponImage, width: Get.width, height: 100),
+          CommonImage(imageSrc: AppImages.cardImage, width: couponWidth?? Get.width, height: couponHeight ?? 100.h),
           Positioned(
             top: 0,
-            left: 150,
+            left: couponWidth != null? 120 : 150,
             child: Container(
-              padding: EdgeInsets.symmetric(vertical: 5),
-              height: 100,
+              padding: const EdgeInsets.symmetric(vertical: 5),
+              height: 100.h,
               child: CustomPaint(
                 painter: DottedLinePainter(
                     orientation: LineOrientation.vertical,
@@ -75,12 +78,12 @@ class CustomCouponCard extends StatelessWidget {
           ),
           Positioned(
             top: 20,
-            left: 50,
-            child: CommonImage(imageSrc: AppImages.pizzaHut, imageType: ImageType.png, height: 50, width: 50,),
+            left: couponWidth != null? 35 : 50,
+            child: CommonImage(imageSrc: couponImage, imageType: ImageType.png, height: 50, width: 50,),
           ),
           Positioned(
             top: 10,
-            left: 170,
+            left: couponWidth != null? 140 : 170,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [

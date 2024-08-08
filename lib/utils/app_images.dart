@@ -14,6 +14,7 @@ class AppImages {
   static const String pizzaHut = "$baseurl/pizzaHut.png" ;
   static const String detailsCard = "$baseurl/detailsCard.png" ;
   static const String uploadImage = "$baseurl/uploadImage.png" ;
+  static const String couponBadge = "$baseurl/couponBadge.png" ;
 
 
   ///<<<================= Svg Images ========================>>>

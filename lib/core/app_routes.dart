@@ -7,6 +7,8 @@ import 'package:rentx/view/screen/common_screen/auth/sign%20up/landlord_infomati
 import 'package:rentx/view/screen/home/home_screen.dart';
 import 'package:rentx/view/screen/selection_role_screen.dart';
 
+import '../view/screen/Marchant_screens/BoostPackageScreens/boost_package_screen.dart';
+import '../view/screen/Marchant_screens/BoostPackageScreens/buy_package_screen.dart';
 import '../view/screen/Marchant_screens/CompleteProfile/complete_profile_merch.dart';
 import '../view/screen/Marchant_screens/CouponDetails/coupon_details_screen.dart';
 import '../view/screen/Marchant_screens/ScanQR/scan_qr_screen.dart';
@@ -60,6 +62,8 @@ class AppRoutes {
   static const String homeScreenMarch = "/home_screen_march.dart";
   static const String couponDetailsScreen = "/coupon_details_screen.dart";
   static const String completeProfileMerch = "/complete_profile_merch.dart";
+  static const String boostPackageScreen = "/boost_package_screen.dart";
+  static const String buyPackageScreen = "/buy_package_screen.dart";
 
   static List<GetPage> routes = [
     ///<<<================ Merchant Screens=============>>>
@@ -86,6 +90,14 @@ class AppRoutes {
     GetPage(
         name: completeProfileMerch,
         page: () => CompleteProfileMerch(),
+        transition: Transition.rightToLeftWithFade),
+    GetPage(
+        name: boostPackageScreen,
+        page: () => BoostPackageScreen(),
+        transition: Transition.rightToLeftWithFade),
+    GetPage(
+        name: buyPackageScreen,
+        page: () => BuyPackageScreen(),
         transition: Transition.rightToLeftWithFade),
 
 

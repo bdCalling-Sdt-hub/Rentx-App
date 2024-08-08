@@ -54,6 +54,7 @@ dependencies:
   flutter_barcode_scanner: ^2.0.0
   curved_navigation_bar: ^1.0.6
   dotted_border: ^2.1.0
+  carousel_slider: ^4.2.1
 
 
 dev_dependencies:

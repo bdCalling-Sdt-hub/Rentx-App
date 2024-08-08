@@ -10,4 +10,8 @@ class AppIcons {
   static const String coupons = "$assetIcons/coupons.svg" ;
   static const String logOut = "$assetIcons/logOut.svg" ;
   static const String termsOfService = "$assetIcons/termsOfService.svg" ;
+  static const String notifyIcon = "$assetIcons/notifyIcon.svg" ;
+  static const String couponDiscount = "$assetIcons/couponDiscount.svg" ;
+  static const String crownWinner = "$assetIcons/crownWinner.svg" ;
+  static const String arrowUp = "$assetIcons/arrowUp.svg" ;
 }
