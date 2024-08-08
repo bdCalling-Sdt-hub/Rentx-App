@@ -5,7 +5,6 @@ import 'package:get/get.dart';
 import '../../../core/app_routes.dart';
 import '../../../utils/app_colors.dart';
 
-
 class CommonBottomNavBar extends StatefulWidget {
   final int currentIndex;
 
@@ -45,32 +44,16 @@ class _CommonBottomNavBarState extends State<CommonBottomNavBar> {
         onTap: onTap,
         color: AppColors.white,
         buttonBackgroundColor: AppColors.s200,
-        backgroundColor: widget.currentIndex == 1
-            ? AppColors.s200
-            : AppColors.transparent,
+        backgroundColor:
+            widget.currentIndex == 1 ? AppColors.s200 : AppColors.transparent,
         animationCurve: Curves.easeInOut,
         animationDuration: const Duration(milliseconds: 900),
-        items: [
-          Icon(Icons.home,
-              color: widget.currentIndex == 0
-                  ? AppColors.s200
-                  : AppColors.black),
-          Icon(Icons.location_on_outlined,
-              color: widget.currentIndex == 1
-                  ? AppColors.s200
-                  : AppColors.black),
-          Icon(Icons.add,
-              color: widget.currentIndex == 2
-                  ? AppColors.s200
-                  : AppColors.black),
-          Icon(Icons.settings_outlined,
-              color: widget.currentIndex == 3
-                  ? AppColors.s200
-                  : AppColors.black),
-          Icon(Icons.person,
-              color: widget.currentIndex == 4
-                  ? AppColors.s200
-                  : AppColors.black),
+        items: const [
+          Icon(Icons.home, color: AppColors.black),
+          Icon(Icons.location_on_outlined, color: AppColors.black),
+          Icon(Icons.add, color: AppColors.black),
+          Icon(Icons.settings_outlined, color: AppColors.black),
+          Icon(Icons.person, color: AppColors.black),
         ]);
   }
 

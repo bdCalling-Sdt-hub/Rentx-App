@@ -73,7 +73,6 @@ class HomeDrawer extends StatelessWidget {
                     title: AppString.myCoupons,
                     icon: Icons.local_offer),
 
-
                 drawerItem(
                     // onTap: () => Get.toNamed(AppRoutes.setting),
                     title: AppString.support,
@@ -93,7 +92,7 @@ class HomeDrawer extends StatelessWidget {
                     icon: Icons.list_alt_rounded),
 
                 drawerItem(
-                  // onTap: () => Get.toNamed(AppRoutes.setting),
+                    // onTap: () => Get.toNamed(AppRoutes.setting),
                     title: AppString.aboutMe,
                     icon: Icons.info_outline),
                 drawerItem(

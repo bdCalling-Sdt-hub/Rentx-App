@@ -23,7 +23,7 @@ class SignInController extends GetxController {
   }
 
   Future<void> signInUser() async {
-    Get.toNamed(AppRoutes.profile);
+    Get.toNamed(AppRoutes.home);
     return;
     isLoading = true;
     update();

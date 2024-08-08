@@ -3,6 +3,7 @@ import 'package:rentx/extension/my_extension.dart';
 import 'package:rentx/utils/app_colors.dart';
 import 'package:rentx/view/component/text/common_text.dart';
 import 'package:get/get.dart';
+import 'package:cupertino_icons/cupertino_icons.dart';
 
 import '../../../core/app_routes.dart';
 import '../../../utils/app_images.dart';
