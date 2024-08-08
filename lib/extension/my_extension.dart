@@ -15,12 +15,16 @@ extension View2 on Widget {
       );
 
   Widget get center => Align(
-    alignment: Alignment.center,
-    child: this,
-  );
+        alignment: Alignment.center,
+        child: this,
+      );
 
   Widget get end => Align(
         alignment: Alignment.centerRight,
+        child: this,
+      );
+
+  Widget get pad => Container(
         child: this,
       );
 }

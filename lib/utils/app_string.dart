@@ -111,4 +111,10 @@ class AppString {
       "Enter the code that was sent to your email.";
   static const nowResetYour = "Now Reset Your ";
   static const passwordLength = "Password  must have 6-8 characters.";
+  static const welcome = "Welcome!";
+  static const youHome = "YOUR HOME!";
+  static const redeem = "Redeem";
+  static const rewardPoints = "Reward Points";
+  static const payNow = "Pay Now";
+  static const dueRent = "Due Rent";
 }
