@@ -3,7 +3,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:rentx/extension/my_extension.dart';
 import 'package:rentx/view/component/text/common_text.dart';
-import '../../../../controllers/common_controller/home/home_controller.dart';
 import '../../../../core/app_routes.dart';
 import '../../../../helpers/prefs_helper.dart';
 import '../../../../utils/app_colors.dart';
@@ -74,7 +73,6 @@ class HomeDrawer extends StatelessWidget {
                     title: AppString.myCoupons,
                     icon: Icons.local_offer),
 
-
                 drawerItem(
                     // onTap: () => Get.toNamed(AppRoutes.setting),
                     title: AppString.support,
@@ -94,7 +92,7 @@ class HomeDrawer extends StatelessWidget {
                     icon: Icons.list_alt_rounded),
 
                 drawerItem(
-                  // onTap: () => Get.toNamed(AppRoutes.setting),
+                    // onTap: () => Get.toNamed(AppRoutes.setting),
                     title: AppString.aboutMe,
                     icon: Icons.info_outline),
                 drawerItem(

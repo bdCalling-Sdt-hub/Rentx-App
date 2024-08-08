@@ -1,12 +1,16 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+import 'package:rentx/extension/my_extension.dart';
+import 'package:rentx/utils/app_colors.dart';
+import 'package:rentx/utils/app_string.dart';
+import 'package:rentx/view/component/other_widgets/reward_item.dart';
+import 'package:rentx/view/component/text/common_text.dart';
 import 'package:rentx/view/screen/home/widgets/drawer.dart';
 
 import '../../../controllers/common_controller/home/home_controller.dart';
-import '../../../utils/app_colors.dart';
 import '../../component/bottom_nav_bar/common_bottom_bar.dart';
-import '../../component/text_field/common_text_field.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -15,42 +19,80 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetBuilder<HomeController>(
         builder: (controller) => Scaffold(
-          drawer: const HomeDrawer(),
-          appBar: AppBar(
-            // title: SizedBox(
-            //   width: 150,
-            //   child: CommonTextField(
-            //     fillColor: AppColors.transparent,
-            //     paddingHorizontal: 8,
-            //     fontSize: 24,
-            //     hintText: "jkldsfdslfj",
-            //     controller: controller.houseController,
-            //     suffixIcon: PopUpMenu(
-            //         items: controller.houses,
-            //         selectedItem: controller.houseController.text,
-            //         onTap: controller.selectHouse),
-            //   ),
-            // ),
-            // actions: [
-            //   SizedBox(
-            //     width: 110,
-            //     child: CommonTextField(
-            //       fillColor: AppColors.transparent,
-            //       paddingHorizontal: 8,
-            //       hintText: "jkldsfdslfj",
-            //       controller: controller.houseController,
-            //       suffixIcon: PopUpMenu(
-            //           items: controller.houses,
-            //           selectedItem: controller.houseController.text,
-            //           onTap: controller.selectHouse),
-            //     ),
-            //   )
-            // ],
-          ),
-          body: Container(),
-          bottomNavigationBar: const CommonBottomNavBar(
-            currentIndex: 0,
-          ),
-        ));
+              backgroundColor: AppColors.b500,
+              drawer: const HomeDrawer(),
+              appBar: AppBar(
+                actions: const [
+                  Icon(
+                    Icons.notifications_active,
+                    color: AppColors.organ,
+                    size: 34,
+                  )
+                ],
+              ),
+              body: SingleChildScrollView(
+                child: Column(
+                  children: [
+                    Container(
+                      color: AppColors.background,
+                      padding: EdgeInsets.symmetric(
+                        horizontal: 20.w,
+                        vertical: 8.h,
+                      ),
+                      child: Column(
+                        children: [
+                          const CommonText(
+                            text: AppString.welcome,
+                            color: AppColors.p50,
+                          ).start,
+                          const CommonText(
+                            text: "Mr. Mushtaq",
+                            fontSize: 20,
+                            fontWeight: FontWeight.bold,
+                          ).start,
+                          const CommonText(
+                            text: AppString.youHome,
+                            color: AppColors.p50,
+                          ).start,
+                          const CommonText(
+                            text: "Central Park Palace",
+                            fontSize: 20,
+                            fontWeight: FontWeight.bold,
+                          ).start,
+                          Container(
+                            padding: const EdgeInsets.symmetric(
+                                horizontal: 4, vertical: 2),
+                            decoration: const BoxDecoration(
+                                color: AppColors.s900,
+                                borderRadius:
+                                    BorderRadius.all(Radius.circular(4))),
+                            child: const CommonText(
+                              text: "RentX. Rewards Alliance",
+                              fontSize: 12,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ).start,
+                          8.height,
+                        ],
+                      ),
+                    ),
+                    12.height,
+                    const RewardItem(
+                      text: AppString.dueRent,
+                      buttonText: AppString.payNow,
+                      amount: "৳16,000",
+                      date: "06 Days-12 Hours left",
+                    ),
+                    12.height,
+                    const RewardItem(
+                      amount: "2000",
+                    )
+                  ],
+                ),
+              ),
+              bottomNavigationBar: const CommonBottomNavBar(
+                currentIndex: 0,
+              ),
+            ));
   }
 }
