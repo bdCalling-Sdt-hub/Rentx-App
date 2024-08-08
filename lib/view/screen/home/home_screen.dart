@@ -53,12 +53,6 @@ class HomeScreen extends StatelessWidget {
                             text: AppString.youHome,
                             color: AppColors.p50,
                           ).start,
-                          Container(
-                            width: Get.width,
-                            height: Get.height,
-                            color: Colors.red,
-                            padding: EdgeInsets.zero,
-                          ),
                           const CommonText(
                             text: "Central Park Palace",
                             fontSize: 20,
@@ -83,6 +77,7 @@ class HomeScreen extends StatelessWidget {
                 ),
               ),
               bottomNavigationBar: const CommonBottomNavBar(
+
                 currentIndex: 0,
               ),
             ));
