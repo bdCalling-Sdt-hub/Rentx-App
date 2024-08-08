@@ -5,6 +5,7 @@ import 'package:get/get.dart';
 import 'package:rentx/extension/my_extension.dart';
 import 'package:rentx/utils/app_colors.dart';
 import 'package:rentx/utils/app_string.dart';
+import 'package:rentx/view/component/other_widgets/reward_item.dart';
 import 'package:rentx/view/component/text/common_text.dart';
 import 'package:rentx/view/screen/home/widgets/drawer.dart';
 
@@ -58,26 +59,38 @@ class HomeScreen extends StatelessWidget {
                             fontSize: 20,
                             fontWeight: FontWeight.bold,
                           ).start,
+                          Container(
+                            padding: const EdgeInsets.symmetric(
+                                horizontal: 4, vertical: 2),
+                            decoration: const BoxDecoration(
+                                color: AppColors.s900,
+                                borderRadius:
+                                    BorderRadius.all(Radius.circular(4))),
+                            child: const CommonText(
+                              text: "RentX. Rewards Alliance",
+                              fontSize: 12,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ).start,
+                          8.height,
                         ],
                       ),
                     ),
-                    Container(
-                      padding: const EdgeInsets.symmetric(
-                          horizontal: 4, vertical: 2),
-                      decoration: const BoxDecoration(
-                          color: AppColors.s900,
-                          borderRadius: BorderRadius.all(Radius.circular(4))),
-                      child: const CommonText(
-                        text: "RentX. Rewards Alliance",
-                        fontSize: 12,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ).start,
+                    12.height,
+                    const RewardItem(
+                      text: AppString.dueRent,
+                      buttonText: AppString.payNow,
+                      amount: "৳16,000",
+                      date: "06 Days-12 Hours left",
+                    ),
+                    12.height,
+                    const RewardItem(
+                      amount: "2000",
+                    )
                   ],
                 ),
               ),
               bottomNavigationBar: const CommonBottomNavBar(
-
                 currentIndex: 0,
               ),
             ));
