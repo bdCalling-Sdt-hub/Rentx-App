@@ -16,7 +16,7 @@ class HistoryScreenMarch extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      bottomNavigationBar: BottomBarMarch(currentIndex: 0),
+      bottomNavigationBar: BottomBarMarch(currentIndex: 1),
       appBar: AppBar(
         centerTitle: true,
         title: CommonText(text: "History"),

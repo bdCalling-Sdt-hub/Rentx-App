@@ -2,6 +2,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:rentx/controllers/common_controller/auth/sign_up_controller.dart';
+import 'package:rentx/core/app_routes.dart';
 import 'package:rentx/extension/my_extension.dart';
 import 'package:rentx/helpers/other_helper.dart';
 import 'package:rentx/utils/app_colors.dart';
@@ -65,7 +66,11 @@ class CompleteProfileMerch extends StatelessWidget {
                 hindText: "Enter shop address",
               ),
               70.height,
-              CommonButton(titleText: "Done")
+              CommonButton(
+                onTap: () {
+                  Get.offAllNamed(AppRoutes.signIn);
+                },
+                  titleText: "Done")
             ],
           );
         },),

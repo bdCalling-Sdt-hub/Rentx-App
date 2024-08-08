@@ -22,5 +22,4 @@ class AppImages {
   static const String merchantIcon = "$baseurl/merchantIcon.svg" ;
   static const String userIcon = "$baseurl/userIcon.svg" ;
 
-
 }

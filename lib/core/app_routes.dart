@@ -66,19 +66,19 @@ class AppRoutes {
     GetPage(
         name: homeScreenMarch,
         page: () => HomeScreenMarch(),
-        transition: Transition.rightToLeftWithFade),
+       ),
     GetPage(
         name: historyScreenMarch,
         page: () => HistoryScreenMarch(),
-        transition: Transition.rightToLeftWithFade),
+        ),
     GetPage(
         name: scanQrScreen,
         page: () => ScanQrScreen(),
-        transition: Transition.rightToLeftWithFade),
+        ),
     GetPage(
         name: profileScreenMarch,
         page: () => ProfileScreenMarch(),
-        transition: Transition.rightToLeftWithFade),
+        ),
     GetPage(
         name: couponDetailsScreen,
         page: () => CouponDetailsScreen(),

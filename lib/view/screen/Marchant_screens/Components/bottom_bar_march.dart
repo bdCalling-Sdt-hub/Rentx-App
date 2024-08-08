@@ -1,6 +1,6 @@
+import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 
 import '../../../../core/app_routes.dart';
@@ -20,16 +20,16 @@ class BottomBarMarch extends StatefulWidget {
 class _BottomBarMarchState extends State<BottomBarMarch> {
   var bottomNavIndex = 0;
   List<Widget> unselectedIcons = [
-    const Icon(Icons.home_outlined, color: AppColors.black),
-    const Icon(Icons.history_toggle_off, color: AppColors.black),
-    const Icon(Icons.document_scanner_outlined, color: AppColors.black),
-    const Icon(Icons.perm_contact_cal_outlined, color: AppColors.black),
+    const Icon(Icons.settings_outlined, color: AppColors.black),
+    const Icon(Icons.notifications_outlined, color: AppColors.black),
+    const Icon(Icons.chat, color: AppColors.black),
+    const Icon(Icons.person_2_outlined, color: AppColors.black),
   ];
 
   List<Widget> selectedIcons = [
-    const Icon(Icons.home, color: AppColors.primaryColor),
-    const Icon(Icons.history, color: AppColors.primaryColor),
-    const Icon(Icons.document_scanner, color: AppColors.primaryColor),
+    const Icon(Icons.settings_outlined, color: AppColors.primaryColor),
+    const Icon(Icons.notifications, color: AppColors.primaryColor),
+    const Icon(Icons.chat, color: AppColors.primaryColor),
     const Icon(Icons.person, color: AppColors.primaryColor),
   ];
 
@@ -41,53 +41,46 @@ class _BottomBarMarchState extends State<BottomBarMarch> {
 
   @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView(
-      physics: const NeverScrollableScrollPhysics(),
-      child: Container(
-        width: MediaQuery.of(context).size.width,
-        alignment: Alignment.center,
-        padding: EdgeInsets.all(12.sp),
-        decoration: BoxDecoration(
-            color: AppColors.blueLight,
-            borderRadius: BorderRadius.only(
-                topLeft: Radius.circular(20.r),
-                topRight: Radius.circular(20.r))),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: List.generate(unselectedIcons.length, (index) {
-            return GestureDetector(
-              onTap: () => onTap(index),
-              child: Container(
-                margin: EdgeInsetsDirectional.all(12.sp),
-                height: 50,
-                width: 50,
-                color: AppColors.white,
-                child: Column(
-                  children: [
-                    index == bottomNavIndex
-                        ? selectedIcons[index]
-                        : unselectedIcons[index],
-                  ],
-                ),
-              ),
-            );
-          }),
-        ),
-      ),
-    );
+    return CurvedNavigationBar(
+        index: widget.currentIndex > 5 ? 2 : widget.currentIndex,
+        height: 60,
+        onTap: onTap,
+        color: AppColors.white,
+        buttonBackgroundColor: AppColors.s200,
+        backgroundColor: widget.currentIndex == 1
+            ? AppColors.s200
+            : AppColors.transparent,
+        animationCurve: Curves.easeInOut,
+        animationDuration: const Duration(milliseconds: 900),
+        items: [
+          Icon(Icons.home,
+              color: widget.currentIndex == 0
+                  ? AppColors.s200
+                  : AppColors.black),
+          Icon(Icons.history,
+              color: widget.currentIndex == 1
+                  ? AppColors.s200
+                  : AppColors.black),
+          Icon(Icons.document_scanner_outlined,
+              color: widget.currentIndex == 2
+                  ? AppColors.s200
+                  : AppColors.black),
+          Icon(Icons.person,
+              color: widget.currentIndex == 3
+                  ? AppColors.s200
+                  : AppColors.black),
+        ]);
   }
 
   void onTap(int index) async {
     if (kDebugMode) {
       print(widget.currentIndex);
     }
-
     if (index == 0) {
       if (!(widget.currentIndex == 0)) {
         Get.toNamed(AppRoutes.homeScreenMarch);
       }
-    }
-     else if (index == 1) {
+    } else if (index == 1) {
       if (!(widget.currentIndex == 1)) {
         Get.toNamed(AppRoutes.historyScreenMarch);
       }
