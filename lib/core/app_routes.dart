@@ -8,7 +8,10 @@ import 'package:rentx/view/screen/home/home_screen.dart';
 import 'package:rentx/view/screen/selection_role_screen.dart';
 
 import '../view/screen/Marchant_screens/BoostPackageScreens/boost_package_screen.dart';
+import '../view/screen/Marchant_screens/BoostPackageScreens/boosted_package_screen.dart';
 import '../view/screen/Marchant_screens/BoostPackageScreens/buy_package_screen.dart';
+import '../view/screen/Marchant_screens/BoostPackageScreens/payment_screen.dart';
+import '../view/screen/Marchant_screens/BoostPackageScreens/payment_successful_screen.dart';
 import '../view/screen/Marchant_screens/CompleteProfile/complete_profile_merch.dart';
 import '../view/screen/Marchant_screens/CouponDetails/coupon_details_screen.dart';
 import '../view/screen/Marchant_screens/ScanQR/scan_qr_screen.dart';
@@ -64,6 +67,9 @@ class AppRoutes {
   static const String completeProfileMerch = "/complete_profile_merch.dart";
   static const String boostPackageScreen = "/boost_package_screen.dart";
   static const String buyPackageScreen = "/buy_package_screen.dart";
+  static const String paymentScreen = "/payment_screen.dart";
+  static const String paymentSuccessfulScreen = "/payment_successful_screen.dart";
+  static const String boostedPackageScreen = "/boosted_package_screen.dart";
 
   static List<GetPage> routes = [
     ///<<<================ Merchant Screens=============>>>
@@ -98,6 +104,18 @@ class AppRoutes {
     GetPage(
         name: buyPackageScreen,
         page: () => BuyPackageScreen(),
+        transition: Transition.rightToLeftWithFade),
+    GetPage(
+        name: paymentScreen,
+        page: () => PaymentScreen(),
+        transition: Transition.rightToLeftWithFade),
+    GetPage(
+        name: paymentSuccessfulScreen,
+        page: () => PaymentSuccessfulScreen(),
+        transition: Transition.rightToLeftWithFade),
+    GetPage(
+        name: paymentSuccessfulScreen,
+        page: () => BoostedPackageScreen(),
         transition: Transition.rightToLeftWithFade),
 
 

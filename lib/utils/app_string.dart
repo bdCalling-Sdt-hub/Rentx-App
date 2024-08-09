@@ -130,4 +130,13 @@ class AppString {
   static const check = "Check";
   static const chooseBoostPackage = "Choose your preferred package and boost your vouchers.";
 
+  static const paymentAmount = "Payment amount";
+  static const nameOnCard = "Name on Card";
+  static const enterNameOnCard = "Enter name on your card";
+  static const enterCardNumber = "Enter your card number";
+  static const dateMonthYear = "DD/MM/YY";
+  static const enterCountryName = "Enter your country name";
+  static const pay = "Pay";
+  static const paymentSuccessful = "Payment Successful!";
+  static const backToHome = "Back to Home";
 }

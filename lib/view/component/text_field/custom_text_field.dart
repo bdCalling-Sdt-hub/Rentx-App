@@ -120,17 +120,17 @@ class _CustomTextFieldState extends State<CustomTextField> {
         suffixIconColor: widget.suffixIconColor,
         border: OutlineInputBorder(
             borderRadius:
-            BorderRadius.circular(widget.fieldBorderRadius ?? 16.r),
+            BorderRadius.circular(widget.fieldBorderRadius ?? 6.r),
             borderSide: BorderSide(color: widget.fieldBorderColor, width: 1),
             gapPadding: 0),
         focusedBorder: OutlineInputBorder(
             borderRadius:
-            BorderRadius.circular(widget.fieldBorderRadius ?? 16.r),
+            BorderRadius.circular(widget.fieldBorderRadius ?? 6.r),
             borderSide: BorderSide(color: widget.fieldBorderColor, width: 1),
             gapPadding: 0),
         enabledBorder: OutlineInputBorder(
             borderRadius:
-            BorderRadius.circular(widget.fieldBorderRadius ?? 16.r),
+            BorderRadius.circular(widget.fieldBorderRadius ?? 6.r),
             borderSide: BorderSide(color: widget.fieldBorderColor, width: 1),
             gapPadding: 0),
       ),
