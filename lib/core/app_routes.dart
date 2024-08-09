@@ -114,7 +114,7 @@ class AppRoutes {
         page: () => PaymentSuccessfulScreen(),
         transition: Transition.rightToLeftWithFade),
     GetPage(
-        name: paymentSuccessfulScreen,
+        name: boostedPackageScreen,
         page: () => BoostedPackageScreen(),
         transition: Transition.rightToLeftWithFade),
 
