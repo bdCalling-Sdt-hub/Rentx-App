@@ -49,9 +49,9 @@ class AppRoutes {
 
   static List<GetPage> routes = [
     GetPage(
-        name: test,
-        page: () => TestScreen(),
-        transition: Transition.rightToLeftWithFade),
+      name: test,
+      page: () => TestScreen(),
+    ),
     GetPage(
         name: splash,
         page: () => SplashScreen(),
@@ -101,9 +101,9 @@ class AppRoutes {
         page: () => MessageScreen(),
         transition: Transition.rightToLeftWithFade),
     GetPage(
-        name: profile,
-        page: () => ProfileScreen(),
-        transition: Transition.rightToLeftWithFade),
+      name: profile,
+      page: () => ProfileScreen(),
+    ),
     GetPage(
         name: editProfile,
         page: () => EditProfile(),
@@ -132,10 +132,9 @@ class AppRoutes {
         name: landlordInformation,
         page: () => LandlordInformationScreen(),
         transition: Transition.rightToLeftWithFade),
-
     GetPage(
-        name: home,
-        page: () => HomeScreen(),
-        transition: Transition.rightToLeftWithFade),
+      name: home,
+      page: () => HomeScreen(),
+    ),
   ];
 }
