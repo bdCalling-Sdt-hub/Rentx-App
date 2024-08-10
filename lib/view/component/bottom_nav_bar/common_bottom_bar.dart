@@ -55,6 +55,7 @@ class _CommonBottomNavBarState extends State<CommonBottomNavBar> {
           CommonImage(imageSrc: AppImages.payRent),
           const Icon(Icons.access_time_outlined, color: AppColors.black),
           const Icon(Icons.person_2_outlined, color: AppColors.black),
+
         ]);
   }
 
