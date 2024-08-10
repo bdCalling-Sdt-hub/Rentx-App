@@ -22,6 +22,7 @@ class CouponDetailsScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    print(Get.height * 0.0235);
     return Scaffold(
       appBar: AppBar(
         title: CommonText(text: ""),
