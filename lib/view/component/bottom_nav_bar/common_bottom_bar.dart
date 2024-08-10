@@ -18,19 +18,6 @@ class CommonBottomNavBar extends StatefulWidget {
 
 class _CommonBottomNavBarState extends State<CommonBottomNavBar> {
   var bottomNavIndex = 0;
-  List<Widget> unselectedIcons = [
-    const Icon(Icons.settings_outlined, color: AppColors.black),
-    const Icon(Icons.notifications_outlined, color: AppColors.black),
-    const Icon(Icons.chat, color: AppColors.black),
-    const Icon(Icons.person_2_outlined, color: AppColors.black),
-  ];
-
-  List<Widget> selectedIcons = [
-    const Icon(Icons.settings_outlined, color: AppColors.primaryColor),
-    const Icon(Icons.notifications, color: AppColors.primaryColor),
-    const Icon(Icons.chat, color: AppColors.primaryColor),
-    const Icon(Icons.person, color: AppColors.primaryColor),
-  ];
 
   @override
   void initState() {
@@ -55,7 +42,6 @@ class _CommonBottomNavBarState extends State<CommonBottomNavBar> {
           CommonImage(imageSrc: AppImages.payRent),
           const Icon(Icons.access_time_outlined, color: AppColors.black),
           const Icon(Icons.person_2_outlined, color: AppColors.black),
-
         ]);
   }
 

@@ -70,29 +70,27 @@ class _FirstPageState extends State<FirstPage> {
                   30.height,
 
                   Expanded(
-                    child: Container(
-                      child: Column(
-                        children: [
-                          CommonImage(
-                            imageSrc: AppImages.earnPoint,
-                            height: 250,
-                            width: 360,
-                            imageType: ImageType.png,
-                          ),
-                          const CommonText(
-                            text: AppString.earnPointDetails,
-                            fontSize: 26,
-                            maxLines: 2,
-                            top: 26,
-                          ),
-                          const CommonText(
-                            text: AppString.payYourRentDetails,
-                            fontSize: 14,
-                            maxLines: 2,
-                            top: 26,
-                          )
-                        ],
-                      ),
+                    child: Column(
+                      children: [
+                        CommonImage(
+                          imageSrc: AppImages.earnPoint,
+                          height: 250,
+                          width: 360,
+                          imageType: ImageType.png,
+                        ),
+                        const CommonText(
+                          text: AppString.earnPointDetails,
+                          fontSize: 26,
+                          maxLines: 2,
+                          top: 26,
+                        ),
+                        const CommonText(
+                          text: AppString.payYourRentDetails,
+                          fontSize: 14,
+                          maxLines: 2,
+                          top: 26,
+                        )
+                      ],
                     ),
                   ),
 

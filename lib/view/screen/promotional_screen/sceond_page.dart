@@ -70,29 +70,27 @@ class _SecondPageState extends State<SecondPage> {
                   30.height,
 
                   Expanded(
-                    child: Container(
-                      child: Column(
-                        children: [
-                          CommonImage(
-                            imageSrc: AppImages.usePoint,
-                            height: 250,
-                            width: 360,
-                            imageType: ImageType.png,
-                          ),
-                          const CommonText(
-                            text: AppString.usePointDetails,
-                            fontSize: 26,
-                            maxLines: 2,
-                            top: 26,
-                          ),
-                          const CommonText(
-                            text: AppString.redeemYourPointsDetails,
-                            fontSize: 14,
-                            maxLines: 2,
-                            top: 26,
-                          )
-                        ],
-                      ),
+                    child: Column(
+                      children: [
+                        CommonImage(
+                          imageSrc: AppImages.usePoint,
+                          height: 250,
+                          width: 360,
+                          imageType: ImageType.png,
+                        ),
+                        const CommonText(
+                          text: AppString.usePointDetails,
+                          fontSize: 26,
+                          maxLines: 2,
+                          top: 26,
+                        ),
+                        const CommonText(
+                          text: AppString.redeemYourPointsDetails,
+                          fontSize: 14,
+                          maxLines: 2,
+                          top: 26,
+                        )
+                      ],
                     ),
                   ),
 
@@ -131,7 +129,7 @@ class _SecondPageState extends State<SecondPage> {
             padding: const EdgeInsets.symmetric(vertical: 40, horizontal: 80),
             child: CommonButton(
               onTap: () {
-                Get.to(ThirdPage());
+                Get.to(const ThirdPage());
               },
               titleText: AppString.next,
               buttonColor: AppColors.white,
