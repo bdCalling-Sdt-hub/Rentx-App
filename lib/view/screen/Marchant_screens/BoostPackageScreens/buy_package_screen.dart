@@ -7,9 +7,9 @@ import 'package:rentx/core/app_routes.dart';
 import 'package:rentx/extension/my_extension.dart';
 import 'package:rentx/utils/app_images.dart';
 import 'package:rentx/view/component/text/common_text.dart';
-import 'package:rentx/view/screen/Marchant_screens/History/History_screen_march.dart';
 
 import '../../../../utils/app_colors.dart';
+import '../../../component/CouponCard/custom_coupon_card.dart';
 
 class BuyPackageScreen extends StatelessWidget {
   const BuyPackageScreen({super.key});

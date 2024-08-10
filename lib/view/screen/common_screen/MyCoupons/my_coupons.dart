@@ -6,7 +6,8 @@ import 'package:rentx/view/component/text/common_text.dart';
 
 import '../../../../core/app_routes.dart';
 import '../../../../utils/app_images.dart';
-import '../../Marchant_screens/History/History_screen_march.dart';
+import '../../../component/CouponCard/custom_coupon_card.dart';
+
 
 class MyCoupons extends StatelessWidget {
   const MyCoupons({super.key});

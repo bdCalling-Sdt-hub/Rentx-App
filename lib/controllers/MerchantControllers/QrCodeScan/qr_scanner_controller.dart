@@ -4,6 +4,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_barcode_scanner/flutter_barcode_scanner.dart';
 import 'package:get/get.dart';
+import 'package:rentx/core/app_routes.dart';
 import 'package:rentx/extension/my_extension.dart';
 import 'dart:developer' as print;
 
@@ -44,14 +45,17 @@ class QrScannerController extends GetxController{
           title: CommonText(text: "Scan QR", fontSize: 22, fontWeight: FontWeight.w700,),
           automaticallyImplyLeading: false,
           actions: [
-            Container(
-                height: 36,
-                width: 36,
-                decoration: BoxDecoration(
-                    color: AppColors.s500,
-                    borderRadius: BorderRadius.circular(8)
-                ),
-                child: Icon(Icons.edit_note, color: AppColors.black,)),
+            InkWell(
+              onTap: () => Get.toNamed(AppRoutes.qrCodeNumber),
+              child: Container(
+                  height: 36,
+                  width: 36,
+                  decoration: BoxDecoration(
+                      color: AppColors.s500,
+                      borderRadius: BorderRadius.circular(8)
+                  ),
+                  child: Icon(Icons.edit_note, color: AppColors.black,)),
+            ),
             20.width
           ],
         );

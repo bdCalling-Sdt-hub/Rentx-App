@@ -13,6 +13,7 @@ import 'package:rentx/view/screen/Marchant_screens/Home/Widgets/home_drawer_merc
 
 import '../../../../core/app_routes.dart';
 import '../../../../utils/app_images.dart';
+import '../../../component/CouponCard/custom_coupon_card.dart';
 import '../../../component/image/common_image.dart';
 
 class HomeScreenMarch extends StatelessWidget {

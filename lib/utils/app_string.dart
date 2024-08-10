@@ -148,4 +148,6 @@ class AppString {
   static const noNotifications = "There’s no notifications";
   static const yourNotificationsWillBeAppear = "Your notifications will be appear on this page.";
   static const enterEmailResetPassword = "Enter your email address to reset your password.";
+  static const qrCodeNumber = "QR Code Number";
+  static const enterQrCodeNumber = "Enter QR code number here";
 }

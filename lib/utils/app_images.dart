@@ -18,6 +18,7 @@ class AppImages {
   static const String paymentSuccessful = "$baseurl/paymentSuccessful.png" ;
   static const String rentxTextImage = "$baseurl/rentxtextImage.png" ;
   static const String notificationImage = "$baseurl/notificationImage.png" ;
+  static const String kfcImage = "$baseurl/kfcImage.png" ;
 
 
   ///<<<================= Svg Images ========================>>>

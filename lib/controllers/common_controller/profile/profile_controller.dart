@@ -10,6 +10,7 @@ class ProfileController extends GetxController {
 
   String selectedLanguage = "English";
   String? image;
+  bool isLanguageTapped = false;
 
   TextEditingController nameController = TextEditingController();
   TextEditingController emailController = TextEditingController();
@@ -38,4 +39,9 @@ class ProfileController extends GetxController {
     update();
     Get.back();
   }
+  tappedLanguage(){
+    isLanguageTapped = !isLanguageTapped;
+    update();
+  }
+
 }
