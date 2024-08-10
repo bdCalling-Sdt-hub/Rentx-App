@@ -40,17 +40,17 @@ class SettingScreen extends StatelessWidget {
                   ),
                 ),
                 GestureDetector(
-                  onTap: () => Get.toNamed(AppRoutes.termsOfServices),
-                  child: const SettingItem(
-                    title: AppString.termsOfServices,
-                    iconDate: Icons.gavel,
-                  ),
-                ),
-                GestureDetector(
                   onTap: () => Get.toNamed(AppRoutes.privacyPolicy),
                   child: const SettingItem(
                     title: AppString.privacyPolicy,
-                    iconDate: Icons.network_wifi_1_bar,
+                    iconDate: Icons.privacy_tip_outlined,
+                  ),
+                ),
+                GestureDetector(
+                  onTap: () => Get.toNamed(AppRoutes.termsOfServices),
+                  child: const SettingItem(
+                    title: AppString.termsOfServices,
+                    iconDate: Icons.error_outline,
                   ),
                 ),
                 GestureDetector(
@@ -62,17 +62,17 @@ class SettingScreen extends StatelessWidget {
                     height: 52.h,
                     padding: EdgeInsets.symmetric(horizontal: 20.w),
                     decoration: BoxDecoration(
-                        color: AppColors.blueLight,
+                        border: Border.all(color: AppColors.s900),
                         borderRadius: BorderRadius.circular(4.r)),
                     child: Row(
                       children: [
                         const Icon(
                           Icons.delete_outline_rounded,
-                          color: AppColors.baseColor,
+                          color: AppColors.s500,
                         ),
                         CommonText(
                           text: AppString.deleteAccount,
-                          color: AppColors.baseColor,
+                          color: AppColors.p50,
                           left: 12.w,
                         ),
                       ],

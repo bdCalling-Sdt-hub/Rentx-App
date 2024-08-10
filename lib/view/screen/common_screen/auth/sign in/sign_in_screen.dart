@@ -105,7 +105,7 @@ class SignInScreen extends StatelessWidget {
                       titleText: "Merchant SignIn",
                       isLoading: controller.isLoading,
                       onTap: () {
-                        Get.toNamed(AppRoutes.historyScreenMarch);
+                        Get.toNamed(AppRoutes.homeScreenMarch);
                         // if (formKey.currentState!.validate()) {
                         //   controller.signInUser();
                         // }

@@ -12,8 +12,10 @@ class ProfileController extends GetxController {
   String? image;
 
   TextEditingController nameController = TextEditingController();
+  TextEditingController emailController = TextEditingController();
   TextEditingController numberController = TextEditingController();
   TextEditingController dateOfBirthController = TextEditingController();
+  TextEditingController addressController = TextEditingController();
   TextEditingController ageController = TextEditingController();
   TextEditingController genderController = TextEditingController();
   TextEditingController descriptionController = TextEditingController();

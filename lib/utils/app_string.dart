@@ -3,7 +3,7 @@ class AppString {
   static const String noInternet = "No Internet";
   static const String checkInternet = "Check Internet";
   static const String back = "Back";
-  static const String youSureWantToLogout = "You sure want to logout";
+  static const String youSureWantToLogout = "Are you sure to logout?";
   static const String no = "No";
   static const String yes = "Yes";
   static const String areYouSure = "Are you sure";
@@ -139,4 +139,7 @@ class AppString {
   static const pay = "Pay";
   static const paymentSuccessful = "Payment Successful!";
   static const backToHome = "Back to Home";
+  static const generalSettings = "General Settings";
+  static const updateInformation = "Update Information";
+  static const ifYouFaceAnyKind = "If you face any kind of problem with our service feel free to contact us.";
 }

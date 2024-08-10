@@ -21,7 +21,7 @@ class HomeDrawerMerch extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Drawer(
-        backgroundColor: AppColors.background.withOpacity(0.5),
+        backgroundColor: AppColors.background.withOpacity(0.8),
         child: Center(
           child: Padding(
             padding: const EdgeInsets.all(12),
@@ -64,7 +64,7 @@ class HomeDrawerMerch extends StatelessWidget {
                 ),
                 20.height,
                 drawerItem(
-                    // onTap: () => Get.toNamed(AppRoutes.profile),
+                    onTap: () => Get.toNamed(AppRoutes.editProfile),
                     title: AppString.personalInformation,
                     icon: Icons.account_circle_outlined),
                 drawerItem(

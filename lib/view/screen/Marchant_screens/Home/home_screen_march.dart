@@ -21,6 +21,7 @@ class HomeScreenMarch extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      extendBody: true,
       bottomNavigationBar: BottomBarMarch(currentIndex: 0),
       drawer: HomeDrawerMerch(),
       appBar: AppBar(
@@ -173,8 +174,7 @@ class HomeScreenMarch extends StatelessWidget {
                   },
                     couponImage: AppImages.pizzaHut);
               },),
-            )
-
+            ),
           ],
         ),
       ),

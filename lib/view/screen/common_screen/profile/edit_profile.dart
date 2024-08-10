@@ -4,6 +4,7 @@ import '../../../../../extension/my_extension.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import '../../../../controllers/common_controller/profile/profile_controller.dart';
+import '../../../../utils/app_colors.dart';
 import '../../../../utils/app_images.dart';
 import '../../../../utils/app_string.dart';
 import '../../../component/button/common_button.dart';
@@ -39,7 +40,7 @@ class EditProfile extends StatelessWidget {
                     children: [
                       Center(
                         child: CircleAvatar(
-                          radius: 85.sp,
+                          radius: 70.r,
                           backgroundColor: Colors.transparent,
                           child: ClipOval(
                             child: controller.image != null
@@ -64,24 +65,27 @@ class EditProfile extends StatelessWidget {
                           child: IconButton(
                               style: ButtonStyle(
                                   backgroundColor: WidgetStateColor.resolveWith(
-                                (states) => Colors.black,
+                                (states) => AppColors.s200,
                               )),
                               onPressed: controller.getProfileImage,
                               icon: const Icon(
                                 Icons.edit,
-                                color: Colors.white,
+                                color: AppColors.black,
                               )))
                     ],
                   ),
                   const EditProfileAllFiled(),
                   30.height,
                   CommonButton(
-                      titleText: AppString.saveAndChanges,
+                    buttonHeight: 48,
+                      titleText: AppString.updateInformation,
                       onTap: () {
                         if (formKey.currentState!.validate()) {
+                          Get.back();
                           // Get.toNamed(AppRoutes.patientsProfile);
                         }
-                      }),
+                      }
+                      ),
                 ],
               ),
             ),

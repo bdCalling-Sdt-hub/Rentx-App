@@ -106,7 +106,8 @@ logOutPopUp() {
         title: const CommonText(
           text: AppString.youSureWantToLogout,
           maxLines: 2,
-          fontWeight: FontWeight.w600,
+          fontWeight: FontWeight.w500,
+          color: AppColors.black,
         ),
         actions: [
           Row(
@@ -115,9 +116,10 @@ logOutPopUp() {
                   child: CommonButton(
                 titleText: AppString.no,
                 borderWidth: 1.5,
-                borderColor: AppColors.primaryColor,
+                borderColor: AppColors.s500,
                 buttonColor: AppColors.transparent,
-                titleColor: AppColors.primaryColor,
+                titleColor: AppColors.black,
+                buttonHeight: 48,
                 onTap: () => Get.back(),
               )),
               SizedBox(
@@ -126,6 +128,7 @@ logOutPopUp() {
               Expanded(
                   child: CommonButton(
                 titleText: AppString.yes,
+                buttonHeight: 48,
                 onTap: () => PrefsHelper.removeAllPrefData(),
               ))
             ],

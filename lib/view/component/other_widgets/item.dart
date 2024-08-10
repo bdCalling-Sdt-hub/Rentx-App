@@ -12,7 +12,7 @@ class Item extends StatelessWidget {
       this.image = "",
       this.disableDivider = false,
       this.onTap,
-      this.color = AppColors.black,
+      this.color = AppColors.white,
       this.vertical = 4,
       this.horizontal = 24,
       this.disableIcon = false});
@@ -34,33 +34,28 @@ class Item extends StatelessWidget {
       child: Padding(
         padding: EdgeInsets.symmetric(
             horizontal: horizontal.w, vertical: vertical.h),
-        child: Column(
+        child: Row(
           children: [
-            Row(
-              children: [
-                icon != null
-                    ? Icon(
-                        icon,
-                        color: color,
-                      )
-                    : CommonImage(imageSrc: image),
-                CommonText(
-                  text: title,
-                  color: color,
-                  fontWeight: FontWeight.w400,
-                  fontSize: 18,
-                  left: 16,
-                ),
-                const Spacer(),
-                disableIcon
-                    ? const SizedBox()
-                    : Icon(
-                        Icons.arrow_forward_ios_outlined,
-                        size: 20.sp,
-                      )
-              ],
+            icon != null
+                ? Icon(
+                    icon,
+                    color: AppColors.s500,
+                  )
+                : CommonImage(imageSrc: image),
+            CommonText(
+              text: title,
+              color: color,
+              fontWeight: FontWeight.w400,
+              fontSize: 18,
+              left: 16,
             ),
-            disableDivider ? const SizedBox() : const Divider()
+            const Spacer(),
+            disableIcon
+                ? const SizedBox()
+                : Icon(
+                    Icons.arrow_forward_ios_outlined,
+                    size: 20.sp,
+                  )
           ],
         ),
       ),

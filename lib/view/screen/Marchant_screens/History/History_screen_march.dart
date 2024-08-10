@@ -19,6 +19,7 @@ class HistoryScreenMarch extends StatelessWidget {
       bottomNavigationBar: BottomBarMarch(currentIndex: 1),
       appBar: AppBar(
         centerTitle: true,
+        automaticallyImplyLeading: false,
         title: CommonText(text: "History"),
       ),
       body: Padding(
