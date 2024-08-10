@@ -69,29 +69,27 @@ class _ThirdPageState extends State<ThirdPage> {
                   30.height,
 
                   Expanded(
-                    child: Container(
-                      child: Column(
-                        children: [
-                          CommonImage(
-                            imageSrc: AppImages.getVoucher,
-                            height: 250,
-                            width: 360,
-                            imageType: ImageType.png,
-                          ),
-                          const CommonText(
-                            text: AppString.getVoucher,
-                            fontSize: 26,
-                            maxLines: 2,
-                            top: 26,
-                          ),
-                          const CommonText(
-                            text: AppString.redeemYourPointsDetails,
-                            fontSize: 14,
-                            maxLines: 2,
-                            top: 26,
-                          )
-                        ],
-                      ),
+                    child: Column(
+                      children: [
+                        CommonImage(
+                          imageSrc: AppImages.getVoucher,
+                          height: 250,
+                          width: 360,
+                          imageType: ImageType.png,
+                        ),
+                        const CommonText(
+                          text: AppString.getVoucher,
+                          fontSize: 26,
+                          maxLines: 2,
+                          top: 26,
+                        ),
+                        const CommonText(
+                          text: AppString.redeemYourPointsDetails,
+                          fontSize: 14,
+                          maxLines: 2,
+                          top: 26,
+                        )
+                      ],
                     ),
                   ),
 

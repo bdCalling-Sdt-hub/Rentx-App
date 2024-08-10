@@ -27,7 +27,7 @@ class CompleteProfile extends StatelessWidget {
       appBar: AppBar(),
       body: GetBuilder<SignUpController>(
         builder: (controller) => SingleChildScrollView(
-          padding: EdgeInsets.symmetric(horizontal: 20),
+          padding: const EdgeInsets.symmetric(horizontal: 20),
           child: Form(
             key: formKey,
             child: Column(

@@ -10,6 +10,8 @@ class AppImages {
   static const String getVoucher = "$baseurl/get_voucher.png" ;
   static const String logoBlack = "$baseurl/logo_black.png" ;
   static const String onboarding = "$baseurl/onboarding.png" ;
+  static const String reward = "$baseurl/reward.svg" ;
+  static const String payRent = "$baseurl/pay_rent.svg" ;
 
   static const String pizzaHut = "$baseurl/pizzaHut.png" ;
   static const String detailsCard = "$baseurl/detailsCard.png" ;
