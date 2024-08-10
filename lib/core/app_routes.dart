@@ -4,6 +4,7 @@ import 'package:rentx/view/screen/Marchant_screens/Home/home_screen_march.dart';
 import 'package:rentx/view/screen/Marchant_screens/Profile/profile_screen_march.dart';
 import 'package:rentx/view/screen/common_screen/auth/sign%20up/complete_profile.dart';
 import 'package:rentx/view/screen/common_screen/auth/sign%20up/landlord_infomation_screen.dart';
+import 'package:rentx/view/screen/common_screen/setting/support_screen.dart';
 import 'package:rentx/view/screen/home/home_screen.dart';
 import 'package:rentx/view/screen/selection_role_screen.dart';
 
@@ -15,6 +16,7 @@ import '../view/screen/Marchant_screens/BoostPackageScreens/payment_successful_s
 import '../view/screen/Marchant_screens/CompleteProfile/complete_profile_merch.dart';
 import '../view/screen/Marchant_screens/CouponDetails/coupon_details_screen.dart';
 import '../view/screen/Marchant_screens/ScanQR/scan_qr_screen.dart';
+import '../view/screen/common_screen/MyCoupons/my_coupons.dart';
 import '../view/screen/common_screen/auth/change_password/change_password_screen.dart';
 import '../view/screen/common_screen/auth/forgot password/create_password.dart';
 import '../view/screen/common_screen/auth/forgot password/forgot_password.dart';
@@ -70,6 +72,8 @@ class AppRoutes {
   static const String paymentScreen = "/payment_screen.dart";
   static const String paymentSuccessfulScreen = "/payment_successful_screen.dart";
   static const String boostedPackageScreen = "/boosted_package_screen.dart";
+  static const String myCoupons = "/my_coupons.dart";
+  static const String supportScreen = "/support_screen.dart";
 
   static List<GetPage> routes = [
     ///<<<================ Merchant Screens=============>>>
@@ -116,6 +120,14 @@ class AppRoutes {
     GetPage(
         name: boostedPackageScreen,
         page: () => BoostedPackageScreen(),
+        transition: Transition.rightToLeftWithFade),
+    GetPage(
+        name: myCoupons,
+        page: () => MyCoupons(),
+        transition: Transition.rightToLeftWithFade),
+    GetPage(
+        name: supportScreen,
+        page: () => SupportScreen(),
         transition: Transition.rightToLeftWithFade),
 
 
