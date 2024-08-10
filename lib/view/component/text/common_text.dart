@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -19,8 +21,8 @@ class CommonText extends StatelessWidget {
       this.color = AppColors.p50,
       required this.text,
       this.style = false,
-      this.overflow = TextOverflow.ellipsis
-      });
+      this.overflow = TextOverflow.ellipsis,
+      this.textDecoration = TextDecoration.none});
 
   final double left;
   final double right;
@@ -34,12 +36,13 @@ class CommonText extends StatelessWidget {
   final int maxLines;
   final TextOverflow overflow;
   final bool style;
+  final TextDecoration textDecoration;
 
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding:
-          EdgeInsets.only(left: left.w, right: right.w, top: top.h, bottom: bottom.h),
+      padding: EdgeInsets.only(
+          left: left.w, right: right.w, top: top.h, bottom: bottom.h),
       child: Text(
         textAlign: textAlign,
         text,
@@ -50,12 +53,12 @@ class CommonText extends StatelessWidget {
                 fontSize: fontSize.sp,
                 fontWeight: fontWeight,
                 color: color,
-              )
+                decoration: textDecoration)
             : GoogleFonts.poppins(
                 fontSize: fontSize.sp,
                 fontWeight: fontWeight,
                 color: color,
-              ),
+                decoration: textDecoration),
       ),
     );
   }

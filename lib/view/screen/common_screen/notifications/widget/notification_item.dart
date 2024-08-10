@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:rentx/utils/app_icons.dart';
+import 'package:rentx/view/component/image/common_image.dart';
 import '../../../../../models/notification_model.dart';
 import '../../../../../extension/my_extension.dart';
 import '../../../../../utils/app_colors.dart';
@@ -20,42 +22,30 @@ class NotificationItem extends StatelessWidget {
           border: Border.all(color: AppColors.primaryColor)),
       child: Row(
         children: [
-          CircleAvatar(
-            backgroundColor: AppColors.background,
-            radius: 35.r,
-            child: const ClipOval(
-              child: Icon(
-                Icons.date_range,
-                color: AppColors.primaryColor,
-              ),
-            ),
-          ),
+          CommonImage(imageSrc: AppIcons.notifyIcon),
+          // CircleAvatar(
+          //   backgroundColor: AppColors.background,
+          //   radius: 35.r,
+          //   child: const ClipOval(
+          //     child: Icon(
+          //       Icons.date_range,
+          //       color: AppColors.primaryColor,
+          //     ),
+          //   ),
+          // ),
           16.width,
           Expanded(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Flexible(
-                      child: CommonText(
-                        text: item.type,
-                        fontSize: 16,
-                        fontWeight: FontWeight.w700,
-                        textAlign: TextAlign.start,
-                        maxLines: 1,
-                      ),
-                    ),
-                    CommonText(
-                      text: item.createdAt.checkTime,
-                      fontSize: 14,
-                      fontWeight: FontWeight.w700,
-                      textAlign: TextAlign.start,
-                      color: AppColors.black,
-                      maxLines: 1,
-                    ),
-                  ],
+                Flexible(
+                  child: CommonText(
+                    text: item.type,
+                    fontSize: 16,
+                    fontWeight: FontWeight.w700,
+                    textAlign: TextAlign.start,
+                    maxLines: 1,
+                  ),
                 ),
                 CommonText(
                   text: item.message,

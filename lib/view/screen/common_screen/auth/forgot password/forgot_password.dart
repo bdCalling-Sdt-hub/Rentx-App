@@ -21,8 +21,8 @@ class ForgotPasswordScreen extends StatelessWidget {
         appBar: AppBar(
           title: const CommonText(
             text: AppString.forgotPassword,
-            fontWeight: FontWeight.w700,
-            fontSize: 24,
+            fontWeight: FontWeight.w600,
+            fontSize: 20,
           ),
         ),
         body: SingleChildScrollView(
@@ -31,11 +31,17 @@ class ForgotPasswordScreen extends StatelessWidget {
             key: formKey,
             child: Column(
               children: [
-                105.height,
+                60.height,
+                const CommonText(
+                  maxLines: 3,
+                  text: AppString.enterEmailResetPassword,
+                  fontWeight: FontWeight.w600,
+                  bottom: 40,
+                ),
                 const CommonText(
                   text: AppString.email,
                   fontWeight: FontWeight.w600,
-                  bottom: 8,
+                  bottom: 12,
                 ).start,
                 CommonTextField(
                   controller: controller.emailController,
@@ -50,6 +56,7 @@ class ForgotPasswordScreen extends StatelessWidget {
         bottomNavigationBar: Padding(
           padding: const EdgeInsets.symmetric(vertical: 30, horizontal: 20),
           child: CommonButton(
+            buttonHeight: 48,
             titleText: AppString.getVerificationCode,
             isLoading: controller.isLoadingEmail,
             onTap: () {

@@ -21,9 +21,9 @@ class CreatePassword extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const CommonText(
-          text: AppRoutes.createPassword,
+          text: AppString.resetPassword,
           fontWeight: FontWeight.w700,
-          fontSize: 24,
+          fontSize: 20,
         ),
       ),
       body: GetBuilder<ForgetPasswordController>(
@@ -39,14 +39,14 @@ class CreatePassword extends StatelessWidget {
                   const Center(
                     child: CommonText(
                       text: AppString.nowResetYour,
-                      fontSize: 26,
+                      fontSize: 24,
                       fontWeight: FontWeight.w600,
                     ),
                   ),
                   const Center(
                     child: CommonText(
                       text: AppString.password,
-                      fontSize: 26,
+                      fontSize: 24,
                       fontWeight: FontWeight.w600,
                       color: AppColors.s200,
                     ),
@@ -93,7 +93,8 @@ class CreatePassword extends StatelessWidget {
       bottomNavigationBar: Padding(
         padding: const EdgeInsets.symmetric(vertical: 30, horizontal: 20),
         child: CommonButton(
-          titleText: AppString.continues,
+          buttonHeight: 48,
+          titleText: AppString.submit,
           isLoading: ForgetPasswordController.instance.isLoadingReset,
           onTap: () {
             if (formKey.currentState!.validate()) {

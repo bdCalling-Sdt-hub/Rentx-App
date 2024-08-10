@@ -32,8 +32,8 @@ class _VerifyScreenState extends State<VerifyScreen> {
       appBar: AppBar(
         title: const CommonText(
           text: AppString.forgotPassword,
-          fontWeight: FontWeight.w700,
-          fontSize: 24,
+          fontWeight: FontWeight.w600,
+          fontSize: 20,
         ),
       ),
       body: GetBuilder<ForgetPasswordController>(
@@ -45,18 +45,10 @@ class _VerifyScreenState extends State<VerifyScreen> {
               children: [
                 const Center(
                   child: CommonText(
-                    text: AppString.enterVerificationCode,
-                    fontSize: 26,
-                    top: 60,
-                    maxLines: 3,
-                  ),
-                ),
-                const Center(
-                  child: CommonText(
                     text: AppString.enterTheCodeThatWasSentYourEmail,
-                    fontSize: 14,
-                    bottom: 20,
-                    top: 12,
+                    fontSize: 20,
+                    top: 60,
+                    bottom: 30,
                     maxLines: 3,
                   ),
                 ),
@@ -116,6 +108,8 @@ class _VerifyScreenState extends State<VerifyScreen> {
                             ? AppString.resendCode
                             : "${AppString.resendCodeIn} ${controller.time} ${AppString.minute}",
                         fontSize: 18,
+                        textDecoration: controller.time == '00:00'? TextDecoration.underline : TextDecoration.none,
+                        color: controller.time == '00:00'? AppColors.s500 : AppColors.white
                       ),
                     ),
                   ],
@@ -128,6 +122,7 @@ class _VerifyScreenState extends State<VerifyScreen> {
       bottomNavigationBar: Padding(
         padding: const EdgeInsets.symmetric(vertical: 30, horizontal: 20),
         child: CommonButton(
+          buttonHeight: 48,
             titleText: AppString.verify,
             isLoading: ForgetPasswordController.instance.isLoadingVerify,
             onTap: () {

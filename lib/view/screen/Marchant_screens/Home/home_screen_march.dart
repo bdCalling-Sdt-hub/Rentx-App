@@ -27,8 +27,10 @@ class HomeScreenMarch extends StatelessWidget {
       appBar: AppBar(
         title: CommonText(text: ""),
         actions: [
-          CommonImage(imageSrc: AppIcons.notifyIcon),
-          8.width,
+          GestureDetector(
+            onTap: () => Get.toNamed(AppRoutes.notifications),
+              child: CommonImage(imageSrc: AppIcons.notifyIcon)),
+          12.width,
           InkWell(
             onTap: () {
               Get.toNamed(AppRoutes.boostPackageScreen);

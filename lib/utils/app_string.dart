@@ -6,7 +6,7 @@ class AppString {
   static const String youSureWantToLogout = "Are you sure to logout?";
   static const String no = "No";
   static const String yes = "Yes";
-  static const String areYouSure = "Are you sure";
+  static const String areYouSure = "Are you sure?";
   static const String enterYouPassword = "Enter you password";
   static const String cancel = "Cancel";
   static const String done = "Done";
@@ -21,6 +21,7 @@ class AppString {
   static const String currentPassword = "Current Password";
   static const String newPassword = "New Password";
   static const String confirmPassword = "Confirm Password";
+  static const String confirmNewPassword = "Confirm New Password";
   static const String forgotPassword = "Forgot Password";
   static const String confirm = "Confirm";
   static const String createNewPassword = "Create New Password";
@@ -142,4 +143,9 @@ class AppString {
   static const generalSettings = "General Settings";
   static const updateInformation = "Update Information";
   static const ifYouFaceAnyKind = "If you face any kind of problem with our service feel free to contact us.";
+  static const submit = "Submit";
+  static const resetPassword = "Reset Password";
+  static const noNotifications = "There’s no notifications";
+  static const yourNotificationsWillBeAppear = "Your notifications will be appear on this page.";
+  static const enterEmailResetPassword = "Enter your email address to reset your password.";
 }

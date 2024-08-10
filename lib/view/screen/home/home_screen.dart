@@ -1,7 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+import 'package:rentx/core/app_routes.dart';
 import 'package:rentx/extension/my_extension.dart';
 import 'package:rentx/utils/app_colors.dart';
 import 'package:rentx/utils/app_string.dart';
@@ -22,11 +24,14 @@ class HomeScreen extends StatelessWidget {
               backgroundColor: AppColors.b500,
               drawer: const HomeDrawer(),
               appBar: AppBar(
-                actions: const [
-                  Icon(
-                    Icons.notifications_active,
-                    color: AppColors.organ,
-                    size: 34,
+                actions: [
+                  GestureDetector(
+                    onTap: () => Get.toNamed(AppRoutes.notifications),
+                    child: Icon(
+                      Icons.notifications_active,
+                      color: AppColors.organ,
+                      size: 34,
+                    ),
                   )
                 ],
               ),

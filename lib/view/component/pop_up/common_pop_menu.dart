@@ -157,28 +157,29 @@ deletePopUp(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Center(
+              const Center(
                 child: CommonText(
                   text: AppString.areYouSure,
-                  fontSize: 20.sp,
-                  fontWeight: FontWeight.w700,
+                  fontSize: 20,
+                  fontWeight: FontWeight.w600,
                   color: AppColors.black,
                   maxLines: 1,
-                  bottom: 24.h,
+                  bottom: 24,
                 ),
               ),
-              CommonText(
+              const CommonText(
                 text: AppString.deleteDetails,
-                fontSize: 16.sp,
+                fontSize: 16,
                 fontWeight: FontWeight.w500,
                 color: AppColors.black,
-                maxLines: 2,
-                bottom: 20.h,
+                maxLines: 5,
+                bottom: 20,
               ),
               CommonTextField(
                 controller: controller,
                 labelText: AppString.enterYouPassword,
                 validator: OtherHelper.validator,
+                borderColor: AppColors.s200,
               )
             ],
           ),
@@ -190,7 +191,7 @@ deletePopUp(
                 child: CommonButton(
                   titleText: AppString.cancel,
                   titleColor: AppColors.black,
-                  borderColor: AppColors.black,
+                  borderColor: AppColors.s500,
                   buttonColor: AppColors.transparent,
                   buttonRadius: 4.r,
                   buttonHeight: 48.h,
@@ -203,7 +204,7 @@ deletePopUp(
               Expanded(
                 child: CommonButton(
                   titleText: AppString.done,
-                  titleColor: AppColors.white,
+                  titleColor: AppColors.black,
                   buttonRadius: 4.r,
                   buttonHeight: 48.h,
                   onTap: () {

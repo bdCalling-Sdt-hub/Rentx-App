@@ -22,6 +22,7 @@ class ProfileScreenMarch extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        automaticallyImplyLeading: false,
         centerTitle: true,
         title: const CommonText(
           text: AppString.profile,
@@ -37,7 +38,7 @@ class ProfileScreenMarch extends StatelessWidget {
               children: [
                 Center(
                   child: CircleAvatar(
-                    radius: 85.r,
+                    radius: 75.r,
                     backgroundColor: Colors.transparent,
                     child: ClipOval(
                       child: CommonImage(

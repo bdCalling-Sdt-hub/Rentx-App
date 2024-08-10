@@ -34,7 +34,11 @@ class PrivacyPolicyScreen extends StatelessWidget {
                       padding: const EdgeInsets.symmetric(
                           vertical: 24, horizontal: 20),
                       child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
+                          CommonText(
+                            textAlign: TextAlign.justify,
+                              maxLines: 10,text: "Lorem ipsum dolor sit amet consectetur. Felis aliquam arcu pretium enim scelerisque adipiscing viverra sed. Malesuada quam massa mi hendrerit pulvinar a tortor nec. In dictumst suspendisse est dui dignissim risus lectus bibendum arcu. Condimentum nibh varius elementum convallis."),
                           Html(data: controller.data.content),
                         ],
                       ),

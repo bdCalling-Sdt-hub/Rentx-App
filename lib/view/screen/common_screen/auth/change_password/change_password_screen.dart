@@ -34,8 +34,11 @@ class ChangePasswordScreen extends StatelessWidget {
             child: Form(
               key: formKey,
               child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   70.height,
+                  CommonText(text: AppString.currentPassword, fontWeight: FontWeight.w600, fontSize: 18,),
+                  8.height,
                   CommonTextField(
                     controller: controller.currentPasswordController,
                     hintText: AppString.currentPassword,
@@ -47,6 +50,8 @@ class ChangePasswordScreen extends StatelessWidget {
                     ),
                   ),
                   16.height,
+                  CommonText(text: AppString.newPassword, fontWeight: FontWeight.w600, fontSize: 18,),
+                  8.height,
                   CommonTextField(
                     controller: controller.newPasswordController,
                     hintText: AppString.newPassword,
@@ -58,6 +63,8 @@ class ChangePasswordScreen extends StatelessWidget {
                     ),
                   ),
                   16.height,
+                  CommonText(text: AppString.confirmNewPassword, fontWeight: FontWeight.w600, fontSize: 18,),
+                  8.height,
                   CommonTextField(
                     controller: controller.confirmPasswordController,
                     hintText: AppString.confirmPassword,
@@ -70,28 +77,32 @@ class ChangePasswordScreen extends StatelessWidget {
                     ),
                   ),
                   Align(
-                    alignment: Alignment.centerLeft,
+                    alignment: Alignment.centerRight,
                     child: GestureDetector(
                       onTap: () => Get.toNamed(AppRoutes.forgotPassword),
                       child: CommonText(
                         text: AppString.forgotPassword,
+                        textDecoration: TextDecoration.underline,
                         color: AppColors.primaryColor,
-                        fontWeight: FontWeight.w600,
-                        fontSize: 18.sp,
+                        fontWeight: FontWeight.w500,
+                        fontSize: 16,
                         top: 16.h,
                         bottom: 20.h,
                       ),
                     ),
                   ),
+                  Spacer(),
                   CommonButton(
-                    titleText: AppString.confirm,
+                    titleText: AppString.submit,
+                    buttonHeight: 48,
                     isLoading: controller.isLoading,
                     onTap: () {
                       if (formKey.currentState!.validate()) {
                         controller.changePasswordRepo();
                       }
                     },
-                  )
+                  ),
+                  20.height
                 ],
               ),
             ),

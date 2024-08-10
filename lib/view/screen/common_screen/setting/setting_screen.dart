@@ -84,9 +84,6 @@ class SettingScreen extends StatelessWidget {
           );
         },
       ),
-      bottomNavigationBar: const CommonBottomNavBar(
-        currentIndex: 0,
-      ),
     );
   }
 }
