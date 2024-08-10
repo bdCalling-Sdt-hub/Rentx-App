@@ -231,8 +231,5 @@ class AppRoutes {
         name: aboutUs,
         page: () => AboutUs(),
         transition: Transition.rightToLeftWithFade),
-      name: home,
-      page: () => HomeScreen(),
-    ),
   ];
 }
