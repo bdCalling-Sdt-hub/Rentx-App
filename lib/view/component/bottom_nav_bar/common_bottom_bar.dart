@@ -46,8 +46,7 @@ class _CommonBottomNavBarState extends State<CommonBottomNavBar> {
         onTap: onTap,
         color: AppColors.s200,
         buttonBackgroundColor: AppColors.s200,
-        backgroundColor:
-            widget.currentIndex == 1 ? AppColors.s200 : AppColors.transparent,
+        backgroundColor: AppColors.transparent,
         animationCurve: Curves.easeInOut,
         animationDuration: const Duration(milliseconds: 900),
         items: [
