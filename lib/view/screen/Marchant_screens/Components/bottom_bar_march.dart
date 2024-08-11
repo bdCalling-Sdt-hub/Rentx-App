@@ -1,11 +1,8 @@
-import 'package:ai_barcode_scanner/ai_barcode_scanner.dart';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:rentx/controllers/MerchantControllers/QrCodeScan/qr_scanner_controller.dart';
-import 'package:rentx/extension/my_extension.dart';
-import 'package:rentx/view/component/text/common_text.dart';
 
 import '../../../../core/app_routes.dart';
 import '../../../../utils/app_colors.dart';

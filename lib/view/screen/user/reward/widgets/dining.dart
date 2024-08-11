@@ -1,14 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:rentx/extension/my_extension.dart';
-import 'package:rentx/view/screen/user/reward/widgets/sliders.dart';
 
 import '../../../../../core/app_routes.dart';
 import '../../../../../utils/app_colors.dart';
 import '../../../../../utils/app_images.dart';
 import '../../../../../utils/app_string.dart';
 import '../../../../component/other_widgets/coupon_card.dart';
-import '../../../../component/other_widgets/reward_item.dart';
 import '../../../../component/text/common_text.dart';
 
 class Dining extends StatelessWidget {

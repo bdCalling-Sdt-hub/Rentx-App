@@ -2,10 +2,7 @@ import 'dart:io';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:rentx/extension/my_extension.dart';
-import 'package:rentx/utils/app_images.dart';
-import 'package:rentx/view/component/image/common_image.dart';
 import 'package:rentx/view/component/text/common_text.dart';
 import '../../../utils/app_colors.dart';
 

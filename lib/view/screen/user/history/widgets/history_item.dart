@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:rentx/extension/my_extension.dart';
-import 'package:rentx/utils/app_colors.dart';
 import 'package:rentx/view/component/text/common_text.dart';
 
 class HistoryItem extends StatelessWidget {

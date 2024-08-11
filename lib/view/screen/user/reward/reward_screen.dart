@@ -8,16 +8,10 @@ import 'package:rentx/view/component/text/common_text.dart';
 import 'package:rentx/view/screen/user/reward/widgets/dining.dart';
 import 'package:rentx/view/screen/user/reward/widgets/rewards_guide.dart';
 import 'package:rentx/view/screen/user/reward/widgets/shopping.dart';
-import 'package:rentx/view/screen/user/reward/widgets/sliders.dart';
 import 'package:rentx/view/screen/user/reward/widgets/travel.dart';
 
 import '../../../../controllers/user/reward_controller.dart';
-import '../../../../core/app_routes.dart';
 import '../../../../utils/app_colors.dart';
-import '../../../../utils/app_images.dart';
-import '../../../component/CouponCard/custom_coupon_card.dart';
-import '../../../component/other_widgets/coupon_card.dart';
-import '../../../component/other_widgets/reward_item.dart';
 
 class RewardScreen extends StatelessWidget {
   const RewardScreen({super.key});
