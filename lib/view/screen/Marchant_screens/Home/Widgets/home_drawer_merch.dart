@@ -7,7 +7,6 @@ import 'package:rentx/extension/my_extension.dart';
 import 'package:rentx/utils/app_icons.dart';
 import 'package:rentx/view/component/text/common_text.dart';
 import '../../../../../core/app_routes.dart';
-import '../../../../../helpers/prefs_helper.dart';
 import '../../../../../utils/app_colors.dart';
 import '../../../../../utils/app_images.dart';
 import '../../../../../utils/app_string.dart';

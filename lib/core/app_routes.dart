@@ -6,7 +6,6 @@ import 'package:rentx/view/screen/common_screen/auth/sign%20up/complete_profile.
 import 'package:rentx/view/screen/common_screen/auth/sign%20up/landlord_infomation_screen.dart';
 import 'package:rentx/view/screen/common_screen/setting/about_us.dart';
 import 'package:rentx/view/screen/common_screen/setting/support_screen.dart';
-import 'package:rentx/view/screen/home/home_screen.dart';
 import 'package:rentx/view/screen/selection_role_screen.dart';
 
 import '../view/screen/Marchant_screens/BoostPackageScreens/boost_package_screen.dart';
@@ -37,6 +36,7 @@ import '../view/screen/common_screen/setting/setting_screen.dart';
 import '../view/screen/common_screen/setting/terms_of_services_screen.dart';
 import '../view/screen/common_screen/splash/splash_screen.dart';
 import '../view/screen/test_screen.dart';
+import '../view/screen/user/home/home_screen.dart';
 
 class AppRoutes {
   static const String test = "/test_screen.dart";

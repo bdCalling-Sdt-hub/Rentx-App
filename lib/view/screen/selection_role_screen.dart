@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:rentx/helpers/prefs_helper.dart';
 import 'package:rentx/utils/app_colors.dart';
 import 'package:rentx/view/component/text/common_text.dart';
+import 'package:rentx/view/screen/user/promotional_screen/fristPage.dart';
 import '../../../../../extension/my_extension.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
@@ -10,7 +11,7 @@ import '../../../../utils/app_images.dart';
 import '../../../../utils/app_string.dart';
 import '../component/button/common_button.dart';
 import '../component/image/common_image.dart';
-import 'promotional_screen/fristPage.dart';
+
 
 class SelectionRole extends StatelessWidget {
   const SelectionRole({super.key});

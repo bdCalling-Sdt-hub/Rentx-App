@@ -3,13 +3,14 @@ import 'package:rentx/extension/my_extension.dart';
 import 'package:rentx/utils/app_colors.dart';
 import 'package:rentx/view/component/text/common_text.dart';
 import 'package:get/get.dart';
-import 'package:rentx/view/screen/promotional_screen/third_page.dart';
+import 'package:rentx/view/screen/user/promotional_screen/third_page.dart';
 
-import '../../../core/app_routes.dart';
-import '../../../utils/app_images.dart';
-import '../../../utils/app_string.dart';
-import '../../component/button/common_button.dart';
-import '../../component/image/common_image.dart';
+import '../../../../core/app_routes.dart';
+import '../../../../utils/app_images.dart';
+import '../../../../utils/app_string.dart';
+import '../../../component/button/common_button.dart';
+import '../../../component/image/common_image.dart';
+
 
 class SecondPage extends StatefulWidget {
   const SecondPage({super.key});

@@ -4,7 +4,6 @@ import 'package:get/get.dart';
 import 'package:qr_flutter/qr_flutter.dart';
 import 'package:rentx/controllers/MerchantControllers/QrCodeScan/qr_scanner_controller.dart';
 import 'package:rentx/extension/my_extension.dart';
-import 'package:rentx/view/component/button/common_button.dart';
 import 'package:rentx/view/component/image/common_image.dart';
 import 'package:rentx/view/component/text/common_text.dart';
 import 'package:rentx/view/screen/Marchant_screens/Components/bottom_bar_march.dart';

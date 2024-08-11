@@ -4,11 +4,12 @@ import 'package:rentx/utils/app_colors.dart';
 import 'package:rentx/view/component/text/common_text.dart';
 import 'package:get/get.dart';
 
-import '../../../core/app_routes.dart';
-import '../../../utils/app_images.dart';
-import '../../../utils/app_string.dart';
-import '../../component/button/common_button.dart';
-import '../../component/image/common_image.dart';
+import '../../../../core/app_routes.dart';
+import '../../../../utils/app_images.dart';
+import '../../../../utils/app_string.dart';
+import '../../../component/button/common_button.dart';
+import '../../../component/image/common_image.dart';
+
 
 class ThirdPage extends StatefulWidget {
   const ThirdPage({super.key});

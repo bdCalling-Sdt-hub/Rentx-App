@@ -5,10 +5,8 @@ import 'package:rentx/extension/my_extension.dart';
 import 'package:rentx/utils/app_colors.dart';
 import 'package:rentx/utils/app_icons.dart';
 import 'package:rentx/utils/app_string.dart';
-import 'package:rentx/view/component/button/common_button.dart';
 import 'package:rentx/view/component/text/common_text.dart';
 import 'package:rentx/view/screen/Marchant_screens/Components/bottom_bar_march.dart';
-import 'package:rentx/view/screen/Marchant_screens/History/History_screen_march.dart';
 import 'package:rentx/view/screen/Marchant_screens/Home/Widgets/home_drawer_merch.dart';
 
 import '../../../../core/app_routes.dart';
@@ -23,7 +21,7 @@ class HomeScreenMarch extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       extendBody: true,
-      bottomNavigationBar: BottomBarMarch(currentIndex: 0),
+      bottomNavigationBar: const BottomBarMarch(currentIndex: 0),
       drawer: HomeDrawerMerch(),
       appBar: AppBar(
         title: CommonText(text: ""),

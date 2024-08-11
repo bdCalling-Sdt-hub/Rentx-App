@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:rentx/extension/my_extension.dart';
 
-import '../../../../utils/app_colors.dart';
-import '../../../component/text/common_text.dart';
+import '../../../../../utils/app_colors.dart';
+import '../../../../component/text/common_text.dart';
+
 
 Widget drawerItem(
     {required String title, required IconData icon, VoidCallback? onTap}) {

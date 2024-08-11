@@ -64,7 +64,7 @@ class QrScannerController extends GetxController{
       bottomSheetBuilder: (context, controller) {
         return Container(
           height: 300,
-          decoration: BoxDecoration(
+          decoration: const BoxDecoration(
               color: AppColors.background
           ),
           child: Column(

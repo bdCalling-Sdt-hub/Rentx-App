@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:rentx/extension/my_extension.dart';
-import 'package:rentx/utils/app_images.dart';
 import 'package:rentx/view/component/image/common_image.dart';
 
 import '../../../../../utils/app_colors.dart';

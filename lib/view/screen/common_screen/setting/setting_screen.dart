@@ -6,7 +6,6 @@ import '../../../../controllers/common_controller/setting/setting_controller.dar
 import '../../../../core/app_routes.dart';
 import '../../../../utils/app_colors.dart';
 import '../../../../utils/app_string.dart';
-import '../../../component/bottom_nav_bar/common_bottom_bar.dart';
 import '../../../component/pop_up/common_pop_menu.dart';
 import '../../../component/text/common_text.dart';
 import 'widget/setting_item.dart';

@@ -9,10 +9,11 @@ import 'package:rentx/utils/app_colors.dart';
 import 'package:rentx/utils/app_string.dart';
 import 'package:rentx/view/component/other_widgets/reward_item.dart';
 import 'package:rentx/view/component/text/common_text.dart';
-import 'package:rentx/view/screen/home/widgets/drawer.dart';
+import 'package:rentx/view/screen/user/home/widgets/drawer.dart';
 
-import '../../../controllers/common_controller/home/home_controller.dart';
-import '../../component/bottom_nav_bar/common_bottom_bar.dart';
+import '../../../../controllers/common_controller/home/home_controller.dart';
+import '../../../component/bottom_nav_bar/common_bottom_bar.dart';
+
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
