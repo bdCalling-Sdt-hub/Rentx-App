@@ -27,6 +27,7 @@ class RewardScreen extends StatelessWidget {
     return Scaffold(
       backgroundColor: AppColors.b500,
       appBar: AppBar(
+        automaticallyImplyLeading: false,
         title: const CommonText(
           text: AppString.rentXRewards,
           fontSize: 24,

@@ -162,4 +162,6 @@ class AppString {
   static const pizzaHut = "Pizza Hut";
   static const comingSoon = "Coming Soon...";
   static const history = "History";
+  static const redemption = "Redemption";
+  static const transaction = "Transaction";
 }
