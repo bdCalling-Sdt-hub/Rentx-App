@@ -12,7 +12,6 @@ import '../../../../utils/app_string.dart';
 import '../component/button/common_button.dart';
 import '../component/image/common_image.dart';
 
-
 class SelectionRole extends StatelessWidget {
   const SelectionRole({super.key});
 
@@ -40,7 +39,7 @@ class SelectionRole extends StatelessWidget {
             ),
             100.height,
             CommonButton(
-              buttonIcon: AppImages.merchantIcon,
+              icon: CommonImage(imageSrc: AppImages.merchantIcon, imageColor: AppColors.black),
               titleText: AppString.merchant,
               titleSize: 24,
               onTap: () {
@@ -50,7 +49,7 @@ class SelectionRole extends StatelessWidget {
             ),
             24.height,
             CommonButton(
-              buttonIcon: AppImages.userIcon,
+              icon: CommonImage(imageSrc: AppImages.userIcon, imageColor: AppColors.black),
               titleText: AppString.user,
               titleSize: 24,
               buttonColor: AppColors.s500,

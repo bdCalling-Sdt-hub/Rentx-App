@@ -8,6 +8,7 @@ import 'package:rentx/view/screen/common_screen/setting/about_us.dart';
 import 'package:rentx/view/screen/common_screen/setting/support_screen.dart';
 import 'package:rentx/view/screen/selection_role_screen.dart';
 import 'package:rentx/view/screen/user/history/history_screen.dart';
+import 'package:rentx/view/screen/user/my_residences/my_residences_screen.dart';
 import 'package:rentx/view/screen/user/reward/reward_screen.dart';
 
 import '../view/screen/Marchant_screens/BoostPackageScreens/boost_package_screen.dart';
@@ -86,6 +87,7 @@ class AppRoutes {
   static const String home = "/home_screen.dart";
   static const String aboutUs = "/about_us.dart";
   static const String history = "/history_screen.dart";
+  static const String myResidences = "/my_residences_screen.dart";
 
   static List<GetPage> routes = [
     ///<<<================ Merchant Screens=============>>>
@@ -247,5 +249,12 @@ class AppRoutes {
         name: history,
         page: () => const HistoryScreen(),
         transition: Transition.rightToLeftWithFade),
+     GetPage(
+        name: myResidences,
+        page: () => const MyResidencesScreen(),
+        transition: Transition.rightToLeftWithFade),
+
+
+
   ];
 }

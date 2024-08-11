@@ -21,7 +21,7 @@ class CommonButton extends StatelessWidget {
   final double buttonRadius;
   final double buttonHeight;
   final double buttonWidth;
-  final String? buttonIcon;
+  final Widget? icon;
 
   final bool isLoading;
 
@@ -38,7 +38,7 @@ class CommonButton extends StatelessWidget {
       this.isLoading = false,
       this.buttonWidth = double.infinity,
       this.borderColor = AppColors.primaryColor,
-      this.buttonIcon,
+      this.icon,
       super.key});
 
   @override
@@ -49,6 +49,7 @@ class CommonButton extends StatelessWidget {
       child: ElevatedButton(
         onPressed: onTap,
         style: ButtonStyle(
+            padding: WidgetStateProperty.all(EdgeInsets.zero),
             backgroundColor: WidgetStateProperty.all(buttonColor),
             shape: WidgetStateProperty.all(
               RoundedRectangleBorder(
@@ -66,8 +67,8 @@ class CommonButton extends StatelessWidget {
             : Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  if (buttonIcon != null) CommonImage(imageSrc: "$buttonIcon", imageColor: AppColors.black,),
-                  if (buttonIcon != null) 8.width,
+                  if (icon != null) icon!,
+                  if (icon != null) 8.width,
                   CommonText(
                     text: titleText,
                     fontSize: titleSize,

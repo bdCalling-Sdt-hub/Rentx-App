@@ -70,7 +70,7 @@ class ProfileScreen extends StatelessWidget {
                         Item(
                           icon: Icons.home,
                           title: AppString.myResidences,
-                          onTap: () => Get.toNamed(AppRoutes.setting),
+                          onTap: () => Get.toNamed(AppRoutes.myResidences),
                         ),
                         16.height,
                         Item(

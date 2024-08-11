@@ -163,4 +163,6 @@ class AppString {
   static const history = "History";
   static const redemption = "Redemption";
   static const transaction = "Transaction";
+  static const delete = "Delete";
+  static const edit = "Edit";
 }
