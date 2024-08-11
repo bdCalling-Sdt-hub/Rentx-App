@@ -13,6 +13,7 @@ import '../controllers/common_controller/profile/profile_controller.dart';
 import '../controllers/common_controller/setting/privacy_policy_controller.dart';
 import '../controllers/common_controller/setting/setting_controller.dart';
 import '../controllers/common_controller/setting/terms_of_services_controller.dart';
+import '../controllers/user/history_controller.dart';
 import '../controllers/user/home/home_controller.dart';
 import '../controllers/user/reward_controller.dart';
 
@@ -34,5 +35,6 @@ class DependencyInjection extends Bindings {
     Get.lazyPut(() => HomeController(), fenix: true);
     Get.lazyPut(() => PaymentController(), fenix: true);
     Get.lazyPut(() => RewardController(), fenix: true);
+    Get.lazyPut(() => HistoryController(), fenix: true);
   }
 }

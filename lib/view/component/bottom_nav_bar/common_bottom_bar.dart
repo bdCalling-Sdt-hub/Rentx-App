@@ -64,7 +64,7 @@ class _CommonBottomNavBarState extends State<CommonBottomNavBar> {
       }
     } else if (index == 3) {
       if (!(widget.currentIndex == 3)) {
-        Get.toNamed(AppRoutes.profile);
+        Get.toNamed(AppRoutes.history);
       }
     } else if (index == 4) {
       if (!(widget.currentIndex == 4)) {

@@ -157,4 +157,9 @@ class AppString {
   static const travel = "Travel";
   static const getRewardPointsByGivingYourRentsUsingRentX = "Get Reward points By Giving Your Rents Using RentX.";
   static const popularVouchers = "Popular  Vouchers";
+  static const all = "All";
+  static const available = "Available";
+  static const pizzaHut = "Pizza Hut";
+  static const comingSoon = "Coming Soon...";
+  static const history = "History";
 }

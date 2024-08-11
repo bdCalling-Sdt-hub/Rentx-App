@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:rentx/extension/my_extension.dart';
+import 'package:rentx/utils/app_string.dart';
 
 import '../../../utils/app_colors.dart';
 import '../../../utils/app_images.dart';
@@ -15,10 +16,12 @@ class CouponCard extends StatelessWidget {
       this.onTap,
       required this.couponImage,
       this.couponHeight,
+      this.name = AppString.pizzaHut,
       this.couponWidth});
 
   final VoidCallback? onTap;
   final String couponImage;
+  final String name;
   final double? couponHeight;
   final double? couponWidth;
 
@@ -34,7 +37,7 @@ class CouponCard extends StatelessWidget {
               height: couponHeight ?? 100.h),
           Positioned(
             top: 0,
-            left:  130,
+            left: 130,
             child: Container(
               padding: const EdgeInsets.symmetric(vertical: 5),
               height: 100.h,
@@ -50,7 +53,7 @@ class CouponCard extends StatelessWidget {
           ),
           Positioned(
             top: 20,
-            left: couponWidth != null ? 35 : 50,
+            left: 35,
             child: CommonImage(
               imageSrc: couponImage,
               imageType: ImageType.png,
@@ -60,7 +63,7 @@ class CouponCard extends StatelessWidget {
           ),
           Positioned(
             top: 10,
-            left:  150,
+            left: 150,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -83,8 +86,8 @@ class CouponCard extends StatelessWidget {
                 ),
                 Row(
                   children: [
-                    const CommonText(
-                      text: "Pizza Hut",
+                    CommonText(
+                      text: name,
                       fontSize: 16,
                       fontWeight: FontWeight.w600,
                       color: AppColors.black,

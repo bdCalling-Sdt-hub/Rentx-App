@@ -85,7 +85,7 @@ flutter:
   assets:
     - assets/images/
     - assets/icons/
-    - assets/images/profile.png
+    - assets/images/trevel_imag.png
 
 
   # An image asset can refer to one or more resolution-specific "variants", see
