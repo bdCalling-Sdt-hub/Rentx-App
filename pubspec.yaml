@@ -58,6 +58,7 @@ dependencies:
   ai_barcode_scanner: ^5.1.1+2
 
 
+
 dev_dependencies:
   flutter_test:
     sdk: flutter

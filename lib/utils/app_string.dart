@@ -155,4 +155,6 @@ class AppString {
   static const dining = "Dining";
   static const shopping = "Shopping";
   static const travel = "Travel";
+  static const getRewardPointsByGivingYourRentsUsingRentX = "Get Reward points By Giving Your Rents Using RentX.";
+  static const popularVouchers = "Popular  Vouchers";
 }

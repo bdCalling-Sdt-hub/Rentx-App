@@ -9,18 +9,18 @@ import '../../screen/Marchant_screens/Components/dotted_line_painter.dart';
 import '../image/common_image.dart';
 import '../text/common_text.dart';
 
-class CustomCouponCard extends StatelessWidget {
-  CustomCouponCard(
+class CouponCard extends StatelessWidget {
+  const CouponCard(
       {super.key,
       this.onTap,
       required this.couponImage,
       this.couponHeight,
       this.couponWidth});
 
-  VoidCallback? onTap;
-  String couponImage;
-  double? couponHeight;
-  double? couponWidth;
+  final VoidCallback? onTap;
+  final String couponImage;
+  final double? couponHeight;
+  final double? couponWidth;
 
   @override
   Widget build(BuildContext context) {
@@ -34,7 +34,7 @@ class CustomCouponCard extends StatelessWidget {
               height: couponHeight ?? 100.h),
           Positioned(
             top: 0,
-            left: couponWidth != null ? 120 : 150,
+            left:  130,
             child: Container(
               padding: const EdgeInsets.symmetric(vertical: 5),
               height: 100.h,
@@ -60,14 +60,14 @@ class CustomCouponCard extends StatelessWidget {
           ),
           Positioned(
             top: 10,
-            left: couponWidth != null ? 140 : 170,
+            left:  150,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Row(
                   children: [
                     const CommonText(
-                      text: "20%",
+                      text: "15%",
                       fontSize: 24,
                       fontWeight: FontWeight.w700,
                       color: AppColors.black,
@@ -91,7 +91,7 @@ class CustomCouponCard extends StatelessWidget {
                     ),
                     12.width,
                     const CommonText(
-                      text: "3500 Points",
+                      text: "2000 Points",
                       fontSize: 10,
                       fontWeight: FontWeight.w400,
                       color: AppColors.black,
