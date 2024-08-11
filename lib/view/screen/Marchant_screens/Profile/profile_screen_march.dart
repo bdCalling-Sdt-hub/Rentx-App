@@ -88,42 +88,46 @@ class ProfileScreenMarch extends StatelessWidget {
                           title: AppString.support,
                           onTap: () => Get.toNamed(AppRoutes.supportScreen),
                         ),
-                        // Container(
-                        //   padding: EdgeInsets.symmetric(horizontal: 24.w),
-                        //   child: Column(
-                        //     children: [
-                        //       Row(
-                        //         children: [
-                        //           const Icon(Icons.language,
-                        //               color: AppColors.s500),
-                        //           CommonText(
-                        //             text: controller.selectedLanguage,
-                        //             fontWeight: FontWeight.w400,
-                        //             fontSize: 18,
-                        //             left: 16,
-                        //           ),
-                        //           const Spacer(),
-                        //           PopUpMenu(
-                        //               items: controller.languages,
-                        //               selectedItem: [
-                        //                 controller.selectedLanguage
-                        //               ],
-                        //               onTap: controller.selectLanguage)
-                        //         ],
-                        //       ),
-                        //     ],
-                        //   ),
-                        // ),
+                        Container(
+                          padding: EdgeInsets.symmetric(horizontal: 24.w),
+                          child: Column(
+                            children: [
+                              Row(
+                                children: [
+                                  const Icon(
+                                    Icons.language,
+                                    color: AppColors.s500,
+                                  ),
+                                  CommonText(
+                                    text: controller.selectedLanguage,
+                                    fontWeight: FontWeight.w400,
+                                    fontSize: 18,
+                                    left: 16,
+                                  ),
+                                  const Spacer(),
+                                  PopUpMenu(
+                                      items: controller.languages,
+                                      iconColor: AppColors.s500,
+                                      selectedItem: [
+                                        controller.selectedLanguage
+                                      ],
+                                      onTap: controller.selectLanguage)
+                                ],
+                              ),
+                            ],
+                          ),
+                        ),
                       ],
                     )),
-
                 20.height,
-                customContainer(controller: controller, height: 80, item: Item(
-                  icon: Icons.logout,
-                  title: AppString.logOut,
-                  onTap: () => logOutPopUp(),
-                ))
-
+                customContainer(
+                    controller: controller,
+                    height: 80,
+                    item: Item(
+                      icon: Icons.logout,
+                      title: AppString.logOut,
+                      onTap: () => logOutPopUp(),
+                    ))
               ],
             ),
           );
