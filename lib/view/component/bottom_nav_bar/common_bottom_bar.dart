@@ -56,7 +56,7 @@ class _CommonBottomNavBarState extends State<CommonBottomNavBar> {
       }
     } else if (index == 1) {
       if (!(widget.currentIndex == 1)) {
-        Get.toNamed(AppRoutes.notifications);
+        Get.toNamed(AppRoutes.reward);
       }
     } else if (index == 2) {
       if (!(widget.currentIndex == 2)) {

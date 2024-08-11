@@ -150,4 +150,9 @@ class AppString {
   static const enterEmailResetPassword = "Enter your email address to reset your password.";
   static const qrCodeNumber = "QR Code Number";
   static const enterQrCodeNumber = "Enter QR code number here";
+  static const rentXRewards = "RentX Rewards";
+  static const rewardsGuide = "Rewards Guide";
+  static const dining = "Dining";
+  static const shopping = "Shopping";
+  static const travel = "Travel";
 }

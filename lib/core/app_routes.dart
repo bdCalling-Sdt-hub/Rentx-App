@@ -7,6 +7,7 @@ import 'package:rentx/view/screen/common_screen/auth/sign%20up/landlord_infomati
 import 'package:rentx/view/screen/common_screen/setting/about_us.dart';
 import 'package:rentx/view/screen/common_screen/setting/support_screen.dart';
 import 'package:rentx/view/screen/selection_role_screen.dart';
+import 'package:rentx/view/screen/user/reward/reward_screen.dart';
 
 import '../view/screen/Marchant_screens/BoostPackageScreens/boost_package_screen.dart';
 import '../view/screen/Marchant_screens/BoostPackageScreens/boosted_package_screen.dart';
@@ -60,8 +61,6 @@ class AppRoutes {
   static const String setting = "/setting_screen.dart";
   static const String completeProfile = "/complete_profile.dart";
   static const String landlordInformation = "/landlord_infomation_screen.dart";
-  static const String home = "/home_screen.dart";
-  static const String aboutUs = "/about_us.dart";
 
   ///<<<=================== Merchant Screens ====================>>>
   static const String historyScreenMarch = "/History_screen_march.dart";
@@ -73,30 +72,37 @@ class AppRoutes {
   static const String boostPackageScreen = "/boost_package_screen.dart";
   static const String buyPackageScreen = "/buy_package_screen.dart";
   static const String paymentScreen = "/payment_screen.dart";
-  static const String paymentSuccessfulScreen = "/payment_successful_screen.dart";
+  static const String paymentSuccessfulScreen =
+      "/payment_successful_screen.dart";
   static const String boostedPackageScreen = "/boosted_package_screen.dart";
   static const String myCoupons = "/my_coupons.dart";
   static const String supportScreen = "/support_screen.dart";
   static const String qrCodeNumber = "/qr_code_number.dart";
 
+  ///======================= User Screen =================
+
+  static const String reward = "/reward_screen.dart";
+  static const String home = "/home_screen.dart";
+  static const String aboutUs = "/about_us.dart";
+
   static List<GetPage> routes = [
     ///<<<================ Merchant Screens=============>>>
     GetPage(
-        name: homeScreenMarch,
-        page: () => HomeScreenMarch(),
-       ),
+      name: homeScreenMarch,
+      page: () => HomeScreenMarch(),
+    ),
     GetPage(
-        name: historyScreenMarch,
-        page: () => HistoryScreenMarch(),
-        ),
+      name: historyScreenMarch,
+      page: () => HistoryScreenMarch(),
+    ),
     GetPage(
-        name: scanQrScreen,
-        page: () => ScanQrScreen(),
-        ),
+      name: scanQrScreen,
+      page: () => ScanQrScreen(),
+    ),
     GetPage(
-        name: profileScreenMarch,
-        page: () => ProfileScreenMarch(),
-        ),
+      name: profileScreenMarch,
+      page: () => ProfileScreenMarch(),
+    ),
     GetPage(
         name: couponDetailsScreen,
         page: () => CouponDetailsScreen(),
@@ -137,7 +143,6 @@ class AppRoutes {
         name: qrCodeNumber,
         page: () => QrCodeNumber(),
         transition: Transition.rightToLeftWithFade),
-
 
     GetPage(
       name: test,
@@ -230,6 +235,10 @@ class AppRoutes {
     GetPage(
         name: aboutUs,
         page: () => AboutUs(),
+        transition: Transition.rightToLeftWithFade),
+    GetPage(
+        name: reward,
+        page: () => RewardScreen(),
         transition: Transition.rightToLeftWithFade),
   ];
 }
