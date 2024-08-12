@@ -16,6 +16,7 @@ class AppIcons {
   static const String arrowUp = "$assetIcons/arrowUp.svg" ;
   static const String cvcIcon = "$assetIcons/cvcIcon.svg" ;
   static const String autoPayIcon = "$assetIcons/autoPayIcon.svg" ;
+  static const String deleteIcon = "$assetIcons/deleteIcon.svg" ;
 
   static const String rentxText = "$assetIcons/rentxText.png" ;
 }

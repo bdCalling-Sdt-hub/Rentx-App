@@ -41,7 +41,10 @@ class Item extends StatelessWidget {
                     icon,
                     color: AppColors.s500,
                   )
-                : CommonImage(imageSrc: image),
+                : Padding(
+                  padding: EdgeInsets.only(left: 4.0),
+                  child: CommonImage(imageSrc: image, height: 18, width: 18,),
+                ),
             CommonText(
               text: title,
               color: color,

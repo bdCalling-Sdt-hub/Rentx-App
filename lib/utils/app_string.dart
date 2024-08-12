@@ -171,4 +171,6 @@ class AppString {
   static const autoPayForRent = "Autopay for rent";
   static const setUpAutomaticRent = "Set up automatic rent payments so you never miss a rent payment.";
   static const recentRentHistory = "Recent Rent History";
+  static const myResidenceList = "My Residence List";
+  static const update = "Update";
 }

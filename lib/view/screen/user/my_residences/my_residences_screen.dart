@@ -10,6 +10,7 @@ import '../../../../helpers/other_helper.dart';
 import '../../../../utils/app_colors.dart';
 import '../../../component/text_field/common_phone_number_text_filed.dart';
 import '../../../component/text_field/common_text_field.dart';
+import '../../common_screen/auth/sign up/widget/account_info.dart';
 
 class MyResidencesScreen extends StatelessWidget {
   const MyResidencesScreen({super.key});
@@ -107,96 +108,145 @@ class MyResidencesScreen extends StatelessWidget {
                 top: 24,
               ).start,
               const Divider(),
-              Column(
-                children: [
-                  const CommonText(
-                    text: AppString.accountName,
-                    fontWeight: FontWeight.w600,
-                    bottom: 8,
-                    top: 16,
-                  ).start,
-                  CommonTextField(
-                    controller: controller.accountNameController,
-                    hintText: AppString.accountName,
-                    validator: OtherHelper.validator,
-                  ),
-                  const CommonText(
-                    text: AppString.accountNumber,
-                    fontWeight: FontWeight.w600,
-                    bottom: 8,
-                    top: 16,
-                  ).start,
-                  CommonTextField(
-                    controller: controller.accountNumberController,
-                    hintText: AppString.accountNumber,
-                    keyboardType: TextInputType.number,
-                    validator: OtherHelper.validator,
-                  ),
-                  const CommonText(
-                    text: AppString.bankName,
-                    fontWeight: FontWeight.w600,
-                    bottom: 8,
-                    top: 16,
-                  ).start,
-                  CommonTextField(
-                    controller: controller.bankController,
-                    hintText: AppString.bankName,
-                    validator: OtherHelper.validator,
-                  ),
-                  const CommonText(
-                    text: AppString.branchName,
-                    fontWeight: FontWeight.w600,
-                    bottom: 8,
-                    top: 16,
-                  ).start,
-                  CommonTextField(
-                    controller: controller.branchNameController,
-                    hintText: AppString.branchName,
-                    validator: OtherHelper.validator,
-                  ),
-                  16.height,
-                  const Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      CommonButton(
-                        buttonWidth: 160,
-                        titleText: AppString.delete,
-                        buttonColor: AppColors.s900,
-                        titleColor: AppColors.white,
-                        borderColor: AppColors.transparent,
-                        titleSize: 16,
-                        icon: Icon(
-                          Icons.delete,
-                          color: AppColors.white,
-                        ),
-                      ),
-                      CommonButton(
-                        buttonWidth: 160,
-                        titleText: AppString.edit,
-                        buttonColor: AppColors.s500,
-                        titleSize: 16,
-                        borderColor: AppColors.transparent,
-                        icon: Icon(
-                          Icons.edit,
-                          color: AppColors.black,
-                        ),
-                      ),
-                    ],
-                  ),
-                  16.height,
-                  const CommonButton(
-                    buttonWidth: 160,
-                    titleText: AppString.addMore,
-                    buttonColor: AppColors.transparent,
-                    titleColor: AppColors.white,
-                    titleSize: 16,
-                    icon: Icon(
-                      Icons.add,
-                      color: AppColors.white,
-                    ),
-                  ).end
-                ],
+              const AccountInfo(),
+              16.height,
+              const CommonButton(
+                buttonWidth: 160,
+                titleText: AppString.addMore,
+                buttonColor: AppColors.transparent,
+                titleColor: AppColors.white,
+                titleSize: 16,
+                icon: Icon(
+                  Icons.add,
+                  color: AppColors.white,
+                ),
+              ).end,
+              16.height,
+              const CommonButton(
+                titleText: AppString.update,
+                buttonColor: AppColors.s500,
+                titleSize: 16,
+                borderColor: AppColors.transparent,
               ),
+                  // const Row(
+                  //   mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  //   children: [
+                  //     CommonButton(
+                  //       buttonWidth: 160,
+                  //       titleText: AppString.delete,
+                  //       buttonColor: AppColors.s900,
+                  //       titleColor: AppColors.white,
+                  //       borderColor: AppColors.transparent,
+                  //       titleSize: 16,
+                  //       icon: Icon(
+                  //         Icons.delete,
+                  //         color: AppColors.white,
+                  //       ),
+                  //     ),
+                  //     CommonButton(
+                  //       buttonWidth: 160,
+                  //       titleText: AppString.edit,
+                  //       buttonColor: AppColors.s500,
+                  //       titleSize: 16,
+                  //       borderColor: AppColors.transparent,
+                  //       icon: Icon(
+                  //         Icons.edit,
+                  //         color: AppColors.black,
+                  //       ),
+                  //     ),
+                  //   ],
+                  // ),
+
+              // Column(
+              //   children: [
+              //     const CommonText(
+              //       text: AppString.accountName,
+              //       fontWeight: FontWeight.w600,
+              //       bottom: 8,
+              //       top: 16,
+              //     ).start,
+              //     CommonTextField(
+              //       controller: controller.accountNameController,
+              //       hintText: AppString.accountName,
+              //       validator: OtherHelper.validator,
+              //     ),
+              //     const CommonText(
+              //       text: AppString.accountNumber,
+              //       fontWeight: FontWeight.w600,
+              //       bottom: 8,
+              //       top: 16,
+              //     ).start,
+              //     CommonTextField(
+              //       controller: controller.accountNumberController,
+              //       hintText: AppString.accountNumber,
+              //       keyboardType: TextInputType.number,
+              //       validator: OtherHelper.validator,
+              //     ),
+              //     const CommonText(
+              //       text: AppString.bankName,
+              //       fontWeight: FontWeight.w600,
+              //       bottom: 8,
+              //       top: 16,
+              //     ).start,
+              //     CommonTextField(
+              //       controller: controller.bankController,
+              //       hintText: AppString.bankName,
+              //       validator: OtherHelper.validator,
+              //     ),
+              //     const CommonText(
+              //       text: AppString.branchName,
+              //       fontWeight: FontWeight.w600,
+              //       bottom: 8,
+              //       top: 16,
+              //     ).start,
+              //     CommonTextField(
+              //       controller: controller.branchNameController,
+              //       hintText: AppString.branchName,
+              //       validator: OtherHelper.validator,
+              //     ),
+              //     16.height,
+              //     const Row(
+              //       mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              //       children: [
+              //         CommonButton(
+              //           buttonWidth: 160,
+              //           titleText: AppString.delete,
+              //           buttonColor: AppColors.s900,
+              //           titleColor: AppColors.white,
+              //           borderColor: AppColors.transparent,
+              //           titleSize: 16,
+              //           icon: Icon(
+              //             Icons.delete,
+              //             color: AppColors.white,
+              //           ),
+              //         ),
+              //         CommonButton(
+              //           buttonWidth: 160,
+              //           titleText: AppString.edit,
+              //           buttonColor: AppColors.s500,
+              //           titleSize: 16,
+              //           borderColor: AppColors.transparent,
+              //           icon: Icon(
+              //             Icons.edit,
+              //             color: AppColors.black,
+              //           ),
+              //         ),
+              //       ],
+              //     ),
+              //     16.height,
+              //     const CommonButton(
+              //       buttonWidth: 160,
+              //       titleText: AppString.addMore,
+              //       buttonColor: AppColors.transparent,
+              //       titleColor: AppColors.white,
+              //       titleSize: 16,
+              //       icon: Icon(
+              //         Icons.add,
+              //         color: AppColors.white,
+              //       ),
+              //     ).end
+              //   ],
+              // ),
             ],
           ),
         ),

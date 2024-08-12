@@ -3,24 +3,25 @@ import 'package:rentx/extension/my_extension.dart';
 import 'package:rentx/view/component/text/common_text.dart';
 
 class HistoryItem extends StatelessWidget {
-  const HistoryItem({super.key, this.isUse = false});
+  const HistoryItem({super.key, this.isUse = false, this.text = "Reward points added for paying rent through RentX card.", this.horizontalPadding = 16});
 
   final bool isUse;
+  final String text;
+  final double horizontalPadding;
 
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+      padding: EdgeInsets.symmetric(horizontal: horizontalPadding, vertical: 8),
       child: Row(
         children: [
           Expanded(
             child: Column(
               children: [
-                const CommonText(
+                CommonText(
                         maxLines: 2,
                         textAlign: TextAlign.start,
-                        text:
-                            "Reward points added for paying rent through RentX card.")
+                        text: text)
                     .start,
                 const CommonText(
                         textAlign: TextAlign.start,

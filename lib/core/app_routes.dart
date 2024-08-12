@@ -41,6 +41,7 @@ import '../view/screen/common_screen/setting/terms_of_services_screen.dart';
 import '../view/screen/common_screen/splash/splash_screen.dart';
 import '../view/screen/test_screen.dart';
 import '../view/screen/user/home/home_screen.dart';
+import '../view/screen/user/my_residences/my_residence_list_screen.dart';
 
 class AppRoutes {
   static const String test = "/test_screen.dart";
@@ -89,6 +90,7 @@ class AppRoutes {
   static const String history = "/history_screen.dart";
   static const String myResidences = "/my_residences_screen.dart";
   static const String payRentScreen = "/pay_rent_screen.dart";
+  static const String myResidenceListScreen = "/my_residence_list_screen.dart";
 
   static List<GetPage> routes = [
     ///<<<================ Merchant Screens=============>>>
@@ -238,22 +240,25 @@ class AppRoutes {
         page: () => AboutUs(),
         transition: Transition.rightToLeftWithFade),
     GetPage(
-        name: reward,
-        page: () => RewardScreen(),
-       ),
+      name: reward,
+      page: () => RewardScreen(),
+    ),
 
     GetPage(
-        name: history,
-        page: () => const HistoryScreen(),
-      ),
-     GetPage(
+      name: history,
+      page: () => const HistoryScreen(),
+    ),
+    GetPage(
         name: myResidences,
         page: () => const MyResidencesScreen(),
         transition: Transition.rightToLeftWithFade),
-     GetPage(
-        name: payRentScreen,
-        page: () => PayRentScreen(),
-        ),
-
+    GetPage(
+      name: payRentScreen,
+      page: () => PayRentScreen(),
+    ),
+    GetPage(
+        name: myResidenceListScreen,
+        page: () => MyResidenceListScreen(),
+        transition: Transition.rightToLeftWithFade),
   ];
 }
