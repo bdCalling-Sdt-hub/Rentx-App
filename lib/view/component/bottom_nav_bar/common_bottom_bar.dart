@@ -60,7 +60,7 @@ class _CommonBottomNavBarState extends State<CommonBottomNavBar> {
       }
     } else if (index == 2) {
       if (!(widget.currentIndex == 2)) {
-        Get.toNamed(AppRoutes.chat);
+        Get.toNamed(AppRoutes.payRentScreen);
       }
     } else if (index == 3) {
       if (!(widget.currentIndex == 3)) {

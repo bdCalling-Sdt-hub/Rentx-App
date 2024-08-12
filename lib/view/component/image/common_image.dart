@@ -47,18 +47,21 @@ class CommonImage extends StatelessWidget {
     }
 
     if (imageType == ImageType.png) {
-      imageWidget = Image.asset(
-        imageSrc,
-        color: imageColor,
-        height: height.h,
-        width: width.w,
-        fit: fill,
-        errorBuilder: (context, error, stackTrace) {
-          if (kDebugMode) {
-            print("imageError : $error");
-          }
-          return Image.asset(defaultImage);
-        },
+      imageWidget = ClipRRect(
+        borderRadius: BorderRadius.circular(borderRadius),
+        child: Image.asset(
+          imageSrc,
+          color: imageColor,
+          height: height.h,
+          width: width.w,
+          fit: fill,
+          errorBuilder: (context, error, stackTrace) {
+            if (kDebugMode) {
+              print("imageError : $error");
+            }
+            return Image.asset(defaultImage);
+          },
+        ),
       );
     }
 

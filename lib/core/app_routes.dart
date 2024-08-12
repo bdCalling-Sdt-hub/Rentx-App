@@ -7,6 +7,7 @@ import 'package:rentx/view/screen/common_screen/auth/sign%20up/landlord_infomati
 import 'package:rentx/view/screen/common_screen/setting/about_us.dart';
 import 'package:rentx/view/screen/common_screen/setting/support_screen.dart';
 import 'package:rentx/view/screen/selection_role_screen.dart';
+import 'package:rentx/view/screen/user/PayRent/pay_rent_screen.dart';
 import 'package:rentx/view/screen/user/history/history_screen.dart';
 import 'package:rentx/view/screen/user/my_residences/my_residences_screen.dart';
 import 'package:rentx/view/screen/user/reward/reward_screen.dart';
@@ -54,7 +55,6 @@ class AppRoutes {
   static const String createPassword = "/create_password.dart";
   static const String changePassword = "/change_password_screen.dart";
   static const String notifications = "/notifications_screen.dart";
-  static const String chat = "/chat_screen.dart";
   static const String message = "/message_screen.dart";
   static const String profile = "/profile_screen.dart";
   static const String editProfile = "/edit_profile.dart";
@@ -88,6 +88,7 @@ class AppRoutes {
   static const String aboutUs = "/about_us.dart";
   static const String history = "/history_screen.dart";
   static const String myResidences = "/my_residences_screen.dart";
+  static const String payRentScreen = "/pay_rent_screen.dart";
 
   static List<GetPage> routes = [
     ///<<<================ Merchant Screens=============>>>
@@ -193,10 +194,6 @@ class AppRoutes {
         page: () => NotificationScreen(),
         transition: Transition.rightToLeftWithFade),
     GetPage(
-        name: chat,
-        page: () => ChatListScreen(),
-        transition: Transition.rightToLeftWithFade),
-    GetPage(
         name: message,
         page: () => MessageScreen(),
         transition: Transition.rightToLeftWithFade),
@@ -243,18 +240,20 @@ class AppRoutes {
     GetPage(
         name: reward,
         page: () => RewardScreen(),
-        transition: Transition.rightToLeftWithFade),
+       ),
 
     GetPage(
         name: history,
         page: () => const HistoryScreen(),
-        transition: Transition.rightToLeftWithFade),
+      ),
      GetPage(
         name: myResidences,
         page: () => const MyResidencesScreen(),
         transition: Transition.rightToLeftWithFade),
-
-
+     GetPage(
+        name: payRentScreen,
+        page: () => PayRentScreen(),
+        ),
 
   ];
 }

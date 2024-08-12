@@ -165,4 +165,10 @@ class AppString {
   static const transaction = "Transaction";
   static const delete = "Delete";
   static const edit = "Edit";
+  static const getRentxDayChallenge = "Get RentX. day challenge: Birthday editions";
+  static const everyoneWhoSolves = "Everyone who solves the puzzle in-app gets a prize.";
+  static const currentRentDue = "Current Rent Due";
+  static const autoPayForRent = "Autopay for rent";
+  static const setUpAutomaticRent = "Set up automatic rent payments so you never miss a rent payment.";
+  static const recentRentHistory = "Recent Rent History";
 }

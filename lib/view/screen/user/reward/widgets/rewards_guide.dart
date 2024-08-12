@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:rentx/extension/my_extension.dart';
+import 'package:rentx/view/screen/user/reward/widgets/reward_points.dart';
 import 'package:rentx/view/screen/user/reward/widgets/sliders.dart';
 
 import '../../../../../core/app_routes.dart';
@@ -18,9 +19,7 @@ class RewardsGuide extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        const RewardItem(
-          amount: "2000",
-        ),
+      const RewardPoints(rewardPoints: AppString.rewardPoints, pointNumber: "2000",),
         12.height,
         const Sliders(),
         Container(
@@ -58,3 +57,5 @@ class RewardsGuide extends StatelessWidget {
     );
   }
 }
+
+

@@ -40,9 +40,14 @@ class AppImages {
   static const String kfcImage = "$baseurl/kfcImage.png";
 
   static const String point = "$baseurl/point.png";
+
   static const String yellow = "$baseurl/yellow.png";
+
   static const String gentlepark = "$baseurl/gentlepark.png";
+
   static const String travelImage = "$baseurl/trevel_imag.png";
+
+  static const String rentxDayChallenge = "$baseurl/rentxDayChallenge.png";
 
   ///<<<================= Svg Images ========================>>>
   static const String cardImage = "$baseurl/cardImage.svg";
