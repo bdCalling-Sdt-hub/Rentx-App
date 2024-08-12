@@ -139,6 +139,63 @@ logOutPopUp() {
   );
 }
 
+deleteItemsPopUp({
+  required String itemsId,
+  required VoidCallback onDelete,
+}) {
+  showDialog(
+    context: Get.context!,
+    builder: (context) {
+      return AlertDialog(
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(20.r),
+        ),
+        contentPadding: EdgeInsets.all(12.sp),
+        title: Center(
+          child: CommonText(
+            text: "Are you sure to delete?".tr,
+            fontSize: 20,
+            fontWeight: FontWeight.w500,
+            color: AppColors.black,
+            maxLines: 1,
+            bottom: 18,
+          ),
+        ),
+        actions: [
+          Row(
+            children: [
+              Expanded(
+                child: CommonButton(
+                  buttonHeight: 48.h,
+                  titleText: "Cancel".tr,
+                  buttonColor: AppColors.p600,
+                  titleColor: AppColors.background,
+                  onTap: () => Get.back(),
+                ),
+              ),
+              SizedBox(
+                width: 16.w,
+              ),
+              Expanded(
+                child: CommonButton(
+                  buttonHeight: 48,
+                  titleText: "Delete".tr,
+                  titleColor: AppColors.p600,
+                  buttonColor: AppColors.red,
+                  onTap: () {
+                    onDelete();
+                    Get.back();  // Close the dialog after performing the delete action
+                  },
+                ),
+              ),
+            ],
+          ),
+        ],
+      );
+    },
+  );
+}
+
 deletePopUp(
     {required TextEditingController controller,
     required VoidCallback onTap,

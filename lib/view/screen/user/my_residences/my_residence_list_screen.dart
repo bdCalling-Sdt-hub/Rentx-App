@@ -55,7 +55,9 @@ class MyResidenceListScreen extends StatelessWidget {
                         ),
                         InkWell(
                           onTap: () {
+                            deleteItemsPopUp(itemsId: "", onDelete: () {
 
+                            },);
                           },
                             child: CommonImage(imageSrc: AppIcons.deleteIcon, height: 18, width: 18,))
                       ],
@@ -68,6 +70,7 @@ class MyResidenceListScreen extends StatelessWidget {
             Align(
               alignment: Alignment.centerRight,
               child: CommonButton(
+                onTap: () => Get.toNamed(AppRoutes.landlordInformation),
                 buttonHeight: 48.h,
                 buttonWidth: Get.width * 0.4,
                 buttonColor: AppColors.background,

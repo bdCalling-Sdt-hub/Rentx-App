@@ -6,6 +6,7 @@ class AppColors {
   static const Color background = Color(0xFF010515);
   static const Color highLight = Color(0xFF97C6EA);
   static const Color organ = Color(0xFFFF8A00);
+  static const Color red = Color(0xFF881818);
 
   static const Color transparent = Colors.transparent;
   static const Color white = Colors.white;
