@@ -19,6 +19,7 @@ class PrefsHelper extends GetxController {
   static String localizationLanguageCode = 'en';
   static String localizationCountryCode = 'US';
   static bool isMerchant = false;
+  static bool isAutoPayRent = false;
 
   ///<<<======================== Get All Data Form Shared Preference ==============>
 
@@ -32,6 +33,8 @@ class PrefsHelper extends GetxController {
     myEmail = preferences.getString("myEmail") ?? "";
     myRole = preferences.getString("myRole") ?? "";
     isLogIn = preferences.getBool("isLogIn") ?? false;
+    isAutoPayRent = preferences.getBool("isAutoPayRent") ?? false;
+
     isNotifications = preferences.getBool("isNotifications") ?? true;
     mySubscription = preferences.getString("mySubscription") ?? "shopping";
     localizationCountryCode =

@@ -1,15 +1,21 @@
 
 import 'package:flutter/material.dart';
+import 'package:flutter_advanced_switch/flutter_advanced_switch.dart';
 import 'package:get/get.dart';
 import 'package:rentx/extension/my_extension.dart';
+import 'package:rentx/utils/app_icons.dart';
 import 'package:rentx/utils/app_string.dart';
+import 'package:rentx/view/component/image/common_image.dart';
 import 'package:rentx/view/component/text/common_text.dart';
 
 import '../../../../core/app_routes.dart';
+import '../../../../helpers/prefs_helper.dart';
 import '../../../../utils/app_colors.dart';
 
 class PayRentScreen extends StatelessWidget {
-  const PayRentScreen({super.key});
+  PayRentScreen({super.key});
+
+  final autoPayRentController = ValueNotifier<bool>(PrefsHelper.isAutoPayRent);
 
   @override
   Widget build(BuildContext context) {
@@ -53,26 +59,78 @@ class PayRentScreen extends StatelessWidget {
             GestureDetector(
               onTap: () => Get.toNamed(AppRoutes.buyPackageScreen),
               child: Container(
-                padding: EdgeInsets.symmetric(
+                padding: const EdgeInsets.symmetric(
                     horizontal: 30, vertical: 12),
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(8),
+                decoration: const BoxDecoration(
                   color: AppColors.s500,
                 ),
                 child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     CommonText(
-                      text: "Buy Now",
+                      text: "Pay Now",
                       color: AppColors.black,
+                      fontSize: 18,
+                      fontWeight: FontWeight.w700,
                     ),
                     8.width,
                     Icon(Icons.arrow_forward)
                   ],
                 ),
               ),
-            )
+            ),
+            customContainer(
+                items: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Row(
+                  children: [
+                    CommonImage(imageSrc: AppIcons.autoPayIcon),
+                    6.width,
+                    CommonText(text: AppString.autoPayForRent, fontWeight: FontWeight.w600, fontSize: 18),
+                    Spacer(),
+                    AdvancedSwitch(
+                      initialValue: PrefsHelper.isAutoPayRent,
+                      onChanged: (value) {
 
+                      },
+                      // thumb: ValueListenableBuilder(
+                      //   valueListenable: autoPayRentController,
+                      //   builder: (_, value, __) {
+                      //     return Icon(
+                      //       value? Icons.circle : Icons.circle_outlined,
+                      //       size: 22,
+                      //     );
+                      //   },
+                      // ),
+                      controller: autoPayRentController,
+                      activeColor: AppColors.s600,
+                      inactiveColor: AppColors.b200,
+                      borderRadius: BorderRadius.all(const Radius.circular(15)),
+                      width: 40.0,
+                      height: 22.0,
+                      enabled: true,
+                      disabledOpacity: 0.5,
+                    ),
+                  ],
+                ),
+                8.height,
+                CommonText(
+                  textAlign: TextAlign.left,
+                  maxLines: 3,
+                    text: AppString.setUpAutomaticRent)
+              ],
+            )
+            ),
+            12.height,
+            customContainer(
+                items: Column(
+                  children: [
+                    CommonText(
+                      text: AppString.recentRentHistory, textDecoration: TextDecoration.underline,)
+                  ],
+            ),
+            )
           ],
         ),
       ),

@@ -8,21 +8,22 @@ import 'package:google_fonts/google_fonts.dart';
 import '../../../utils/app_colors.dart';
 
 class CommonText extends StatelessWidget {
-  const CommonText(
-      {super.key,
-      this.maxLines = 1,
-      this.textAlign = TextAlign.center,
-      this.left = 0,
-      this.right = 0,
-      this.top = 0,
-      this.bottom = 0,
-      this.fontSize = 16,
-      this.fontWeight = FontWeight.w500,
-      this.color = AppColors.p50,
-      required this.text,
-      this.style = false,
-      this.overflow = TextOverflow.ellipsis,
-      this.textDecoration = TextDecoration.none});
+  const CommonText({
+    super.key,
+    this.maxLines = 1,
+    this.textAlign = TextAlign.center,
+    this.left = 0,
+    this.right = 0,
+    this.top = 0,
+    this.bottom = 0,
+    this.fontSize = 16,
+    this.fontWeight = FontWeight.w500,
+    this.color = AppColors.p50,
+    required this.text,
+    this.style = false,
+    this.overflow = TextOverflow.ellipsis,
+    this.textDecoration = TextDecoration.none,
+  });
 
   final double left;
   final double right;
@@ -42,24 +43,25 @@ class CommonText extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: EdgeInsets.only(
-          left: left.w, right: right.w, top: top.h, bottom: bottom.h),
+        left: left.w,
+        right: right.w,
+        top: top.h,
+        bottom: bottom.h,
+      ),
       child: Text(
-        textAlign: textAlign,
         text,
+        textAlign: textAlign,
         maxLines: maxLines,
         overflow: overflow,
-        style: style == true
-            ? GoogleFonts.plusJakartaSans(
-                fontSize: fontSize.sp,
-                fontWeight: fontWeight,
-                color: color,
-                decoration: textDecoration)
-            : GoogleFonts.poppins(
-                fontSize: fontSize.sp,
-                fontWeight: fontWeight,
-                color: color,
-                decoration: textDecoration),
+        style: (style ? GoogleFonts.plusJakartaSans : GoogleFonts.poppins)(
+          fontSize: fontSize.sp,
+          fontWeight: fontWeight,
+          color: color,
+          decoration: textDecoration,
+          decorationColor: color // Apply textDecoration here
+        ),
       ),
     );
   }
 }
+
