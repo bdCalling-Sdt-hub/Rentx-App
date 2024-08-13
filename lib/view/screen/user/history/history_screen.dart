@@ -79,7 +79,7 @@ class HistoryScreen extends StatelessWidget {
           ],
         ),
       ),
-      bottomNavigationBar: const CommonBottomNavBar(currentIndex: 3),
+      // bottomNavigationBar: const CommonBottomNavBar(currentIndex: 3),
     );
   }
 }

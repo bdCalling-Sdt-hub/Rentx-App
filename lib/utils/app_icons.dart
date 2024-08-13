@@ -18,5 +18,16 @@ class AppIcons {
   static const String autoPayIcon = "$assetIcons/autoPayIcon.svg" ;
   static const String deleteIcon = "$assetIcons/deleteIcon.svg" ;
 
+  ///<<<=========== Bottom Nav Bar icons =======================>>>
+  static const String historyOutlined = "$assetIcons/historyOutlined.svg";
+  static const String homeOutlined = "$assetIcons/homeOutlined.svg";
+  static const String profileOutlined = "$assetIcons/profileOutlined.svg";
+  static const String scanOutlined = "$assetIcons/scanOutlined.svg";
+  static const String homeSolid = "$assetIcons/homeSolid.svg";
+  static const String historySolid = "$assetIcons/historySolid.svg";
+  static const String profileSolid = "$assetIcons/profileSolid.svg";
+  static const String payRentSolid = "$assetIcons/payRentSolid.svg";
+  static const String rewardSolid = "$assetIcons/rewardSolid.svg";
+
   static const String rentxText = "$assetIcons/rentxText.png" ;
 }

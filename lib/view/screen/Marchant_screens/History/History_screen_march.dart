@@ -15,7 +15,7 @@ class HistoryScreenMarch extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      bottomNavigationBar: BottomBarMarch(currentIndex: 1),
+      // bottomNavigationBar: BottomBarMarch(currentIndex: 1),
       appBar: AppBar(
         centerTitle: true,
         automaticallyImplyLeading: false,
@@ -27,6 +27,8 @@ class HistoryScreenMarch extends StatelessWidget {
           itemCount: 10,
           itemBuilder: (context, index) {
           return CustomCouponCard(
+            couponHeight: 100,
+            couponWidth: Get.width,
             couponImage: AppImages.pizzaHut,
             onTap: () {
               Get.toNamed(AppRoutes.couponDetailsScreen);

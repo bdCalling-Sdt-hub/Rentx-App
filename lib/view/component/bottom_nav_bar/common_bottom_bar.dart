@@ -3,73 +3,90 @@ import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:rentx/controllers/BottomNavbarController/bottom_navbar_controller.dart';
 import 'package:rentx/utils/app_images.dart';
 import 'package:rentx/view/component/image/common_image.dart';
 import '../../../core/app_routes.dart';
 import '../../../utils/app_colors.dart';
+import '../../../utils/app_icons.dart';
+import '../text/common_text.dart';
 
-class CommonBottomNavBar extends StatefulWidget {
-  final int currentIndex;
+class CommonBottomNavBar extends StatelessWidget {
 
-  const CommonBottomNavBar({required this.currentIndex, super.key});
 
-  @override
-  State<CommonBottomNavBar> createState() => _CommonBottomNavBarState();
-}
+  CommonBottomNavBar({super.key});
 
-class _CommonBottomNavBarState extends State<CommonBottomNavBar> {
-  var bottomNavIndex = 0;
-
-  @override
-  void initState() {
-    bottomNavIndex = widget.currentIndex;
-    super.initState();
-  }
+  BottomNavbarController bottomNavbarController = Get.put(BottomNavbarController());
 
   @override
   Widget build(BuildContext context) {
-    return CurvedNavigationBar(
-        index: widget.currentIndex > 5 ? 2 : widget.currentIndex,
-        height: 60,
-        onTap: onTap,
-        color: AppColors.s200,
-        buttonBackgroundColor: AppColors.s200,
-        backgroundColor: AppColors.transparent,
-        animationCurve: Curves.easeInOut,
-        animationDuration: const Duration(milliseconds: 900),
-        items: [
-          const Icon(Icons.home_outlined, color: AppColors.black),
-          CommonImage(imageSrc: AppImages.reward),
-          CommonImage(imageSrc: AppImages.payRent),
-          const Icon(Icons.access_time_outlined, color: AppColors.black),
-          const Icon(Icons.person_2_outlined, color: AppColors.black),
-        ]);
-  }
-
-  void onTap(int index) async {
-    if (kDebugMode) {
-      print(widget.currentIndex);
-    }
-    if (index == 0) {
-      if (!(widget.currentIndex == 0)) {
-        Get.toNamed(AppRoutes.home);
-      }
-    } else if (index == 1) {
-      if (!(widget.currentIndex == 1)) {
-        Get.toNamed(AppRoutes.reward);
-      }
-    } else if (index == 2) {
-      if (!(widget.currentIndex == 2)) {
-        Get.toNamed(AppRoutes.payRentScreen);
-      }
-    } else if (index == 3) {
-      if (!(widget.currentIndex == 3)) {
-        Get.toNamed(AppRoutes.history);
-      }
-    } else if (index == 4) {
-      if (!(widget.currentIndex == 4)) {
-        Get.toNamed(AppRoutes.profile);
-      }
-    }
+    return Scaffold(
+      bottomNavigationBar: Obx(() {
+        return CurvedNavigationBar(
+            height: 60,
+            onTap: bottomNavbarController.onItemTapped,
+            color: AppColors.s200,
+            buttonBackgroundColor: AppColors.s200,
+            backgroundColor: AppColors.transparent,
+            animationCurve: Curves.easeInOut,
+            animationDuration: const Duration(milliseconds: 500),
+            items: [
+              Padding(
+                padding: EdgeInsets.only(top: bottomNavbarController.selectedIndex.value == 0 ? 0 : 8.0),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    CommonImage(imageSrc: bottomNavbarController.selectedIndex.value == 0 ? AppIcons.homeSolid : AppIcons.homeOutlined),
+                    bottomNavbarController.selectedIndex.value == 0 ? SizedBox() : CommonText(text: "Home", fontSize: 12, color: AppColors.black,)
+                  ],
+                ),
+              ),
+              Padding(
+                padding: EdgeInsets.only(top: bottomNavbarController.selectedIndex.value == 1 ? 0 : 8.0),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    CommonImage(imageSrc:  bottomNavbarController.selectedIndex.value == 1 ? AppIcons.rewardSolid : AppImages.reward),
+                    bottomNavbarController.selectedIndex.value == 1 ? SizedBox() :CommonText(text: "Reward", fontSize: 12, color: AppColors.black,)
+                  ],
+                ),
+              ),
+              Padding(
+                padding: EdgeInsets.only(top: bottomNavbarController.selectedIndex.value == 2 ? 0 : 8.0),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    CommonImage(imageSrc: bottomNavbarController.selectedIndex.value == 2 ? AppIcons.payRentSolid : AppImages.payRent) ,
+                    bottomNavbarController.selectedIndex.value == 2 ? SizedBox() : CommonText(text: "Pay rent", fontSize: 12, color: AppColors.black,)
+                  ],
+                ),
+              ),
+              Padding(
+                padding: EdgeInsets.only(top: bottomNavbarController.selectedIndex.value == 3 ? 0 : 8.0),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    CommonImage(imageSrc:  bottomNavbarController.selectedIndex.value == 3 ? AppIcons.historySolid : AppIcons.historyOutlined),
+                    bottomNavbarController.selectedIndex.value == 3 ? SizedBox() : CommonText(text: "History", fontSize: 12, color: AppColors.black,)
+                  ],
+                ),
+              ),
+              Padding(
+                padding: EdgeInsets.only(top: bottomNavbarController.selectedIndex.value == 4 ? 0 : 8.0),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    CommonImage(imageSrc:  bottomNavbarController.selectedIndex.value == 4 ? AppIcons.profileSolid : AppIcons.profileOutlined),
+                    bottomNavbarController.selectedIndex.value == 4 ? SizedBox() : CommonText(text: "Profile", fontSize: 12, color: AppColors.black,)
+                  ],
+                ),
+              ),
+            ],
+           );
+      },),
+      body: Obx(() {
+        return bottomNavbarController.userAllScreens.elementAt(bottomNavbarController.selectedIndex.value);
+      }),
+    );
   }
 }

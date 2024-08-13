@@ -82,7 +82,9 @@ class BuyPackageScreen extends StatelessWidget {
                           },
                         ),
                         12.width,
-                        CustomCouponCard(couponImage: AppImages.pizzaHut, couponWidth: 300,)
+                        CustomCouponCard(
+
+                          couponImage: AppImages.pizzaHut, couponWidth: Get.width * 0.7,)
                       ],
                     ),
                   );

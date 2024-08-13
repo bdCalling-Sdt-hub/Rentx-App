@@ -147,9 +147,9 @@ class ProfileScreen extends StatelessWidget {
           );
         },
       ),
-      bottomNavigationBar: const CommonBottomNavBar(
-        currentIndex: 4,
-      ),
+      // bottomNavigationBar: const CommonBottomNavBar(
+      //   currentIndex: 4,
+      // ),
     );
   }
 

@@ -54,7 +54,7 @@ class CommonText extends StatelessWidget {
         maxLines: maxLines,
         overflow: overflow,
         style: (style ? GoogleFonts.plusJakartaSans : GoogleFonts.poppins)(
-          fontSize: fontSize.sp,
+          fontSize: fontSize,
           fontWeight: fontWeight,
           color: color,
           decoration: textDecoration,

@@ -14,13 +14,13 @@ class CustomCouponCard extends StatelessWidget {
       {super.key,
       this.onTap,
       required this.couponImage,
-      this.couponHeight,
-      this.couponWidth});
+      this.couponHeight  = 100,
+      this.couponWidth  = 250});
 
   VoidCallback? onTap;
   String couponImage;
-  double? couponHeight;
-  double? couponWidth;
+  double couponHeight;
+  double couponWidth;
 
   @override
   Widget build(BuildContext context) {
@@ -30,14 +30,14 @@ class CustomCouponCard extends StatelessWidget {
         children: [
           CommonImage(
               imageSrc: AppImages.cardImage,
-              width: couponWidth ?? Get.width,
-              height: couponHeight ?? 100.h),
+              width: couponWidth,
+              height: couponHeight),
           Positioned(
             top: 0,
-            left: couponWidth != null ? 120 : 150,
+            left: couponWidth * 0.35,
             child: Container(
               padding: const EdgeInsets.symmetric(vertical: 5),
-              height: 100.h,
+              height: couponHeight,
               child: CustomPaint(
                 painter: DottedLinePainter(
                     orientation: LineOrientation.vertical,
@@ -50,7 +50,7 @@ class CustomCouponCard extends StatelessWidget {
           ),
           Positioned(
             top: 20,
-            left: couponWidth != null ? 35 : 50,
+            left: couponWidth * 0.12,
             child: CommonImage(
               imageSrc: couponImage,
               imageType: ImageType.png,
@@ -60,7 +60,7 @@ class CustomCouponCard extends StatelessWidget {
           ),
           Positioned(
             top: 10,
-            left: couponWidth != null ? 140 : 170,
+            left: couponWidth * 0.415,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [

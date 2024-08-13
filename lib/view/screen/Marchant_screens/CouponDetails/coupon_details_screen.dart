@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:qr_flutter/qr_flutter.dart';
 import 'package:rentx/extension/my_extension.dart';
+import 'package:rentx/helpers/other_helper.dart';
 import 'package:rentx/utils/app_images.dart';
 import 'package:rentx/view/component/image/common_image.dart';
 import 'package:rentx/view/component/text/common_text.dart';
@@ -21,46 +23,32 @@ class CouponDetailsScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
     return Scaffold(
       appBar: AppBar(
         title: CommonText(text: ""),
       ),
       body: Padding(
-        padding: EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+        padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 20.h),
         child: Column(
           children: [
             Stack(
               children: [
                 CommonImage(
                   imageSrc: AppImages.detailsCard,
-                  height: Get.height * 0.88,
+                  height: 630.h,
                   width: Get.width,
                   imageType: ImageType.png,
                 ),
                 Positioned(
-                  top: Get.height * 0.50,
-                  child: Container(
-                    padding: EdgeInsets.only(left: 24),
-                    width: Get.width * 0.85,
-                    child: CustomPaint(
-                      painter: DottedLinePainter(
-                          orientation: LineOrientation.horizontal,
-                          color: AppColors.b200,
-                          strokeWidth: 2,
-                          dashLength: 10,
-                          dashSpace: 5),
-                    ),
-                  ),
-                ),
-                Positioned(
-                  top: 20,
-                  left: 20,
-                  right: 20,
+                  top: 20.h,
+                  left: 20.w,
+                  right: 20.w,
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
                       Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 50),
+                        padding:  EdgeInsets.symmetric(horizontal: 30.w),
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
@@ -76,7 +64,7 @@ class CouponDetailsScreen extends StatelessWidget {
                                   mainAxisAlignment:
                                       MainAxisAlignment.spaceBetween,
                                   children: [
-                                    const CommonText(
+                                    CommonText(
                                       text: "20%",
                                       fontSize: 24,
                                       fontWeight: FontWeight.w700,
@@ -153,28 +141,29 @@ class CouponDetailsScreen extends StatelessWidget {
                             },
                           ),
                         ),
-                      )
+                      ),
                     ],
                   ),
                 ),
                 Positioned(
-                  top: Get.height * 0.50,
-                  left: 20,
-                  right: 20,
+                  bottom: 50.h,
+                  left: 20.w,
+                  right: 20.w,
                   child: Column(
                     children: [
+                      16.height,
                       QrImageView(
                         data: '1234567890',
                         version: QrVersions.auto,
-                        size: 150.0,
+                        size: 150,
                       ),
-                      CommonText(
+                      const CommonText(
                         text: "#B25G458",
                         fontSize: 20,
                         fontWeight: FontWeight.w700,
                         color: AppColors.black,
                       ),
-                      CommonText(
+                      const CommonText(
                         text: "Valid until 03 March 2022",
                         color: AppColors.b300,
                         fontSize: 10,

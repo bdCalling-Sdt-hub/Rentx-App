@@ -140,4 +140,13 @@ class OtherHelper {
       "${picked.hour} : ${picked.minute < 10 ? "0${picked.minute}" : picked.minute}";
     }
   }
+
+
+  static double scaleText(double baseFontSize) {
+    double height = Get.height;
+    double width = Get.width;
+    double scaleFactor = (height < width ? height : width) / 800; // Use a common base size
+    return baseFontSize * scaleFactor;
+  }
+
 }

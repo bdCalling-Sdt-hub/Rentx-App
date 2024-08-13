@@ -21,7 +21,7 @@ class HomeScreenMarch extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       extendBody: true,
-      bottomNavigationBar: const BottomBarMarch(currentIndex: 0),
+      // bottomNavigationBar: const BottomBarMarch(currentIndex: 0),
       drawer: HomeDrawerMerch(),
       appBar: AppBar(
         title: CommonText(text: ""),
@@ -170,6 +170,8 @@ class HomeScreenMarch extends StatelessWidget {
             Column(
               children: List.generate(5, (index) {
                 return CustomCouponCard(
+                  couponWidth: Get.width,
+                  couponHeight: 100,
                   onTap: () {
                     Get.toNamed(AppRoutes.couponDetailsScreen);
                   },

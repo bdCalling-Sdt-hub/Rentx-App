@@ -17,7 +17,7 @@ class RewardHeader extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetBuilder<RewardController>(builder: (controller) => Container(
       color: AppColors.background,
-      padding: const EdgeInsets.only(bottom: 12),
+      padding: const EdgeInsets.only(bottom: 12, right: 12, left: 12),
       child: Row(
         children: [
           8.width,

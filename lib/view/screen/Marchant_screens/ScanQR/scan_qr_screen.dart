@@ -18,7 +18,7 @@ class ScanQrScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      bottomNavigationBar: BottomBarMarch(currentIndex: 2),
+      // bottomNavigationBar: BottomBarMarch(currentIndex: 2),
       appBar: AppBar(
         centerTitle: true,
         title: CommonText(text: "Scan QR"),

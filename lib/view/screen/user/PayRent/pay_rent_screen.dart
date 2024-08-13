@@ -164,7 +164,7 @@ class PayRentScreen extends StatelessWidget {
           )
         ],
       ),
-      bottomNavigationBar: CommonBottomNavBar(currentIndex: 2),
+      // bottomNavigationBar: CommonBottomNavBar(currentIndex: 2),
     );
   }
 

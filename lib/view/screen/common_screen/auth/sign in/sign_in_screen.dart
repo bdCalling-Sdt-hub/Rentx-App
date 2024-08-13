@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:rentx/view/screen/Marchant_screens/Components/bottom_bar_march.dart';
 import '../../../../../extension/my_extension.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
@@ -105,7 +106,8 @@ class SignInScreen extends StatelessWidget {
                       titleText: "Merchant SignIn",
                       isLoading: controller.isLoading,
                       onTap: () {
-                        Get.toNamed(AppRoutes.homeScreenMarch);
+                        Get.to(() => BottomBarMarch());
+                        // Get.toNamed(AppRoutes.homeScreenMarch);
                         // if (formKey.currentState!.validate()) {
                         //   controller.signInUser();
                         // }

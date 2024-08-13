@@ -133,9 +133,9 @@ class ProfileScreenMarch extends StatelessWidget {
           );
         },
       ),
-      bottomNavigationBar: const BottomBarMarch(
-        currentIndex: 3,
-      ),
+      // bottomNavigationBar: const BottomBarMarch(
+      //   currentIndex: 3,
+      // ),
     );
   }
 

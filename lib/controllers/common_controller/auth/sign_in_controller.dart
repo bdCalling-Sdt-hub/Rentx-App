@@ -7,6 +7,7 @@ import '../../../core/app_routes.dart';
 import '../../../helpers/prefs_helper.dart';
 import '../../../services/api_service.dart';
 import '../../../utils/app_url.dart';
+import '../../../view/component/bottom_nav_bar/common_bottom_bar.dart';
 
 class SignInController extends GetxController {
   bool isLoading = false;
@@ -23,7 +24,7 @@ class SignInController extends GetxController {
   }
 
   Future<void> signInUser() async {
-    Get.toNamed(AppRoutes.home);
+    Get.to(() => CommonBottomNavBar());
     return;
     isLoading = true;
     update();

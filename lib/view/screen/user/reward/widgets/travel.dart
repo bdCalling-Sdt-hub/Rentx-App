@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:rentx/utils/app_colors.dart';
 import 'package:rentx/utils/app_images.dart';
 import 'package:rentx/utils/app_string.dart';
@@ -11,10 +12,11 @@ class Travel extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      margin: EdgeInsets.symmetric(horizontal: 16.w),
       height: 300,
       width: double.infinity,
       decoration: BoxDecoration(
-          color: AppColors.white, borderRadius: BorderRadius.circular(12)),
+          color: AppColors.white, borderRadius: BorderRadius.circular(12.r)),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [

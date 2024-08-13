@@ -33,7 +33,8 @@ class HomeScreen extends StatelessWidget {
                       color: AppColors.organ,
                       size: 34,
                     ),
-                  )
+                  ),
+                  16.width,
                 ],
               ),
               body: Column(
@@ -133,9 +134,9 @@ class HomeScreen extends StatelessWidget {
                   )
                 ],
               ),
-              bottomNavigationBar: const CommonBottomNavBar(
-                currentIndex: 0,
-              ),
+              // bottomNavigationBar: const CommonBottomNavBar(
+              //   currentIndex: 0,
+              // ),
             ));
   }
 }
