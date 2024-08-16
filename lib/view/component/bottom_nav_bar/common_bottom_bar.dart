@@ -16,15 +16,19 @@ class CommonBottomNavBar extends StatelessWidget {
 
   CommonBottomNavBar({super.key});
 
-  BottomNavbarController bottomNavbarController = Get.put(BottomNavbarController());
+  final BottomNavbarController bottomNavbarController = BottomNavbarController.instance;
 
   @override
   Widget build(BuildContext context) {
+
     return Scaffold(
       bottomNavigationBar: Obx(() {
         return CurvedNavigationBar(
             height: 60,
-            onTap: bottomNavbarController.onItemTapped,
+          index: bottomNavbarController.selectedIndex.value,
+            onTap: (index) {
+              bottomNavbarController.onItemTapped(index);
+            },
             color: AppColors.s200,
             buttonBackgroundColor: AppColors.s200,
             backgroundColor: AppColors.transparent,
@@ -46,7 +50,7 @@ class CommonBottomNavBar extends StatelessWidget {
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    CommonImage(imageSrc:  bottomNavbarController.selectedIndex.value == 1 ? AppIcons.rewardSolid : AppImages.reward),
+                    CommonImage(imageSrc:  bottomNavbarController.selectedIndex.value == 1  ? AppIcons.rewardSolid : AppImages.reward),
                     bottomNavbarController.selectedIndex.value == 1 ? SizedBox() :CommonText(text: "Reward", fontSize: 12, color: AppColors.black,)
                   ],
                 ),

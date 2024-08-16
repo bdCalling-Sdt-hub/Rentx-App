@@ -14,7 +14,9 @@ import '../../../../controllers/user/reward_controller.dart';
 import '../../../../utils/app_colors.dart';
 
 class RewardScreen extends StatelessWidget {
-  const RewardScreen({super.key});
+  RewardScreen({super.key});
+
+  final RewardController controller = RewardController.instance;
 
   @override
   Widget build(BuildContext context) {
@@ -34,10 +36,14 @@ class RewardScreen extends StatelessWidget {
             children: [
               const RewardHeader(),
               12.height,
-              if (controller.indexNumber == 0) const RewardsGuide(),
-              if (controller.indexNumber == 1) const Dining(),
-              if (controller.indexNumber == 2) const Shopping(),
-              if (controller.indexNumber == 3) const Travel(),
+              // Wrap the content with AnimatedSwitcher
+              AnimatedSwitcher(
+                duration: const Duration(milliseconds: 300),
+                transitionBuilder: (Widget child, Animation<double> animation) {
+                  return FadeTransition(opacity: animation, child: child);
+                },
+                child: _buildRewardContent(controller.indexNumber),
+              ),
             ],
           ),
         ),
@@ -45,4 +51,21 @@ class RewardScreen extends StatelessWidget {
       // bottomNavigationBar: const CommonBottomNavBar(currentIndex: 1),
     );
   }
+
+  // Method to build the reward content based on the index
+  Widget _buildRewardContent(int index) {
+    switch (index) {
+      case 0:
+        return const RewardsGuide(key: ValueKey('RewardsGuide'));
+      case 1:
+        return const Dining(key: ValueKey('Dining'));
+      case 2:
+        return const Shopping(key: ValueKey('Shopping'));
+      case 3:
+        return const Travel(key: ValueKey('Travel'));
+      default:
+        return const SizedBox.shrink(); // Return an empty widget if the index is not recognized
+    }
+  }
 }
+

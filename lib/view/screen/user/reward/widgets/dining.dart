@@ -51,7 +51,7 @@ class Dining extends StatelessWidget {
                           vertical: 8, horizontal: 20),
                       child: CouponCard(
                         onTap: () {
-                          Get.toNamed(AppRoutes.couponDetailsScreen);
+                          Get.toNamed(AppRoutes.couponRedeemScreen);
                         },
                         couponImage: AppImages.pizzaHut,
                         couponHeight: 110,

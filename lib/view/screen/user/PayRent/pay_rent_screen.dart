@@ -23,6 +23,7 @@ class PayRentScreen extends StatelessWidget {
     return Scaffold(
       backgroundColor: AppColors.b500,
       appBar: AppBar(
+        automaticallyImplyLeading: false,
         centerTitle: true,
         title: CommonText(
           text: "Pay Rent",

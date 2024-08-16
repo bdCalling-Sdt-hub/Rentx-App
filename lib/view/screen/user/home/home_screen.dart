@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+import 'package:rentx/controllers/BottomNavbarController/bottom_navbar_controller.dart';
 import 'package:rentx/core/app_routes.dart';
 import 'package:rentx/extension/my_extension.dart';
 import 'package:rentx/utils/app_colors.dart';
@@ -16,7 +17,9 @@ import '../../../../controllers/user/home/home_controller.dart';
 import '../../../component/bottom_nav_bar/common_bottom_bar.dart';
 
 class HomeScreen extends StatelessWidget {
-  const HomeScreen({super.key});
+  HomeScreen({super.key});
+
+
 
   @override
   Widget build(BuildContext context) {
@@ -83,7 +86,11 @@ class HomeScreen extends StatelessWidget {
                     ),
                   ),
                   12.height,
-                  const RewardItem(
+                  RewardItem(
+                    onTap: () {
+                      BottomNavbarController.instance.onItemTapped(2);
+                      Get.to(() => CommonBottomNavBar());
+                    },
                     text: AppString.dueRent,
                     buttonText: AppString.payNow,
                     amount: "৳16,000",
@@ -91,7 +98,10 @@ class HomeScreen extends StatelessWidget {
                   ),
                   12.height,
                   RewardItem(
-                    onTap: () => Get.toNamed(AppRoutes.reward),
+                    onTap: () {
+                      BottomNavbarController.instance.onItemTapped(1);
+                      Get.to(() => CommonBottomNavBar());
+                    },
                     amount: "2000",
                   ),
                   12.height,
@@ -126,7 +136,9 @@ class HomeScreen extends StatelessWidget {
                             const CommonText(
                               textAlign: TextAlign.left,
                                 maxLines: 2,
-                                text: AppString.everyoneWhoSolves)
+                                text: AppString.everyoneWhoSolves,
+                              fontSize: 12,
+                            )
                           ],
                         ),
                       ),

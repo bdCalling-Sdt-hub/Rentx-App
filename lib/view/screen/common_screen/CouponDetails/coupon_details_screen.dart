@@ -2,9 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:qr_flutter/qr_flutter.dart';
+import 'package:rentx/core/app_routes.dart';
 import 'package:rentx/extension/my_extension.dart';
 import 'package:rentx/helpers/other_helper.dart';
+import 'package:rentx/helpers/prefs_helper.dart';
 import 'package:rentx/utils/app_images.dart';
+import 'package:rentx/view/component/button/common_button.dart';
 import 'package:rentx/view/component/image/common_image.dart';
 import 'package:rentx/view/component/text/common_text.dart';
 import 'package:rentx/view/screen/Marchant_screens/Components/dotted_line_painter.dart';
@@ -23,7 +26,6 @@ class CouponDetailsScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
     return Scaffold(
       appBar: AppBar(
         title: CommonText(text: ""),
@@ -48,7 +50,7 @@ class CouponDetailsScreen extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
                       Padding(
-                        padding:  EdgeInsets.symmetric(horizontal: 30.w),
+                        padding: EdgeInsets.symmetric(horizontal: 30.w),
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
@@ -173,6 +175,14 @@ class CouponDetailsScreen extends StatelessWidget {
                 )
               ],
             ),
+            20.height,
+            PrefsHelper.isMerchant
+                ? SizedBox()
+                : CommonButton(
+                    onTap: () => Get.offAllNamed(AppRoutes.commonBottomBar),
+                    titleText: "Go To Home",
+                    borderColor: Colors.transparent,
+                  ),
           ],
         ),
       ),

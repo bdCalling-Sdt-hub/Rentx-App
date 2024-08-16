@@ -12,15 +12,17 @@ import 'package:rentx/view/screen/user/history/history_screen.dart';
 import 'package:rentx/view/screen/user/my_residences/my_residences_screen.dart';
 import 'package:rentx/view/screen/user/reward/reward_screen.dart';
 
+import '../view/component/bottom_nav_bar/common_bottom_bar.dart';
 import '../view/screen/Marchant_screens/BoostPackageScreens/boost_package_screen.dart';
 import '../view/screen/Marchant_screens/BoostPackageScreens/boosted_package_screen.dart';
 import '../view/screen/Marchant_screens/BoostPackageScreens/buy_package_screen.dart';
 import '../view/screen/Marchant_screens/BoostPackageScreens/payment_screen.dart';
 import '../view/screen/Marchant_screens/BoostPackageScreens/payment_successful_screen.dart';
 import '../view/screen/Marchant_screens/CompleteProfile/complete_profile_merch.dart';
-import '../view/screen/Marchant_screens/CouponDetails/coupon_details_screen.dart';
 import '../view/screen/Marchant_screens/ScanQR/qr_code_number.dart';
 import '../view/screen/Marchant_screens/ScanQR/scan_qr_screen.dart';
+import '../view/screen/common_screen/CouponDetails/coupon_details_screen.dart';
+import '../view/screen/common_screen/CouponDetails/coupon_redeem_screen.dart';
 import '../view/screen/common_screen/MyCoupons/my_coupons.dart';
 import '../view/screen/common_screen/auth/change_password/change_password_screen.dart';
 import '../view/screen/common_screen/auth/forgot password/create_password.dart';
@@ -91,6 +93,8 @@ class AppRoutes {
   static const String myResidences = "/my_residences_screen.dart";
   static const String payRentScreen = "/pay_rent_screen.dart";
   static const String myResidenceListScreen = "/my_residence_list_screen.dart";
+  static const String commonBottomBar = "/common_bottom_bar.dart";
+  static const String couponRedeemScreen = "/coupon_redeem_screen.dart";
 
   static List<GetPage> routes = [
     ///<<<================ Merchant Screens=============>>>
@@ -200,9 +204,9 @@ class AppRoutes {
         page: () => MessageScreen(),
         transition: Transition.rightToLeftWithFade),
     GetPage(
-      name: profile,
-      page: () => ProfileScreen(),
-    ),
+        name: profile,
+        page: () => ProfileScreen(),
+        transition: Transition.upToDown),
     GetPage(
         name: editProfile,
         page: () => EditProfile(),
@@ -240,25 +244,33 @@ class AppRoutes {
         page: () => AboutUs(),
         transition: Transition.rightToLeftWithFade),
     GetPage(
-      name: reward,
-      page: () => RewardScreen(),
-    ),
+        name: reward,
+        page: () => RewardScreen(),
+        transition: Transition.upToDown),
 
     GetPage(
-      name: history,
-      page: () => const HistoryScreen(),
-    ),
+        name: history,
+        page: () => HistoryScreen(),
+        transition: Transition.upToDown),
     GetPage(
         name: myResidences,
         page: () => const MyResidencesScreen(),
         transition: Transition.rightToLeftWithFade),
     GetPage(
-      name: payRentScreen,
-      page: () => PayRentScreen(),
-    ),
+        name: payRentScreen,
+        page: () => PayRentScreen(),
+        transition: Transition.upToDown),
     GetPage(
         name: myResidenceListScreen,
         page: () => MyResidenceListScreen(),
+        transition: Transition.rightToLeftWithFade),
+    GetPage(
+        name: commonBottomBar,
+        page: () => CommonBottomNavBar(),
+        transition: Transition.rightToLeftWithFade),
+    GetPage(
+        name: couponRedeemScreen,
+        page: () => CouponRedeemScreen(),
         transition: Transition.rightToLeftWithFade),
   ];
 }

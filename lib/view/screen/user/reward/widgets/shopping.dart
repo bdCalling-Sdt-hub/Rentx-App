@@ -50,7 +50,7 @@ class Shopping extends StatelessWidget {
                           vertical: 8, horizontal: 20),
                       child: CouponCard(
                         onTap: () {
-                          Get.toNamed(AppRoutes.couponDetailsScreen);
+                          Get.toNamed(AppRoutes.couponRedeemScreen);
                         },
                         couponImage: index % 2 == 0
                             ? AppImages.yellow

@@ -9,7 +9,7 @@ import 'package:rentx/view/component/text/common_text.dart';
 import 'widgets/history_item.dart';
 
 class HistoryScreen extends StatelessWidget {
-  const HistoryScreen({super.key});
+  HistoryScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -28,58 +28,89 @@ class HistoryScreen extends StatelessWidget {
               padding: const EdgeInsets.all(10),
               margin: const EdgeInsets.symmetric(horizontal: 20),
               decoration: BoxDecoration(
-                  color: AppColors.s200.withOpacity(0.5),
-                  borderRadius: BorderRadius.circular(12)),
+                color: AppColors.s200.withOpacity(0.5),
+                borderRadius: BorderRadius.circular(12),
+              ),
               child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   GestureDetector(
-                    onTap: () => controller.selectItem(AppString.redemption),
+                    onTap: () {
+                      controller.selectItem(AppString.redemption);
+                    },
                     child: Container(
-                        padding: const EdgeInsets.symmetric(
-                            horizontal: 12, vertical: 4),
-                        decoration: BoxDecoration(
-                            color:
-                                controller.selectHistory == AppString.redemption
-                                    ? AppColors.s500
-                                    : AppColors.transparent,
-                            borderRadius: BorderRadius.circular(12)),
-                        child: const CommonText(text: AppString.redemption)),
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 20, vertical: 8),
+                      decoration: BoxDecoration(
+                        color: controller.selectHistory == AppString.redemption
+                            ? AppColors.s500
+                            : AppColors.transparent,
+                        borderRadius: BorderRadius.circular(12),
+                      ),
+                      child: CommonText(
+                        text: AppString.redemption,
+                        color: controller.selectHistory == AppString.redemption
+                            ? AppColors.black
+                            : AppColors.white,
+                        fontSize: 18,
+                        fontWeight: FontWeight.w700,
+                      ),
+                    ),
                   ),
                   GestureDetector(
-                    onTap: () => controller.selectItem(AppString.transaction),
+                    onTap: () {
+                      controller.selectItem(AppString.transaction);
+                    },
                     child: Container(
-                        padding: const EdgeInsets.symmetric(
-                            horizontal: 12, vertical: 4),
-                        decoration: BoxDecoration(
-                            color: controller.selectHistory ==
-                                    AppString.transaction
-                                ? AppColors.s500
-                                : AppColors.transparent,
-                            borderRadius: BorderRadius.circular(12)),
-                        child: const CommonText(text: AppString.transaction)),
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 20, vertical: 8),
+                      decoration: BoxDecoration(
+                        color: controller.selectHistory == AppString.transaction
+                            ? AppColors.s500
+                            : AppColors.transparent,
+                        borderRadius: BorderRadius.circular(12),
+                      ),
+                      child: CommonText(
+                        text: AppString.transaction,
+                        color: controller.selectHistory == AppString.transaction
+                            ? AppColors.black
+                            : AppColors.white,
+                        fontSize: 18,
+                        fontWeight: FontWeight.w700,
+                      ),
+                    ),
                   ),
                 ],
               ),
             ),
-            if (controller.selectHistory == AppString.redemption)
-              Expanded(
-                  child: ListView.builder(
-                itemCount: 10,
-                itemBuilder: (context, index) => HistoryItem(
-                  isUse: index == 1 || index == 3 ? true : false,
+            // Wrap the ListView.builder with AnimatedSwitcher
+            Expanded(
+              child: AnimatedSwitcher(
+                duration: const Duration(milliseconds: 500),
+                transitionBuilder: (Widget child, Animation<double> animation) {
+                  return FadeTransition(opacity: animation, child: child);
+                },
+                child: controller.selectHistory == AppString.redemption
+                    ? ListView.builder(
+                  key: const ValueKey(AppString.redemption),
+                  itemCount: 10,
+                  itemBuilder: (context, index) => HistoryItem(
+                    isUse: index == 1 || index == 3,
+                  ),
+                )
+                    : ListView.builder(
+                  key: const ValueKey(AppString.transaction),
+                  itemCount: 2,
+                  itemBuilder: (context, index) =>
+                  const HistoryItem(),
                 ),
-              )),
-            if (controller.selectHistory == AppString.transaction)
-              Expanded(
-                  child: ListView.builder(
-                itemCount: 2,
-                itemBuilder: (context, index) => const HistoryItem(),
-              ))
+              ),
+            ),
           ],
         ),
       ),
-      // bottomNavigationBar: const CommonBottomNavBar(currentIndex: 3),
     );
   }
 }
+
+

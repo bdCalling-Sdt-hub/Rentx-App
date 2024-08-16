@@ -15,6 +15,8 @@ class BottomNavbarController extends GetxController{
 
   var selectedIndex = 0.obs;
 
+  static BottomNavbarController get instance => Get.put(BottomNavbarController());
+
   void onItemTapped(int index) {
     selectedIndex.value = index;
   }

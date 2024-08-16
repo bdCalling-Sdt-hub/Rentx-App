@@ -26,12 +26,15 @@ class RewardsGuide extends StatelessWidget {
           color: AppColors.background,
           child: Column(
             children: [
-              const CommonText(
-                text: AppString.popularVouchers,
-                fontSize: 20,
-                fontWeight: FontWeight.w700,
-                bottom: 12,
-              ).start,
+              Padding(
+                padding: const EdgeInsets.only(left: 20.0),
+                child: const CommonText(
+                  text: AppString.popularVouchers,
+                  fontSize: 20,
+                  fontWeight: FontWeight.w700,
+                  bottom: 12,
+                ).start,
+              ),
               Column(
                 children: List.generate(
                   5,
@@ -41,7 +44,7 @@ class RewardsGuide extends StatelessWidget {
                           vertical: 8, horizontal: 20),
                       child: CouponCard(
                         onTap: () {
-                          Get.toNamed(AppRoutes.couponDetailsScreen);
+                          Get.toNamed(AppRoutes.couponRedeemScreen);
                         },
                         couponImage: AppImages.pizzaHut,
                         couponHeight: 110,
