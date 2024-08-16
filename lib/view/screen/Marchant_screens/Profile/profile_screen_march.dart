@@ -42,7 +42,7 @@ class ProfileScreenMarch extends StatelessWidget {
                     backgroundColor: Colors.transparent,
                     child: ClipOval(
                       child: CommonImage(
-                        imageSrc: AppImages.profile,
+                        imageSrc: "assets/images/profilePhoto.png",
                         imageType: ImageType.png,
                         height: 170,
                         width: 170,
@@ -74,6 +74,12 @@ class ProfileScreenMarch extends StatelessWidget {
                           title: AppString.myCoupons,
                           onTap: () => Get.toNamed(AppRoutes.myCoupons),
                           // onTap: () => Get.toNamed(AppRoutes.setting),
+                        ),
+                        12.height,
+                        Item(
+                            onTap: () => Get.toNamed(AppRoutes.voucherRequestScreen),
+                            title: AppString.requestForVoucher,
+                            image: AppIcons.voucherRequestIcon
                         ),
                         12.height,
                         Item(

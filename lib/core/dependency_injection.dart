@@ -2,6 +2,7 @@ import 'package:get/get.dart';
 
 import '../controllers/BottomNavbarController/bottom_navbar_controller.dart';
 import '../controllers/MerchantControllers/PaymentController/payment_controller.dart';
+import '../controllers/MerchantControllers/VoucherController/voucher_request_controller.dart';
 import '../controllers/common_controller/auth/change_password_controller.dart';
 import '../controllers/common_controller/auth/forget_password_controller.dart';
 import '../controllers/common_controller/auth/landlord_Info_controller.dart';
@@ -40,5 +41,6 @@ class DependencyInjection extends Bindings {
     Get.lazyPut(() => HistoryController(), fenix: true);
     Get.lazyPut(() => MyResidencesController(), fenix: true);
     Get.lazyPut(() => BottomNavbarController(), fenix: true);
+    Get.lazyPut(() => VoucherRequestController(), fenix: true);
   }
 }

@@ -31,17 +31,13 @@ class HomeDrawerMerch extends StatelessWidget {
                   Row(
                     children: [
                       Center(
-                        child: CircleAvatar(
-                          radius: 25.sp,
-                          child: ClipOval(
-                            child: CommonImage(
-                              imageSrc: "https://rb.gy/fpz6t0",
-                              imageType: ImageType.network,
-                              height: 170,
-                              width: 170,
-                              defaultImage: AppImages.profile,
-                            ),
-                          ),
+                        child: CommonImage(
+                          borderRadius: 100,
+                          imageSrc: "assets/images/profilePhoto.png",
+                          imageType: ImageType.png,
+                          height: 60,
+                          width: 60,
+                          defaultImage: AppImages.profile,
                         ),
                       ),
                       12.width,
@@ -71,6 +67,12 @@ class HomeDrawerMerch extends StatelessWidget {
                     onTap: () => Get.toNamed(AppRoutes.myCoupons),
                     title: AppString.myCoupons,
                     svgIcon: AppIcons.coupons,),
+
+                  drawerItem(
+                      onTap: () => Get.toNamed(AppRoutes.voucherRequestScreen),
+                      title: AppString.requestForVoucher,
+                      svgIcon: AppIcons.voucherRequestIcon),
+
                   drawerItem(
                       onTap: () => Get.toNamed(AppRoutes.supportScreen),
                       title: AppString.support,

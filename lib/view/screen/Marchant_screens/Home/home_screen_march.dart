@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+import 'package:rentx/controllers/BottomNavbarController/bottom_navbar_controller.dart';
 import 'package:rentx/extension/my_extension.dart';
 import 'package:rentx/utils/app_colors.dart';
 import 'package:rentx/utils/app_icons.dart';
@@ -45,16 +46,13 @@ class HomeScreenMarch extends StatelessWidget {
             Row(
               children: [
                 Center(
-                  child: CircleAvatar(
-                    radius: 35.r,
-                    child: ClipOval(
-                      child: CommonImage(
-                        imageSrc:
-                            "https://media.istockphoto.com/id/1311084168/photo/overjoyed-pretty-asian-woman-look-at-camera-with-sincere-laughter.jpg",
-                        imageType: ImageType.network,
-                        defaultImage: AppImages.profile,
-                      ),
-                    ),
+                  child: CommonImage(
+                    width: 80,
+                    height: 80,
+                    borderRadius: 100,
+                    imageSrc: "assets/images/profilePhoto.png",
+                    imageType: ImageType.png,
+                    defaultImage: AppImages.profile,
                   ),
                 ),
                 12.width,
@@ -110,20 +108,21 @@ class HomeScreenMarch extends StatelessWidget {
                         8.height,
                         CommonText(
                           text: "${AppString.youHave} 2",
-                          fontSize: 24,
+                          fontSize: 20,
                           fontWeight: FontWeight.w500,
                           color: AppColors.black,
                         ),
                         CommonText(
                           text: "${AppString.couponsToday}!",
-                          fontSize: 24,
+                          fontSize: 20,
                           fontWeight: FontWeight.w500,
                           color: AppColors.black,
                         ),
-                        8.height,
+                        12.height,
                         InkWell(
                           onTap: () {
-
+                            BottomNavbarController.instance.onItemTapped(1);
+                            Get.to(() => BottomBarMarch());
                           },
                           child: Container(
                             height: 40.h,
@@ -153,7 +152,7 @@ class HomeScreenMarch extends StatelessWidget {
                   ),
                   Positioned(
                     bottom: 0,
-                    right: 50 ,
+                    right: Get.width * 0.1 ,
                       child: CommonImage(imageSrc: AppImages.couponBadge, imageType: ImageType.png, height: 110, width: 85,))
                 ],
               ),

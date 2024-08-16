@@ -94,6 +94,80 @@ class PopUpMenu extends StatelessWidget {
   }
 }
 
+class PopUpMenuItems extends StatelessWidget {
+  const PopUpMenuItems({super.key,
+    required this.items,
+    required this.selectedItem,
+    required this.onTap,
+    this.height = 30,
+    this.selectedColor = AppColors.black,
+    this.unselectedColor = Colors.transparent,
+    this.style,
+    this.isContainer = false,
+    this.iconColor = AppColors.black,
+    this.iconData = Icons.keyboard_arrow_down_outlined});
+
+  final List items;
+  final List selectedItem;
+  final Color selectedColor;
+  final Color iconColor;
+  final Color unselectedColor;
+  final double height;
+  final Function(int index) onTap;
+  final TextStyle? style;
+  final bool isContainer;
+  final IconData iconData;
+
+  @override
+  Widget build(BuildContext context) {
+    return PopupMenuButton(
+      shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(8.r),
+          side: BorderSide(color: AppColors.blue)),
+      offset: const Offset(1, 1),
+      padding: EdgeInsets.zero,
+      itemBuilder: (BuildContext context) => <PopupMenuEntry<String>>[
+        PopupMenuItem<String>(
+          value: 'option1',
+          child: Column(
+            children: List.generate(
+              items.length,
+                  (index) => GestureDetector(
+                onTap: () => onTap(index),
+                child: Padding(
+                  padding: const EdgeInsets.all(12.0),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text(
+                        items[index].toString(),
+                        style: style,
+                      ),
+                      selectedItem
+                          .contains(items[index].toString())
+                          ? Icon(Icons.check, size: 18,) : SizedBox()
+                    ],
+                  ),
+                ),
+              ),
+            ),
+          ),
+        ),
+      ],
+        icon: Padding(
+          padding: EdgeInsets.only(left: isContainer ? 40 : 0),
+          child: Icon(
+            iconData,
+            color: iconColor,
+            size: height,
+          ),
+        )
+
+    );
+  }
+}
+
+
 logOutPopUp() {
   showDialog(
     context: Get.context!,

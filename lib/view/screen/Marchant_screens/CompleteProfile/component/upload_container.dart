@@ -69,19 +69,8 @@ class UploadContainer extends StatelessWidget {
               CommonText(top: 4,text: "Image file selected", fontWeight: fontWeight, fontSize: fontSize,)
             ],
           )
-              : Column(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              const Icon(Icons.add,
+              : const Icon(Icons.add,
                   size: 30, color: AppColors.white),
-              CommonText(
-                text: uploadText,
-                color: AppColors.white,
-                fontSize: fontSize,
-              ),
-            ],
-          ),
         ),
       ),
     );

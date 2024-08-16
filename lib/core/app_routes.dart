@@ -21,6 +21,7 @@ import '../view/screen/Marchant_screens/BoostPackageScreens/payment_successful_s
 import '../view/screen/Marchant_screens/CompleteProfile/complete_profile_merch.dart';
 import '../view/screen/Marchant_screens/ScanQR/qr_code_number.dart';
 import '../view/screen/Marchant_screens/ScanQR/scan_qr_screen.dart';
+import '../view/screen/Marchant_screens/VoucherRequest/voucher_request_screen.dart';
 import '../view/screen/common_screen/CouponDetails/coupon_details_screen.dart';
 import '../view/screen/common_screen/CouponDetails/coupon_redeem_screen.dart';
 import '../view/screen/common_screen/MyCoupons/my_coupons.dart';
@@ -83,6 +84,7 @@ class AppRoutes {
   static const String myCoupons = "/my_coupons.dart";
   static const String supportScreen = "/support_screen.dart";
   static const String qrCodeNumber = "/qr_code_number.dart";
+  static const String voucherRequestScreen = "/voucher_request_screen.dart";
 
   ///======================= User Screen =================
 
@@ -154,6 +156,11 @@ class AppRoutes {
         name: qrCodeNumber,
         page: () => QrCodeNumber(),
         transition: Transition.rightToLeftWithFade),
+    GetPage(
+        name: voucherRequestScreen,
+        page: () => VoucherRequestScreen(),
+        transition: Transition.rightToLeftWithFade),
+
 
     GetPage(
       name: test,

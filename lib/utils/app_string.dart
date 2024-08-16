@@ -125,7 +125,7 @@ class AppString {
 
   static const pointsRedeemed = "Points Redeemed";
   static const coupons = "Coupons";
-  static const youHave = "You Have";
+  static const youHave = "You Have Scanned";
   static const couponsToday = "Coupons Today";
   static const check = "Check";
   static const chooseBoostPackage = "Choose your preferred package and boost your vouchers.";
@@ -173,4 +173,16 @@ class AppString {
   static const recentRentHistory = "Recent Rent History";
   static const myResidenceList = "My Residence List";
   static const update = "Update";
+  static const requestForVoucher = "Request for Voucher";
+  static const voucherRequest = "Voucher Request";
+  static const shopName = "Shop Name";
+  static const shopType = "Shop Type";
+  static const requestedDiscount = "Requested Discount";
+  static const validity = "Validity";
+  static const productImage = "Product Image";
+  static const enterYourShopName = "Enter your shop name";
+  static const enterYourShopType = "Enter your shop type";
+  static const enterYourRequestedDiscount = "Enter your requested discount";
+  static const enterYourShopAddress = "Enter your shop address";
+  static const enterYourVoucherValidity = "Enter your voucher validity";
 }
