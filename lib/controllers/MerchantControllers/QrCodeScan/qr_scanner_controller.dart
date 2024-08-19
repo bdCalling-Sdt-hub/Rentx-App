@@ -38,7 +38,7 @@ class QrScannerController extends GetxController{
   }
 
   static openQrScanner(){
-    Get.offAll(()=> AiBarcodeScanner(
+    Get.to(()=> AiBarcodeScanner(
       appBarBuilder: (context, controller) {
         return AppBar(
           backgroundColor: AppColors.background,
