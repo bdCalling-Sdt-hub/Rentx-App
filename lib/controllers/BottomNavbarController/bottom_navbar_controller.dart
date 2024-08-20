@@ -11,6 +11,7 @@ import 'package:rentx/view/screen/user/history/history_screen.dart';
 import 'package:rentx/view/screen/user/home/home_screen.dart';
 import 'package:rentx/view/screen/user/reward/reward_screen.dart';
 
+import '../../view/screen/Marchant_screens/ScanQR/open_ai_bar_code_scanner.dart';
 import '../MerchantControllers/QrCodeScan/qr_scanner_controller.dart';
 
 class BottomNavbarController extends GetxController{
@@ -26,7 +27,7 @@ class BottomNavbarController extends GetxController{
   final List<Widget> merchantAllScreens = <Widget>[
     HomeScreenMarch(),
     HistoryScreenMarch(),
-    QrScannerController.openQrScanner(),
+    OpenAiBarCodeScanner(),
     ProfileScreenMarch()
   ];
 
@@ -38,3 +39,4 @@ class BottomNavbarController extends GetxController{
     ProfileScreen()
   ];
 }
+
