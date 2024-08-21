@@ -73,8 +73,8 @@ class PayRentScreen extends StatelessWidget {
               ],
             ),
           ),
-          GestureDetector(
-            onTap: () => Get.toNamed(AppRoutes.buyPackageScreen),
+          InkWell(
+            // onTap: () => Get.toNamed(AppRoutes.buyPackageScreen),
             child: Container(
               padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 12),
               decoration: const BoxDecoration(
