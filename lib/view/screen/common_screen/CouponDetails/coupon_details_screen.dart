@@ -7,7 +7,9 @@ import 'package:rentx/extension/my_extension.dart';
 import 'package:rentx/helpers/other_helper.dart';
 import 'package:rentx/helpers/prefs_helper.dart';
 import 'package:rentx/utils/app_images.dart';
+import 'package:rentx/utils/app_string.dart';
 import 'package:rentx/view/component/button/common_button.dart';
+import 'package:rentx/view/component/downloadVoucher/download_voucher_button.dart';
 import 'package:rentx/view/component/image/common_image.dart';
 import 'package:rentx/view/component/text/common_text.dart';
 import 'package:rentx/view/screen/Marchant_screens/Components/dotted_line_painter.dart';
@@ -16,6 +18,8 @@ import '../../../../utils/app_colors.dart';
 
 class CouponDetailsScreen extends StatelessWidget {
   CouponDetailsScreen({super.key});
+
+  static bool isMyCoupons = false;
 
   List couponItems = [
     "Redeem the voucher by using your 2000 reward points.",
@@ -30,7 +34,7 @@ class CouponDetailsScreen extends StatelessWidget {
       appBar: AppBar(
         title: CommonText(text: ""),
       ),
-      body: Padding(
+      body: SingleChildScrollView(
         padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 20.h),
         child: Column(
           children: [
@@ -66,14 +70,14 @@ class CouponDetailsScreen extends StatelessWidget {
                                   mainAxisAlignment:
                                       MainAxisAlignment.spaceBetween,
                                   children: [
-                                    CommonText(
+                                    const CommonText(
                                       text: "20%",
                                       fontSize: 24,
                                       fontWeight: FontWeight.w700,
                                       color: Colors.black,
                                     ),
                                     8.width,
-                                    CommonText(
+                                    const CommonText(
                                       text: "OFF",
                                       fontWeight: FontWeight.w600,
                                       fontSize: 20,
@@ -81,13 +85,13 @@ class CouponDetailsScreen extends StatelessWidget {
                                     )
                                   ],
                                 ),
-                                CommonText(
+                                const CommonText(
                                   text: "KFC",
                                   fontSize: 20,
                                   fontWeight: FontWeight.w600,
                                   color: Colors.black,
                                 ),
-                                CommonText(
+                                const CommonText(
                                     text: "2500 Points",
                                     fontSize: 10,
                                     color: Colors.black)
@@ -97,7 +101,7 @@ class CouponDetailsScreen extends StatelessWidget {
                         ),
                       ),
                       12.height,
-                      CommonText(
+                      const CommonText(
                         text: "Get 15% at your next KFC buy. ",
                         color: AppColors.black,
                         fontSize: 16,
@@ -177,6 +181,10 @@ class CouponDetailsScreen extends StatelessWidget {
             ),
             20.height,
             PrefsHelper.isMerchant
+                ? SizedBox()
+                : downloadVoucherButton(),
+            12.height,
+            PrefsHelper.isMerchant || isMyCoupons
                 ? SizedBox()
                 : CommonButton(
                     onTap: () => Get.offAllNamed(AppRoutes.commonBottomBar),

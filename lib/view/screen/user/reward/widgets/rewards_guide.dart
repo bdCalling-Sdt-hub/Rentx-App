@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:rentx/extension/my_extension.dart';
+import 'package:rentx/view/screen/common_screen/CouponDetails/coupon_details_screen.dart';
 import 'package:rentx/view/screen/user/reward/widgets/reward_points.dart';
 import 'package:rentx/view/screen/user/reward/widgets/sliders.dart';
 
@@ -44,6 +45,7 @@ class RewardsGuide extends StatelessWidget {
                           vertical: 8, horizontal: 20),
                       child: CouponCard(
                         onTap: () {
+                          CouponDetailsScreen.isMyCoupons = false;
                           Get.toNamed(AppRoutes.couponRedeemScreen);
                         },
                         couponImage: AppImages.pizzaHut,

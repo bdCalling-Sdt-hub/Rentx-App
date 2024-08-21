@@ -185,4 +185,7 @@ class AppString {
   static const enterYourRequestedDiscount = "Enter your requested discount";
   static const enterYourShopAddress = "Enter your shop address";
   static const enterYourVoucherValidity = "Enter your voucher validity";
+  static const numberOfVouchers = "Number of Vouchers";
+  static const enterRequestedNumberOfVoucher = "Enter your requested number of voucher";
+  static const downloadVoucher = "Download Voucher";
 }

@@ -9,6 +9,7 @@ class VoucherRequestController extends GetxController{
    TextEditingController shopNameController = TextEditingController();
    TextEditingController shopTypeController = TextEditingController();
    TextEditingController requestedDiscountController = TextEditingController();
+   TextEditingController requestedNumberOfVouchers = TextEditingController();
    TextEditingController addressController = TextEditingController();
    TextEditingController validityController = TextEditingController();
 

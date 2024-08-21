@@ -69,6 +69,14 @@ class VoucherRequestScreen extends StatelessWidget {
               ),
               16.height,
 
+              CommonText(text: AppString.numberOfVouchers),
+              12.height,
+              CommonTextField(
+                controller: voucherRequestController.requestedNumberOfVouchers,
+                hintText: AppString.enterRequestedNumberOfVoucher,
+              ),
+              16.height,
+
               CommonText(text: AppString.address),
               12.height,
               CommonTextField(

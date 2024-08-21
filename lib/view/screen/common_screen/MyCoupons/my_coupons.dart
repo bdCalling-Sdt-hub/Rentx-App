@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:rentx/view/component/text/common_text.dart';
+import 'package:rentx/view/screen/common_screen/CouponDetails/coupon_details_screen.dart';
 
 import '../../../../core/app_routes.dart';
 import '../../../../utils/app_images.dart';
@@ -28,6 +29,7 @@ class MyCoupons extends StatelessWidget {
             return CustomCouponCard(
                 couponWidth: Get.width,
                 onTap: () {
+                  CouponDetailsScreen.isMyCoupons = true;
                   Get.toNamed(AppRoutes.couponDetailsScreen);
                 },
                 couponImage: AppImages.pizzaHut);
