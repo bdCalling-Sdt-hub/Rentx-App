@@ -109,7 +109,9 @@ class SignInScreen extends StatelessWidget {
                       isLoading: controller.isLoading,
                       onTap: () {
                         PrefsHelper.isMerchant = true;
-                        Get.to(() => BottomBarMarch());
+                        Get.to(() => const BottomBarMarch(),
+                            transition: Transition.rightToLeftWithFade,
+                            duration: const Duration(milliseconds: 500));
                         // Get.toNamed(AppRoutes.homeScreenMarch);
                         // if (formKey.currentState!.validate()) {
                         //   controller.signInUser();

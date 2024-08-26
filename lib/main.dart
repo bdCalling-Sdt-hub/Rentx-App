@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+import 'package:permission_handler/permission_handler.dart';
 import 'core/app_routes.dart';
 import 'core/dependency_injection.dart';
 import 'helpers/prefs_helper.dart';
@@ -14,6 +15,7 @@ Future<void> main() async {
 
   DependencyInjection dI = DependencyInjection();
   dI.dependencies();
+  await Permission.photos.request();
   await PrefsHelper.getAllPrefData();
   NotificationService.initLocalNotification();
   SocketServices.connectToSocket();

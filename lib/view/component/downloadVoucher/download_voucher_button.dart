@@ -8,9 +8,9 @@ import 'package:rentx/utils/app_colors.dart';
 import 'package:rentx/utils/app_string.dart';
 import 'package:rentx/view/component/text/common_text.dart';
 
-InkWell downloadVoucherButton() {
+InkWell downloadVoucherButton({required VoidCallback onTap}) {
   return InkWell(
-    onTap: () {},
+    onTap: onTap,
     child: Container(
       padding: EdgeInsets.symmetric(
           horizontal: 30.w, vertical: 12.h),

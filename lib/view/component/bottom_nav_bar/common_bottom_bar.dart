@@ -22,6 +22,7 @@ class CommonBottomNavBar extends StatelessWidget {
   Widget build(BuildContext context) {
 
     return Scaffold(
+      extendBody: true,
       bottomNavigationBar: Obx(() {
         return CurvedNavigationBar(
             height: 60,
@@ -89,7 +90,17 @@ class CommonBottomNavBar extends StatelessWidget {
            );
       },),
       body: Obx(() {
-        return bottomNavbarController.userAllScreens.elementAt(bottomNavbarController.selectedIndex.value);
+        return AnimatedSwitcher(
+          duration: const Duration(milliseconds: 500),
+          transitionBuilder: (Widget child, Animation<double> animation) {
+            return FadeTransition(
+              opacity: animation,
+              child: child,
+            );
+          },
+          child: bottomNavbarController.userAllScreens
+              .elementAt(bottomNavbarController.selectedIndex.value),
+        );
       }),
     );
   }

@@ -7,6 +7,7 @@ import 'package:rentx/view/screen/common_screen/auth/sign%20up/landlord_infomati
 import 'package:rentx/view/screen/common_screen/setting/about_us.dart';
 import 'package:rentx/view/screen/common_screen/setting/support_screen.dart';
 import 'package:rentx/view/screen/selection_role_screen.dart';
+import 'package:rentx/view/screen/user/PayRent/pay_rent_additional_screen.dart';
 import 'package:rentx/view/screen/user/PayRent/pay_rent_screen.dart';
 import 'package:rentx/view/screen/user/history/history_screen.dart';
 import 'package:rentx/view/screen/user/my_residences/my_residences_screen.dart';
@@ -97,6 +98,7 @@ class AppRoutes {
   static const String myResidenceListScreen = "/my_residence_list_screen.dart";
   static const String commonBottomBar = "/common_bottom_bar.dart";
   static const String couponRedeemScreen = "/coupon_redeem_screen.dart";
+  static const String payRentAdditionalScreen = "/pay_rent_additional_screen.dart";
 
   static List<GetPage> routes = [
     ///<<<================ Merchant Screens=============>>>
@@ -279,5 +281,9 @@ class AppRoutes {
         name: couponRedeemScreen,
         page: () => CouponRedeemScreen(),
         transition: Transition.rightToLeftWithFade),
+    GetPage(
+        name: payRentAdditionalScreen,
+        page: () => PayRentAdditionalScreen(),
+        transition: Transition.leftToRightWithFade),
   ];
 }

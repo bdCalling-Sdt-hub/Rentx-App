@@ -3,7 +3,6 @@ import 'package:get/get.dart';
 import 'package:rentx/controllers/user/history_controller.dart';
 import 'package:rentx/utils/app_colors.dart';
 import 'package:rentx/utils/app_string.dart';
-import 'package:rentx/view/component/bottom_nav_bar/common_bottom_bar.dart';
 import 'package:rentx/view/component/text/common_text.dart';
 
 import 'widgets/history_item.dart';
@@ -38,9 +37,9 @@ class HistoryScreen extends StatelessWidget {
                     onTap: () {
                       controller.selectItem(AppString.redemption);
                     },
-                    child: Container(
-                      padding: const EdgeInsets.symmetric(
-                          horizontal: 20, vertical: 8),
+                    child: AnimatedContainer(
+                      duration: const Duration(milliseconds: 300),
+                      padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 8),
                       decoration: BoxDecoration(
                         color: controller.selectHistory == AppString.redemption
                             ? AppColors.s500
@@ -61,9 +60,9 @@ class HistoryScreen extends StatelessWidget {
                     onTap: () {
                       controller.selectItem(AppString.transaction);
                     },
-                    child: Container(
-                      padding: const EdgeInsets.symmetric(
-                          horizontal: 20, vertical: 8),
+                    child: AnimatedContainer(
+                      duration: const Duration(milliseconds: 300),
+                      padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 8),
                       decoration: BoxDecoration(
                         color: controller.selectHistory == AppString.transaction
                             ? AppColors.s500

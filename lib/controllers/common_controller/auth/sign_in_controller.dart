@@ -24,7 +24,9 @@ class SignInController extends GetxController {
   }
 
   Future<void> signInUser() async {
-    Get.to(() => CommonBottomNavBar());
+    Get.to(() => CommonBottomNavBar(),
+        transition: Transition.rightToLeftWithFade,
+        duration: const Duration(milliseconds: 500));
     return;
     isLoading = true;
     update();

@@ -85,27 +85,21 @@ class HomeDrawerMerch extends StatelessWidget {
                       onTap: () => Get.toNamed(AppRoutes.setting),
                       title: AppString.settings,
                       icon: Icons.settings_outlined),
-                  InkWell(
-                    onTap: () {
-                      controller.tappedLanguage();
-                    },
-                    child: Row(
-                      children: [
-                        drawerItem(
-                            title: AppString.languages,
-                            icon: Icons.language),
+                  Row(
+                    children: [
+                      drawerItem(
+                          title: AppString.languages,
+                          icon: Icons.language),
 
-                        controller.isLanguageTapped?
-                            PopUpMenu(
-                              iconColor: AppColors.white,
-                                items: controller.languages,
-                                selectedItem: [
-                                  controller.selectedLanguage
-                                ],
-                                onTap: controller.selectLanguage) : const Icon(Icons.arrow_forward_ios, color: AppColors.white, size: 18,),
+                      PopUpMenu(
+                          items: controller.languages,
+                          iconColor: AppColors.s500,
+                          selectedItem: [
+                            controller.selectedLanguage
+                          ],
+                          onTap: controller.selectLanguage)
 
-                      ],
-                    ),
+                    ],
                   ),
                   drawerItem(
                       onTap: () => Get.toNamed(AppRoutes.aboutUs),

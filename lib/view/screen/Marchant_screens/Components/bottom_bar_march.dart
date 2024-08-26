@@ -1,14 +1,11 @@
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:rentx/controllers/MerchantControllers/QrCodeScan/qr_scanner_controller.dart';
 import 'package:rentx/utils/app_icons.dart';
 import 'package:rentx/view/component/image/common_image.dart';
 import 'package:rentx/view/component/text/common_text.dart';
 
 import '../../../../controllers/BottomNavbarController/bottom_navbar_controller.dart';
-import '../../../../core/app_routes.dart';
 import '../../../../utils/app_colors.dart';
 
 class BottomBarMarch extends StatefulWidget {
@@ -27,6 +24,7 @@ class _BottomBarMarchState extends State<BottomBarMarch> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      extendBody: true,
       bottomNavigationBar: Obx(
         () {
           return CurvedNavigationBar(
@@ -133,9 +131,18 @@ class _BottomBarMarchState extends State<BottomBarMarch> {
           );
         },
       ),
-      body: Obx(() {
-        return bottomNavbarController.merchantAllScreens
-            .elementAt(bottomNavbarController.selectedIndex.value);
+      body:  Obx(() {
+        return AnimatedSwitcher(
+          duration: const Duration(milliseconds: 500),
+          transitionBuilder: (Widget child, Animation<double> animation) {
+            return FadeTransition(
+              opacity: animation,
+              child: child,
+            );
+          },
+          child: bottomNavbarController.merchantAllScreens
+              .elementAt(bottomNavbarController.selectedIndex.value),
+        );
       }),
     );
   }
