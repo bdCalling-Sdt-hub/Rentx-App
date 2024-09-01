@@ -13,7 +13,6 @@ import 'package:rentx/view/component/text_field/common_text_field.dart';
 import 'package:rentx/view/screen/Marchant_screens/CompleteProfile/component/upload_container.dart';
 
 import '../../../../controllers/BottomNavbarController/bottom_navbar_controller.dart';
-import '../../../../utils/app_colors.dart';
 import '../../../component/pop_up/common_pop_menu.dart';
 import '../Components/bottom_bar_march.dart';
 

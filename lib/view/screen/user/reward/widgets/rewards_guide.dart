@@ -10,7 +10,6 @@ import '../../../../../utils/app_colors.dart';
 import '../../../../../utils/app_images.dart';
 import '../../../../../utils/app_string.dart';
 import '../../../../component/other_widgets/coupon_card.dart';
-import '../../../../component/other_widgets/reward_item.dart';
 import '../../../../component/text/common_text.dart';
 
 class RewardsGuide extends StatelessWidget {

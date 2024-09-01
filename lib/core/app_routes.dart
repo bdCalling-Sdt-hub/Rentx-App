@@ -33,7 +33,6 @@ import '../view/screen/common_screen/auth/forgot password/verify_screen.dart';
 import '../view/screen/common_screen/auth/sign in/sign_in_screen.dart';
 import '../view/screen/common_screen/auth/sign up/sign_up_screen.dart';
 import '../view/screen/common_screen/auth/sign up/verify_user.dart';
-import '../view/screen/common_screen/message/chat_screen.dart';
 import '../view/screen/common_screen/message/message_screen.dart';
 import '../view/screen/common_screen/notifications/notifications_screen.dart';
 import '../view/screen/common_screen/onboarding_screen/onboarding_screen.dart';

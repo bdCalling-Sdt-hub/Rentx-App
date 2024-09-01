@@ -4,7 +4,6 @@ import 'package:get/get.dart';
 import 'package:rentx/extension/my_extension.dart';
 import 'package:rentx/utils/app_colors.dart';
 import 'package:rentx/view/component/text/common_text.dart';
-import 'package:rentx/view/screen/Marchant_screens/Components/bottom_bar_march.dart';
 
 import '../../../../controllers/common_controller/profile/profile_controller.dart';
 import '../../../../core/app_routes.dart';

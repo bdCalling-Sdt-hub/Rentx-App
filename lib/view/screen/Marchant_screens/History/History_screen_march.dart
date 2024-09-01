@@ -4,7 +4,6 @@ import 'package:get/get.dart';
 import 'package:rentx/core/app_routes.dart';
 import 'package:rentx/utils/app_images.dart';
 import 'package:rentx/view/component/text/common_text.dart';
-import 'package:rentx/view/screen/Marchant_screens/Components/bottom_bar_march.dart';
 
 import '../../../component/CouponCard/custom_coupon_card.dart';
 

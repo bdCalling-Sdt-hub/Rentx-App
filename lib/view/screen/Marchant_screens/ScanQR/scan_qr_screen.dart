@@ -6,7 +6,6 @@ import 'package:rentx/controllers/MerchantControllers/QrCodeScan/qr_scanner_cont
 import 'package:rentx/extension/my_extension.dart';
 import 'package:rentx/view/component/image/common_image.dart';
 import 'package:rentx/view/component/text/common_text.dart';
-import 'package:rentx/view/screen/Marchant_screens/Components/bottom_bar_march.dart';
 
 import '../../../../utils/app_colors.dart';
 import '../../../../utils/app_images.dart';

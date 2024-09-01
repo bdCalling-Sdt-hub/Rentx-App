@@ -4,16 +4,13 @@ import 'package:get/get.dart';
 import 'package:qr_flutter/qr_flutter.dart';
 import 'package:rentx/core/app_routes.dart';
 import 'package:rentx/extension/my_extension.dart';
-import 'package:rentx/helpers/other_helper.dart';
 import 'package:rentx/helpers/prefs_helper.dart';
 import 'package:rentx/helpers/screen_shot_helper.dart';
 import 'package:rentx/utils/app_images.dart';
-import 'package:rentx/utils/app_string.dart';
 import 'package:rentx/view/component/button/common_button.dart';
 import 'package:rentx/view/component/downloadVoucher/download_voucher_button.dart';
 import 'package:rentx/view/component/image/common_image.dart';
 import 'package:rentx/view/component/text/common_text.dart';
-import 'package:rentx/view/screen/Marchant_screens/Components/dotted_line_painter.dart';
 import 'package:screenshot/screenshot.dart';
 
 import '../../../../utils/app_colors.dart';

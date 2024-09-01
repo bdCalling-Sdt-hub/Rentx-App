@@ -1,12 +1,10 @@
 
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:rentx/controllers/BottomNavbarController/bottom_navbar_controller.dart';
 import 'package:rentx/utils/app_images.dart';
 import 'package:rentx/view/component/image/common_image.dart';
-import '../../../core/app_routes.dart';
 import '../../../utils/app_colors.dart';
 import '../../../utils/app_icons.dart';
 import '../text/common_text.dart';

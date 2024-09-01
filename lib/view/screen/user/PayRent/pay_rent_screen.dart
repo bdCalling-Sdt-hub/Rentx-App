@@ -4,10 +4,8 @@ import 'package:get/get.dart';
 import 'package:rentx/extension/my_extension.dart';
 import 'package:rentx/utils/app_icons.dart';
 import 'package:rentx/utils/app_string.dart';
-import 'package:rentx/view/component/bottom_nav_bar/common_bottom_bar.dart';
 import 'package:rentx/view/component/image/common_image.dart';
 import 'package:rentx/view/component/text/common_text.dart';
-import 'package:rentx/view/screen/user/PayRent/pay_rent_additional_screen.dart';
 
 import '../../../../core/app_routes.dart';
 import '../../../../helpers/prefs_helper.dart';

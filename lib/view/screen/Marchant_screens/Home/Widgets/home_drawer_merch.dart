@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:rentx/controllers/common_controller/profile/profile_controller.dart';
 import 'package:rentx/extension/my_extension.dart';

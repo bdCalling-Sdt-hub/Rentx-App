@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:rentx/extension/my_extension.dart';
 import 'package:rentx/utils/app_string.dart';
-import 'package:rentx/view/component/bottom_nav_bar/common_bottom_bar.dart';
 import 'package:rentx/view/component/other_widgets/reward_header.dart';
 import 'package:rentx/view/component/text/common_text.dart';
 import 'package:rentx/view/screen/user/reward/widgets/dining.dart';
