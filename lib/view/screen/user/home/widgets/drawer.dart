@@ -12,7 +12,6 @@ import '../../../../../utils/app_string.dart';
 import '../../../../component/image/common_image.dart';
 import '../../../Marchant_screens/Home/Widgets/drawer_item.dart';
 
-
 class HomeDrawer extends StatelessWidget {
   const HomeDrawer({super.key});
 
@@ -67,16 +66,16 @@ class HomeDrawer extends StatelessWidget {
                     icon: Icons.person_2_outlined),
 
                 drawerItem(
-                    // onTap: () => Get.toNamed(AppRoutes.setting),
+                    onTap: () => Get.toNamed(AppRoutes.myResidences),
                     title: AppString.myResidences,
                     icon: Icons.account_balance_outlined),
                 drawerItem(
-                    // onTap: () => Get.toNamed(AppRoutes.setting),
+                    onTap: () => Get.toNamed(AppRoutes.myCoupons),
                     title: AppString.myCoupons,
                     icon: Icons.local_offer),
 
                 drawerItem(
-                    // onTap: () => Get.toNamed(AppRoutes.setting),
+                    onTap: () => Get.toNamed(AppRoutes.supportScreen),
                     title: AppString.support,
                     icon: Icons.verified_user_outlined),
 
@@ -84,17 +83,13 @@ class HomeDrawer extends StatelessWidget {
                     onTap: () => Get.toNamed(AppRoutes.setting),
                     title: AppString.settings,
                     icon: Icons.settings_outlined),
-                // drawerItem(
-                //     onTap: () => Get.toNamed(AppRoutes.about),
-                //     title: AppString.about,
-                //     icon: Icons.info_outline),
                 drawerItem(
                     onTap: () => Get.toNamed(AppRoutes.termsOfServices),
                     title: AppString.termsOfServices,
                     icon: Icons.list_alt_rounded),
 
                 drawerItem(
-                    // onTap: () => Get.toNamed(AppRoutes.setting),
+                    onTap: () => Get.toNamed(AppRoutes.aboutUs),
                     title: AppString.aboutMe,
                     icon: Icons.info_outline),
                 drawerItem(

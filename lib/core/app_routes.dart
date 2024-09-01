@@ -215,7 +215,7 @@ class AppRoutes {
     GetPage(
         name: profile,
         page: () => ProfileScreen(),
-        transition: Transition.upToDown),
+        transition: Transition.rightToLeftWithFade),
     GetPage(
         name: editProfile,
         page: () => EditProfile(),

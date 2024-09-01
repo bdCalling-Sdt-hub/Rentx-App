@@ -33,7 +33,7 @@ class HomeScreenMarch extends StatelessWidget {
           12.width,
           InkWell(
             onTap: () {
-              Get.toNamed(AppRoutes.boostPackageScreen);
+              Get.toNamed(AppRoutes.historyScreenMarch, parameters: {"name" : AppString.boostedPackage});
             },
               child: CommonImage(imageSrc: AppIcons.boostPackage)),
           20.width

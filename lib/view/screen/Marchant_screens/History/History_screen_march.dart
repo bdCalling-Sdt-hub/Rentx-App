@@ -8,9 +8,10 @@ import 'package:rentx/view/screen/Marchant_screens/Components/bottom_bar_march.d
 
 import '../../../component/CouponCard/custom_coupon_card.dart';
 
-
 class HistoryScreenMarch extends StatelessWidget {
-  const HistoryScreenMarch({super.key});
+  HistoryScreenMarch({super.key});
+
+  final String title = Get.parameters['name'] ?? "";
 
   @override
   Widget build(BuildContext context) {
@@ -19,25 +20,24 @@ class HistoryScreenMarch extends StatelessWidget {
       appBar: AppBar(
         centerTitle: true,
         automaticallyImplyLeading: false,
-        title: const CommonText(text: "History"),
+        title: CommonText(text: title.isEmpty ? "History" : title),
       ),
       body: Padding(
         padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 20.h),
         child: ListView.builder(
           itemCount: 10,
           itemBuilder: (context, index) {
-          return CustomCouponCard(
-            couponHeight: 100,
-            couponWidth: Get.width,
-            couponImage: AppImages.pizzaHut,
-            onTap: () {
-              Get.toNamed(AppRoutes.couponDetailsScreen);
-            },
-          );
-        },),
+            return CustomCouponCard(
+              couponHeight: 100,
+              couponWidth: Get.width,
+              couponImage: AppImages.pizzaHut,
+              onTap: () {
+                Get.toNamed(AppRoutes.couponDetailsScreen);
+              },
+            );
+          },
+        ),
       ),
     );
   }
 }
-
-

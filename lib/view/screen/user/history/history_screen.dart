@@ -24,8 +24,8 @@ class HistoryScreen extends StatelessWidget {
         builder: (controller) => Column(
           children: [
             Container(
-              padding: const EdgeInsets.all(10),
-              margin: const EdgeInsets.symmetric(horizontal: 20),
+              padding: const EdgeInsets.all(8),
+              margin: const EdgeInsets.symmetric(horizontal: 10),
               decoration: BoxDecoration(
                 color: AppColors.s200.withOpacity(0.5),
                 borderRadius: BorderRadius.circular(12),

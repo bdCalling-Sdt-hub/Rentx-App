@@ -43,24 +43,28 @@ class MyResidenceListScreen extends StatelessWidget {
                     ),
                     margin: EdgeInsets.only(bottom: 8),
                     padding: EdgeInsets.symmetric(horizontal: 20, vertical: 16),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        const Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            CommonText(text: "House Number 1", color: AppColors.background, fontSize: 18, fontWeight: FontWeight.w600,),
-                            CommonText(text: "Block A, Road 5, Banasree, Dhaka.", color: AppColors.background,),
-                          ],
-                        ),
-                        InkWell(
-                          onTap: () {
-                            deleteItemsPopUp(itemsId: "", onDelete: () {
+                    child: Expanded(
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          const Expanded(
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                CommonText(text: "House Number 1", color: AppColors.background, fontSize: 18, fontWeight: FontWeight.w600,),
+                                CommonText(text: "Block A, Road 5, Banasree, Dhaka.", color: AppColors.background,),
+                              ],
+                            ),
+                          ),
+                          InkWell(
+                            onTap: () {
+                              deleteItemsPopUp(itemsId: "", onDelete: () {
 
-                            },);
-                          },
-                            child: CommonImage(imageSrc: AppIcons.deleteIcon, height: 18, width: 18,))
-                      ],
+                              },);
+                            },
+                              child: CommonImage(imageSrc: AppIcons.deleteIcon, height: 18, width: 18,))
+                        ],
+                      ),
                     ),
                   ),
                 );
