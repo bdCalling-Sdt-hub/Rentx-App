@@ -36,14 +36,16 @@ class AccountInfo extends StatelessWidget {
                     : AppColors.white,
                 onTap: () => controller.selectPaymentOption(1),
               ),
-              ButtonWithIcon(
-                title: AppString.digitalPay,
-                icon: Icons.food_bank,
-                color: controller.selectedOption == AppString.digitalPay
-                    ? AppColors.s200
-                    : AppColors.white,
-                width: 140,
-                onTap: () => controller.selectPaymentOption(2),
+              Expanded(
+                flex: 1,
+                child: ButtonWithIcon(
+                  title: AppString.digitalPay,
+                  icon: Icons.food_bank,
+                  color: controller.selectedOption == AppString.digitalPay
+                      ? AppColors.s200
+                      : AppColors.white,
+                  onTap: () => controller.selectPaymentOption(2),
+                ),
               ),
             ],
           ),
@@ -115,6 +117,7 @@ class AccountInfo extends StatelessWidget {
                   mainAxisSize: MainAxisSize.min,
                   children: [
                     Expanded(
+                      flex: 1,
                       child: Column(
                         mainAxisSize: MainAxisSize.min,
                         children: [
@@ -135,6 +138,7 @@ class AccountInfo extends StatelessWidget {
                     ),
                     20.width,
                     Expanded(
+                      flex: 1,
                       child: Column(
                         mainAxisSize: MainAxisSize.min,
                         children: [

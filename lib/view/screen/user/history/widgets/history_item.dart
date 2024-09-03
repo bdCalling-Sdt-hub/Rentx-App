@@ -26,7 +26,7 @@ class HistoryItem extends StatelessWidget {
                 const CommonText(
                         textAlign: TextAlign.start,
                         fontSize: 12,
-                        text: "22-July-2024")
+                        text: "22-July-2024   11:42AM")
                     .start,
                 const CommonText(
                         textAlign: TextAlign.start,

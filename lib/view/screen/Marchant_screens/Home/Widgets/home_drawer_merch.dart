@@ -18,7 +18,7 @@ class HomeDrawerMerch extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Drawer(
-        backgroundColor: AppColors.background.withOpacity(0.8),
+        backgroundColor: AppColors.background,
         child: Center(
           child: Padding(
             padding: const EdgeInsets.all(12),

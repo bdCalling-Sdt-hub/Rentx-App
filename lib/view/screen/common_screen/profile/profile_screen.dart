@@ -55,7 +55,11 @@ class ProfileScreen extends StatelessWidget {
                   fontSize: 18,
                   fontWeight: FontWeight.w700,
                   top: 8,
-                  bottom: 16,
+                ),
+                const CommonText(
+                  text: "example@gmail.com",
+                  fontSize: 14,
+                  bottom: 24,
                 ),
                 customContainer(
                     controller: controller,
@@ -70,7 +74,8 @@ class ProfileScreen extends StatelessWidget {
                         Item(
                           icon: Icons.home,
                           title: AppString.myResidences,
-                          onTap: () => Get.toNamed(AppRoutes.myResidenceListScreen),
+                          onTap: () =>
+                              Get.toNamed(AppRoutes.myResidenceListScreen),
                         ),
                         16.height,
                         Item(
@@ -132,6 +137,7 @@ class ProfileScreen extends StatelessWidget {
                 16.height,
                 customContainer(
                     controller: controller,
+                    vertical: 4,
                     item: const Column(
                       children: [
                         Item(
@@ -153,10 +159,12 @@ class ProfileScreen extends StatelessWidget {
   }
 
   Container customContainer(
-      {required ProfileController controller, required Widget item}) {
+      {required ProfileController controller,
+      required Widget item,
+      double vertical = 10}) {
     return Container(
       width: Get.width,
-      padding: const EdgeInsets.symmetric(vertical: 10),
+      padding: EdgeInsets.symmetric(vertical: vertical),
       decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(8.r),
           border: Border.all(color: AppColors.s200)),

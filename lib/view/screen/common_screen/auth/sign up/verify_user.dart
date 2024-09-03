@@ -161,6 +161,7 @@ class _VerifyUserState extends State<VerifyUser> {
         child: GetBuilder<SignUpController>(
           builder: (controller) => CommonButton(
               titleText: AppString.verify,
+              borderColor: AppColors.transparent,
               isLoading: controller.isLoadingVerify,
               onTap: () {
                 if (formKey.currentState!.validate()) {

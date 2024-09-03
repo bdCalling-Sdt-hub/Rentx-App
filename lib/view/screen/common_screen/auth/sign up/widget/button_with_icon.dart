@@ -29,8 +29,8 @@ class ButtonWithIcon extends StatelessWidget {
         height: 42,
         width: width,
         margin: const EdgeInsets.symmetric(horizontal: 4),
-        decoration:
-            BoxDecoration(color: color, borderRadius: BorderRadius.circular(12)),
+        decoration: BoxDecoration(
+            color: color, borderRadius: BorderRadius.circular(12)),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [

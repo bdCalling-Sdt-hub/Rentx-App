@@ -59,7 +59,7 @@ class _FirstPageState extends State<FirstPage> {
                                 WidgetStateProperty.all(AppColors.b100),
                           ),
                           onPressed: () {
-                            Get.toNamed(AppRoutes.signIn);
+                            Get.toNamed(AppRoutes.signUp);
                           },
                           child: const CommonText(
                             text: AppString.skip,

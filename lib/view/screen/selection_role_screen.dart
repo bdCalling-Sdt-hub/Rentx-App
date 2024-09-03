@@ -41,6 +41,7 @@ class SelectionRole extends StatelessWidget {
             CommonButton(
               icon: CommonImage(imageSrc: AppImages.merchantIcon, imageColor: AppColors.black),
               titleText: AppString.merchant,
+              buttonColor: AppColors.s100,
               titleSize: 24,
               onTap: () {
                 PrefsHelper.isMerchant = true;

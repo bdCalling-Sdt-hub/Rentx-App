@@ -31,20 +31,20 @@ class ProfileScreenMarch extends StatelessWidget {
       ),
       body: GetBuilder<ProfileController>(
         builder: (controller) {
-          return Padding(
+          return SingleChildScrollView(
             padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 24.h),
             child: Column(
               children: [
                 Center(
                   child: CircleAvatar(
-                    radius: 75.r,
+                    radius: 60.r,
                     backgroundColor: Colors.transparent,
                     child: ClipOval(
                       child: CommonImage(
                         imageSrc: "assets/images/profilePhoto.png",
                         imageType: ImageType.png,
-                        height: 170,
-                        width: 170,
+                        height: 120,
+                        width: 120,
                         defaultImage: AppImages.profile,
                       ),
                     ),
@@ -55,6 +55,10 @@ class ProfileScreenMarch extends StatelessWidget {
                   fontSize: 18,
                   fontWeight: FontWeight.w700,
                   top: 20,
+                ),
+                const CommonText(
+                  text: "example@gmail.com",
+                  fontSize: 14,
                   bottom: 24,
                 ),
                 customContainer(
@@ -76,10 +80,10 @@ class ProfileScreenMarch extends StatelessWidget {
                         ),
                         12.height,
                         Item(
-                            onTap: () => Get.toNamed(AppRoutes.voucherRequestScreen),
+                            onTap: () =>
+                                Get.toNamed(AppRoutes.voucherRequestScreen),
                             title: AppString.requestForVoucher,
-                            image: AppIcons.voucherRequestIcon
-                        ),
+                            image: AppIcons.voucherRequestIcon),
                         12.height,
                         Item(
                           icon: Icons.settings_outlined,
@@ -127,7 +131,7 @@ class ProfileScreenMarch extends StatelessWidget {
                 20.height,
                 customContainer(
                     controller: controller,
-                    // height: 80,
+                    vertical: 8,
                     item: Item(
                       icon: Icons.logout,
                       title: AppString.logOut,
@@ -146,12 +150,12 @@ class ProfileScreenMarch extends StatelessWidget {
 
   Container customContainer(
       {required ProfileController controller,
-      // required double height,
+      double vertical = 20,
       required Widget item}) {
     return Container(
-      padding: EdgeInsets.symmetric(vertical: 20),
       // height: height,
       width: Get.width,
+      padding: EdgeInsets.symmetric(vertical: vertical),
       decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(8.r),
           border: Border.all(color: AppColors.s200)),

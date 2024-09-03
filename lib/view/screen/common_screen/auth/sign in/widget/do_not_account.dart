@@ -37,7 +37,7 @@ class DoNotHaveAccount extends StatelessWidget {
                   text: AppString.signUp,
                   recognizer: TapGestureRecognizer()
                     ..onTap = () {
-                      Get.toNamed(AppRoutes.signUp);
+                      Get.toNamed(AppRoutes.selectionRole);
                     },
                   style: GoogleFonts.plusJakartaSans(
                     color: AppColors.primaryColor,
@@ -49,7 +49,7 @@ class DoNotHaveAccount extends StatelessWidget {
                   text: "".tr,
                   recognizer: TapGestureRecognizer()
                     ..onTap = () {
-                      Get.toNamed(AppRoutes.signUp);
+                      Get.toNamed(AppRoutes.selectionRole);
                     },
                   style: GoogleFonts.plusJakartaSans(
                     color: AppColors.baseColor,

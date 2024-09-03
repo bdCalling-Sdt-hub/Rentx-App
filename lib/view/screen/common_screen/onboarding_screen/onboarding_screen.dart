@@ -21,20 +21,16 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: Get.width,
-      height: Get.height,
-      clipBehavior: Clip.antiAlias,
-      decoration: ShapeDecoration(
-        gradient: const LinearGradient(
-          begin: Alignment(-0.50, 0.60),
-          end: Alignment(0.90, -0.5),
+      width: double.infinity,
+      height: double.infinity,
+      decoration: BoxDecoration(
+        gradient: LinearGradient(
+          begin: Alignment(-.90, 0.05),
+          end: Alignment(1.90, -0.5),
           colors: [
             Color(0xFF1D2766),
             Color(0xFF72216D),
           ],
-        ),
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(20),
         ),
       ),
       child: Scaffold(
