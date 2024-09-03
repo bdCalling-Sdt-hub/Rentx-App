@@ -53,30 +53,40 @@ class CompleteProfile extends StatelessWidget {
                 Stack(
                   children: [
                     Center(
-                      child: CircleAvatar(
-                        radius: 90.sp,
-                        backgroundColor: AppColors.transparent,
-                        child: ClipOval(
-                          child: controller.image != null
-                              ? Image.file(
-                                  File(controller.image!),
-                                  width: 130,
-                                  height: 130,
-                                  fit: BoxFit.fill,
-                                )
-                              : CommonImage(
-                                  imageSrc: AppImages.profile,
-                                  imageType: ImageType.png,
-                                  height: 180,
-                                  width: 180,
-                                ),
+                      child: Container(
+                        decoration: BoxDecoration(
+                          shape: BoxShape.circle,
+                          border: Border.all(
+                            color: AppColors.s500,
+                            // Set the border color to blue
+                            width:
+                                2.0, // Set the border width (adjust as needed)
+                          ),
+                        ),
+                        child: CircleAvatar(
+                          radius: 50.sp,
+                          backgroundColor: AppColors.transparent,
+                          child: ClipOval(
+                            child: controller.image != null
+                                ? Image.file(
+                                    File(controller.image!),
+                                    width: 100,
+                                    height: 100,
+                                    fit: BoxFit.fill,
+                                  )
+                                : CommonImage(
+                                    imageSrc: AppImages.profile,
+                                    imageType: ImageType.png,
+                                    height: 100,
+                                    width: 100,
+                                  ),
+                          ),
                         ),
                       ),
                     ),
                     Positioned(
-
-                        bottom: 15,
-                        left: Get.width * 0.55,
+                        bottom: 0,
+                        left: Get.width * 0.50,
                         child: IconButton(
                             style: ButtonStyle(
                                 backgroundColor: WidgetStateColor.resolveWith(
@@ -84,32 +94,28 @@ class CompleteProfile extends StatelessWidget {
                             )),
                             onPressed: controller.getProfileImage,
                             icon: const Icon(
-                              Icons.edit,
+                              Icons.edit_outlined,
                               color: Colors.black,
                             )))
                   ],
                 ),
-
                 20.height,
-
-                if(PrefsHelper.isMerchant)
+                if (PrefsHelper.isMerchant)
                   const CommonText(
-                  text: AppString.dateOfBirth,
-                  fontWeight: FontWeight.w600,
-                  bottom: 8,
-                ).start,
-
-                if(PrefsHelper.isMerchant)
+                    text: AppString.dateOfBirth,
+                    fontWeight: FontWeight.w600,
+                    bottom: 8,
+                  ).start,
+                if (PrefsHelper.isMerchant)
                   CommonTextField(
-                  prefixIcon: const Icon(
-                    Icons.calendar_month,
+                    prefixIcon: const Icon(
+                      Icons.calendar_month,
+                    ),
+                    hintText: AppString.birthDay,
+                    controller: controller.dobController,
+                    validator: OtherHelper.validator,
                   ),
-                  hintText: AppString.birthDay,
-                  controller: controller.dobController,
-                  validator: OtherHelper.validator,
-                ),
-
-                if(PrefsHelper.isMerchant) 12.height,
+                if (PrefsHelper.isMerchant) 12.height,
                 const CommonText(
                   text: AppString.address,
                   fontWeight: FontWeight.w600,
@@ -123,19 +129,24 @@ class CompleteProfile extends StatelessWidget {
                   controller: controller.addressController,
                   validator: OtherHelper.validator,
                 ),
-                150.height,
-                CommonButton(
-                  titleText: AppString.completeProfile,
-                  isLoading: controller.isLoading,
-                  buttonColor: AppColors.s500,
-                  onTap: () {
-                    if (formKey.currentState!.validate()) {
-                      controller.signUpUser();
-                    }
-                  },
-                ),
               ],
             ),
+          ),
+        ),
+      ),
+      bottomNavigationBar: Padding(
+        padding: const EdgeInsets.only(left: 20, right: 20, bottom: 20),
+        child: GetBuilder<SignUpController>(
+          builder: (controller) => CommonButton(
+            titleText: AppString.completeProfile,
+            isLoading: controller.isLoading,
+            buttonColor: AppColors.s500,
+            borderColor: AppColors.s500,
+            onTap: () {
+              if (formKey.currentState!.validate()) {
+                controller.signUpUser();
+              }
+            },
           ),
         ),
       ),

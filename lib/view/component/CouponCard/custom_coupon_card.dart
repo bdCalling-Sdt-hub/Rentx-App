@@ -12,8 +12,8 @@ class CustomCouponCard extends StatelessWidget {
       {super.key,
       this.onTap,
       required this.couponImage,
-      this.couponHeight  = 100,
-      this.couponWidth  = 250});
+      this.couponHeight = 100,
+      this.couponWidth = 250});
 
   VoidCallback? onTap;
   String couponImage;
@@ -32,7 +32,7 @@ class CustomCouponCard extends StatelessWidget {
               height: couponHeight),
           Positioned(
             top: 0,
-            left: couponWidth * 0.35,
+            left: couponWidth * 0.32,
             child: Container(
               padding: const EdgeInsets.symmetric(vertical: 5),
               height: couponHeight,
@@ -48,7 +48,7 @@ class CustomCouponCard extends StatelessWidget {
           ),
           Positioned(
             top: 20,
-            left: couponWidth * 0.12,
+            left: couponWidth * 0.1,
             child: CommonImage(
               imageSrc: couponImage,
               imageType: ImageType.png,
@@ -58,7 +58,7 @@ class CustomCouponCard extends StatelessWidget {
           ),
           Positioned(
             top: 10,
-            left: couponWidth * 0.415,
+            left: couponWidth * 0.4,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -83,7 +83,7 @@ class CustomCouponCard extends StatelessWidget {
                   children: [
                     const CommonText(
                       text: "Pizza Hut",
-                      fontSize: 16,
+                      fontSize: 14,
                       fontWeight: FontWeight.w600,
                       color: AppColors.black,
                     ),

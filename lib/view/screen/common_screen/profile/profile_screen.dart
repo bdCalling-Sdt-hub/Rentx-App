@@ -156,7 +156,7 @@ class ProfileScreen extends StatelessWidget {
       {required ProfileController controller, required Widget item}) {
     return Container(
       width: Get.width,
-      padding: EdgeInsets.symmetric(vertical: 10),
+      padding: const EdgeInsets.symmetric(vertical: 10),
       decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(8.r),
           border: Border.all(color: AppColors.s200)),

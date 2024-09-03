@@ -33,7 +33,6 @@ class AlreadyAccountRichText extends StatelessWidget {
                     fontWeight: FontWeight.w500,
                   ),
                 ),
-
                 TextSpan(
                   text: AppString.signIn,
                   recognizer: TapGestureRecognizer()
@@ -44,6 +43,8 @@ class AlreadyAccountRichText extends StatelessWidget {
                     color: AppColors.primaryColor,
                     fontSize: 16,
                     fontWeight: FontWeight.w600,
+                    decoration: TextDecoration.underline,
+                    decorationColor: Colors.white,
                   ),
                 ),
               ],

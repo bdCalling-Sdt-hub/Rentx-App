@@ -19,7 +19,15 @@ class SignUpScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(),
+        appBar: AppBar(
+          actions: const [
+            CommonText(
+              text: "Rentx.",
+              color: AppColors.s300,
+              right: 24,
+            ),
+          ],
+        ),
         body: GetBuilder<SignUpController>(
           builder: (controller) {
             return SingleChildScrollView(
@@ -28,8 +36,15 @@ class SignUpScreen extends StatelessWidget {
                 key: formKey,
                 child: Column(children: [
                   const CommonText(
-                    text: AppString.createYourAccount,
-                    fontSize: 32,
+                    text: AppString.welcomeHere,
+                    fontSize: 26,
+                    bottom: 8,
+                    maxLines: 2,
+                  ),
+                  const CommonText(
+                    text: AppString.createAnAccount,
+                    color: AppColors.s500,
+                    fontSize: 26,
                     bottom: 8,
                     maxLines: 2,
                   ),

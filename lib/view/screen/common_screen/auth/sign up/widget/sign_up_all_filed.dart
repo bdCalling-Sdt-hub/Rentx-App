@@ -77,8 +77,10 @@ class _SignUpAllFieldState extends State<SignUpAllField> {
             Row(
               children: [
                 Checkbox(
+                  splashRadius: 30,
                   value: controller.isAgree,
                   onChanged: controller.selectAgree,
+                  activeColor: AppColors.filledColor,
                 ),
                 const CommonText(text: AppString.agreeWithTermsAndServices)
               ],

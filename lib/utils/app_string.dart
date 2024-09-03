@@ -51,8 +51,10 @@ class AppString {
   static const String accountNumber = "Account Number";
   static const String bankName = "Bank Name";
   static const String branchName = "Branch Name";
-  static const String createYourAccount = "Welcome Here! \nCreate An Account.";
-  static const String fillInYourInformation = "Please fill up your information.";
+  static const String welcomeHere = "Welcome Here!";
+  static const String createAnAccount = "Create An Account.";
+  static const String fillInYourInformation =
+      "Please fill up your information.";
   static const String otpVerify = "OTP Verify";
   static const String inbox = "Inbox";
   static const String searchDoctor = "search a doctor";
@@ -107,7 +109,9 @@ class AppString {
   static const String cvc = "CVC";
   static const String country = "Country";
   static const String rememberMe = "Remember me";
-  static const String enterVerificationCode = "Enter Verification \nCode.";
+  static const String enter = "Enter ";
+  static const String verification = "Verification \n";
+  static const String code = "Code.";
   static const String enterTheCodeThatWasSentYourEmail =
       "Enter the code that was sent to your email.";
   static const nowResetYour = "Now Reset Your ";
@@ -128,7 +132,8 @@ class AppString {
   static const youHave = "You Have Scanned";
   static const couponsToday = "Coupons Today";
   static const check = "Check";
-  static const chooseBoostPackage = "Choose your preferred package and boost your vouchers.";
+  static const chooseBoostPackage =
+      "Choose your preferred package and boost your vouchers.";
 
   static const paymentAmount = "Payment amount";
   static const nameOnCard = "Name on Card";
@@ -141,12 +146,15 @@ class AppString {
   static const backToHome = "Back to Home";
   static const generalSettings = "General Settings";
   static const updateInformation = "Update Information";
-  static const ifYouFaceAnyKind = "If you face any kind of problem with our service feel free to contact us.";
+  static const ifYouFaceAnyKind =
+      "If you face any kind of problem with our service feel free to contact us.";
   static const submit = "Submit";
   static const resetPassword = "Reset Password";
   static const noNotifications = "There’s no notifications";
-  static const yourNotificationsWillBeAppear = "Your notifications will be appear on this page.";
-  static const enterEmailResetPassword = "Enter your email address to reset your password.";
+  static const yourNotificationsWillBeAppear =
+      "Your notifications will be appear on this page.";
+  static const enterEmailResetPassword =
+      "Enter your email address to reset your password.";
   static const qrCodeNumber = "QR Code Number";
   static const enterQrCodeNumber = "Enter QR code number here";
   static const rentXRewards = "RentX Rewards";
@@ -154,7 +162,8 @@ class AppString {
   static const dining = "Dining";
   static const shopping = "Shopping";
   static const travel = "Travel";
-  static const getRewardPointsByGivingYourRentsUsingRentX = "Get Reward points By Giving Your Rents Using RentX.";
+  static const getRewardPointsByGivingYourRentsUsingRentX =
+      "Get Reward points By Giving Your Rents Using RentX.";
   static const popularVouchers = "Popular  Vouchers";
   static const all = "All";
   static const available = "Available";
@@ -165,11 +174,14 @@ class AppString {
   static const transaction = "Transaction";
   static const delete = "Delete";
   static const edit = "Edit";
-  static const getRentxDayChallenge = "Get RentX. day challenge: Birthday editions";
-  static const everyoneWhoSolves = "Everyone who solves the puzzle in-app gets a prize.";
+  static const getRentxDayChallenge =
+      "Get RentX. day challenge: Birthday editions";
+  static const everyoneWhoSolves =
+      "Everyone who solves the puzzle in-app gets a prize.";
   static const currentRentDue = "Current Rent Due";
   static const autoPayForRent = "Autopay for rent";
-  static const setUpAutomaticRent = "Set up automatic rent payments so you never miss a rent payment.";
+  static const setUpAutomaticRent =
+      "Set up automatic rent payments so you never miss a rent payment.";
   static const recentRentHistory = "Recent Rent History";
   static const myResidenceList = "My Residence List";
   static const update = "Update";
@@ -186,6 +198,7 @@ class AppString {
   static const enterYourShopAddress = "Enter your shop address";
   static const enterYourVoucherValidity = "Enter your voucher validity";
   static const numberOfVouchers = "Number of Vouchers";
-  static const enterRequestedNumberOfVoucher = "Enter your requested number of voucher";
+  static const enterRequestedNumberOfVoucher =
+      "Enter your requested number of voucher";
   static const downloadVoucher = "Download Voucher";
 }

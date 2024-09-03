@@ -68,7 +68,7 @@ class BoostedPackageScreen extends StatelessWidget {
                       return Center(
                         child: CustomCouponCard(
                           couponImage: AppImages.pizzaHut,
-                          couponWidth: Get.width * 0.7,
+                          couponWidth: Get.width * 0.85,
                         ),
                       );
                     },

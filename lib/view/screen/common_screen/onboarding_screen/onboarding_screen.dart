@@ -32,7 +32,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
             Color(0xFF1D2766),
             Color(0xFF72216D),
           ],
-                  ),
+        ),
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(20),
         ),
@@ -68,6 +68,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
               70.height,
               CommonButton(
                 titleText: AppString.signIn,
+                buttonColor: AppColors.p500,
                 onTap: () => Get.toNamed(AppRoutes.signIn),
               ),
               24.height,

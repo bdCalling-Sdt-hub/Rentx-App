@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:rentx/extension/my_extension.dart';
 import '../../../../../controllers/common_controller/auth/sign_up_controller.dart';
 import '../../../../../utils/app_colors.dart';
@@ -30,11 +31,13 @@ class _VerifyUserState extends State<VerifyUser> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const CommonText(
-          text: AppString.otpVerify,
-          fontWeight: FontWeight.w700,
-          fontSize: 24,
-        ),
+        actions: const [
+          CommonText(
+            text: "Rentx.",
+            color: AppColors.s300,
+            right: 24,
+          ),
+        ],
       ),
       body: GetBuilder<SignUpController>(
         builder: (controller) {
@@ -44,12 +47,37 @@ class _VerifyUserState extends State<VerifyUser> {
               key: formKey,
               child: Column(
                 children: [
-                  const Center(
-                    child: CommonText(
-                      text: AppString.enterVerificationCode,
-                      fontSize: 26,
-                      top: 60,
-                      maxLines: 3,
+                  Center(
+                    child: Text.rich(
+                      TextSpan(
+                        children: [
+                          TextSpan(
+                            text: AppString.enter,
+                            style: GoogleFonts.poppins(
+                              color: AppColors.primaryColor,
+                              fontSize: 26,
+                              fontWeight: FontWeight.w500,
+                            ),
+                          ),
+                          TextSpan(
+                            text: AppString.verification,
+                            style: GoogleFonts.poppins(
+                              color: AppColors.s500,
+                              fontSize: 26,
+                              fontWeight: FontWeight.w600,
+                            ),
+                          ),
+                          TextSpan(
+                            text: AppString.code,
+                            style: GoogleFonts.poppins(
+                              color: AppColors.primaryColor,
+                              fontSize: 26,
+                              fontWeight: FontWeight.w600,
+                            ),
+                          ),
+                        ],
+                      ),
+                      textAlign: TextAlign.center,
                     ),
                   ),
                   const Center(
@@ -95,22 +123,22 @@ class _VerifyUserState extends State<VerifyUser> {
                       },
                     ),
                   ),
-                  100.height,
+                  20.height,
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
                       controller.time == '00:00'
                           ? const Center(
-                          child: CommonText(
-                              text: AppString.didNotReceiveTheCode))
+                              child: CommonText(
+                                  text: AppString.didNotReceiveTheCode))
                           : 0.height,
                       GestureDetector(
                         onTap: controller.time == '00:00'
                             ? () {
-                          controller.startTimer();
-                          controller.signUpUser();
-                        }
+                                controller.startTimer();
+                                controller.signUpUser();
+                              }
                             : () {},
                         child: CommonText(
                           text: controller.time == '00:00'
@@ -122,19 +150,24 @@ class _VerifyUserState extends State<VerifyUser> {
                     ],
                   ),
                   100.height,
-                  CommonButton(
-                      titleText: AppString.verify,
-                      isLoading: controller.isLoadingVerify,
-                      onTap: () {
-                        if (formKey.currentState!.validate()) {
-                          controller.verifyOtpRepo();
-                        }
-                      })
                 ],
               ),
             ),
           );
         },
+      ),
+      bottomNavigationBar: Padding(
+        padding: const EdgeInsets.only(left: 20, right: 20, bottom: 20),
+        child: GetBuilder<SignUpController>(
+          builder: (controller) => CommonButton(
+              titleText: AppString.verify,
+              isLoading: controller.isLoadingVerify,
+              onTap: () {
+                if (formKey.currentState!.validate()) {
+                  controller.verifyOtpRepo();
+                }
+              }),
+        ),
       ),
     );
   }

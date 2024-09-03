@@ -77,7 +77,7 @@ class HomeDrawerMerch extends StatelessWidget {
                         title: AppString.support,
                         icon: Icons.verified_user_outlined),
                     drawerItem(
-                        onTap: () => Get.toNamed(AppRoutes.historyScreenMarch,
+                        onTap: () => Get.toNamed(AppRoutes.boostedPackageScreen,
                             parameters: {"name": AppString.boostedPackage}),
                         title: AppString.boostedPackage,
                         svgIcon: AppIcons.boostPackage),
