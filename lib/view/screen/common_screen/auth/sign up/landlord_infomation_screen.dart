@@ -43,7 +43,6 @@ class LandlordInformationScreen extends StatelessWidget {
               top: 12,
             ).start,
             const Divider(),
-
             const AccountInfo(),
             40.height,
             CommonButton(
