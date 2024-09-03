@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -20,91 +19,106 @@ class BuyPackageScreen extends StatelessWidget {
       appBar: AppBar(
         title: CommonText(text: ""),
       ),
-
       body: Padding(
         padding: EdgeInsets.symmetric(horizontal: 20.0),
         child: GetBuilder<PaymentController>(
           builder: (paymentController) {
-          return Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              CommonText(text: "Selected Tier :"),
-              12.height,
-              Padding(
-                padding: EdgeInsets.only(left: 40),
-                child: CommonText(
-                  text: "Mid Tier",
-                  fontSize: 24,
-                  fontWeight: FontWeight.w700,
-                ),
-              ),
-              12.height,
-              Padding(
-                padding: EdgeInsets.only(left: 40),
-                child: RichText(
-                  text: TextSpan(
-                      text: "৳1000",
-                      style: GoogleFonts.poppins(
-                          color: AppColors.white,
-                          fontSize: 40,
-                          fontWeight: FontWeight.w700),
-                      children: [
-                        TextSpan(
-                            text: " per voucher",
-                            style: GoogleFonts.poppins(
-                                fontSize: 12,
-                                fontWeight: FontWeight.w600,
-                                color: AppColors.white)
-                        )
-                      ]
+            return Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                CommonText(text: "Selected Tier :"),
+                12.height,
+                Padding(
+                  padding: EdgeInsets.only(left: 40),
+                  child: CommonText(
+                    text: "Mid Tier",
+                    fontSize: 24,
+                    fontWeight: FontWeight.w700,
                   ),
                 ),
-              ),
-              CommonText(text: "Select your vouchers :"),
-
-              20.height,
-              Column(
-                children: List.generate(
-                  paymentController.couponList.length, (index) {
-                  return Padding(
-                    padding: EdgeInsets.only(bottom: 4),
-                    child: Row(
-                      children: [
-                        Checkbox(
-                          activeColor: AppColors.s500,
-                          checkColor: AppColors.s500,
-                          fillColor: WidgetStatePropertyAll(AppColors.s900),
-                          value: true,
-                          onChanged: (value) {
-                            if(paymentController.isChecked != null){
-                              paymentController.isChecked![index] = value!;
-                            }
-                          },
+                12.height,
+                Padding(
+                  padding: EdgeInsets.only(left: 40),
+                  child: RichText(
+                    text: TextSpan(
+                        text: "৳1000",
+                        style: GoogleFonts.poppins(
+                            color: AppColors.white,
+                            fontSize: 40,
+                            fontWeight: FontWeight.w700),
+                        children: [
+                          TextSpan(
+                              text: " per voucher",
+                              style: GoogleFonts.poppins(
+                                  fontSize: 12,
+                                  fontWeight: FontWeight.w600,
+                                  color: AppColors.white))
+                        ]),
+                  ),
+                ),
+                CommonText(text: "Select your vouchers :"),
+                20.height,
+                Column(
+                  children: List.generate(
+                    paymentController.couponList.length,
+                    (index) {
+                      return Padding(
+                        padding: const EdgeInsets.only(bottom: 4),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: [
+                            SizedBox(
+                              width: 16.0,
+                              height: 16.0,
+                              child: Checkbox(
+                                activeColor: AppColors.s500,
+                                checkColor: AppColors.s500,
+                                fillColor: const WidgetStatePropertyAll(
+                                    AppColors.s900),
+                                value: true,
+                                onChanged: (value) {
+                                  if (paymentController.isChecked != null) {
+                                    paymentController.isChecked![index] =
+                                        value!;
+                                  }
+                                },
+                              ),
+                            ),
+                            16.width,
+                            CustomCouponCard(
+                              couponImage: AppImages.pizzaHut,
+                              couponWidth: Get.width * 0.8,
+                            )
+                          ],
                         ),
-                        12.width,
-                        CustomCouponCard(
-
-                          couponImage: AppImages.pizzaHut, couponWidth: Get.width * 0.7,)
-                      ],
+                      );
+                    },
+                  ),
+                ),
+                20.height,
+                const Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    CommonText(
+                      text: "Total Amount :",
+                      fontSize: 20,
+                      fontWeight: FontWeight.w500,
                     ),
-                  );
-                },),
-              ),
-              20.height,
-
-              Row(
-                children: [
-                  CommonText(text: "Total Amount :", fontSize: 24, fontWeight: FontWeight.w500,),
-                  CommonText(text: " 2000 BDT", fontSize: 30, fontWeight: FontWeight.w700,)
-                ],
-              ),
-              20.height,
-              GestureDetector(
-                onTap: () {
-                  Get.toNamed(AppRoutes.paymentScreen);
-                },
-                child: Container(
-                    padding: EdgeInsets.symmetric(
+                    CommonText(
+                      text: " 2000 BDT",
+                      fontSize: 24,
+                      fontWeight: FontWeight.w700,
+                    )
+                  ],
+                ),
+                20.height,
+                GestureDetector(
+                  onTap: () {
+                    Get.toNamed(AppRoutes.paymentScreen);
+                  },
+                  child: Container(
+                    padding: const EdgeInsets.symmetric(
                         horizontal: 30, vertical: 12),
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(8),
@@ -113,7 +127,7 @@ class BuyPackageScreen extends StatelessWidget {
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        CommonText(
+                        const CommonText(
                           text: "Pay Now",
                           color: AppColors.black,
                         ),
@@ -121,11 +135,12 @@ class BuyPackageScreen extends StatelessWidget {
                         Icon(Icons.arrow_forward)
                       ],
                     ),
-                ),
-              )
-            ],
-          );
-        },),
+                  ),
+                )
+              ],
+            );
+          },
+        ),
       ),
     );
   }

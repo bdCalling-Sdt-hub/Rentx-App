@@ -22,9 +22,7 @@ class SignInScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-
-        ),
+        appBar: AppBar(),
         body: GetBuilder<SignInController>(
           builder: (controller) {
             return SingleChildScrollView(
@@ -68,13 +66,22 @@ class SignInScreen extends StatelessWidget {
                       children: [
                         Row(
                           children: [
-                            Checkbox(
-                              value: controller.isRemember,
-                              onChanged: controller.selectRemember,
+                            SizedBox(
+                              width: 16.0,
+                              height: 16.0,
+                              child: Checkbox(
+                                value: controller.isRemember,
+                                onChanged: controller.selectRemember,
+                                materialTapTargetSize:
+                                    MaterialTapTargetSize.shrinkWrap,
+                                visualDensity: VisualDensity
+                                    .compact, // Reduces the visual density to remove extra space
+                              ),
                             ),
                             const CommonText(
                               text: AppString.rememberMe,
                               fontSize: 14,
+                              left: 8,
                             ),
                           ],
                         ),

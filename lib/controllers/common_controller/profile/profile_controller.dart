@@ -3,9 +3,8 @@ import 'package:get/get.dart';
 
 import '../../../helpers/other_helper.dart';
 
-
 class ProfileController extends GetxController {
-  List languages = ["English", "French", "Arabic"];
+  List languages = ["English", "Bangla"];
   List gender = const ["Male", "Female", "Other"];
 
   String selectedLanguage = "English";
@@ -20,8 +19,6 @@ class ProfileController extends GetxController {
   TextEditingController ageController = TextEditingController();
   TextEditingController genderController = TextEditingController();
   TextEditingController descriptionController = TextEditingController();
-
-
 
   selectedGender(int index) {
     genderController.text = gender[index].toString();
@@ -39,9 +36,9 @@ class ProfileController extends GetxController {
     update();
     Get.back();
   }
-  tappedLanguage(){
+
+  tappedLanguage() {
     isLanguageTapped = !isLanguageTapped;
     update();
   }
-
 }

@@ -37,7 +37,11 @@ class ChangePasswordScreen extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   70.height,
-                  CommonText(text: AppString.currentPassword, fontWeight: FontWeight.w600, fontSize: 18,),
+                  CommonText(
+                    text: AppString.currentPassword,
+                    fontWeight: FontWeight.w600,
+                    fontSize: 18,
+                  ),
                   8.height,
                   CommonTextField(
                     controller: controller.currentPasswordController,
@@ -50,7 +54,11 @@ class ChangePasswordScreen extends StatelessWidget {
                     ),
                   ),
                   16.height,
-                  CommonText(text: AppString.newPassword, fontWeight: FontWeight.w600, fontSize: 18,),
+                  CommonText(
+                    text: AppString.newPassword,
+                    fontWeight: FontWeight.w600,
+                    fontSize: 18,
+                  ),
                   8.height,
                   CommonTextField(
                     controller: controller.newPasswordController,
@@ -63,7 +71,11 @@ class ChangePasswordScreen extends StatelessWidget {
                     ),
                   ),
                   16.height,
-                  CommonText(text: AppString.confirmNewPassword, fontWeight: FontWeight.w600, fontSize: 18,),
+                  CommonText(
+                    text: AppString.confirmNewPassword,
+                    fontWeight: FontWeight.w600,
+                    fontSize: 18,
+                  ),
                   8.height,
                   CommonTextField(
                     controller: controller.confirmPasswordController,
@@ -94,8 +106,8 @@ class ChangePasswordScreen extends StatelessWidget {
                   Spacer(),
                   CommonButton(
                     titleText: AppString.submit,
-                    buttonHeight: 48,
                     isLoading: controller.isLoading,
+                    buttonHeight: 58,
                     onTap: () {
                       if (formKey.currentState!.validate()) {
                         controller.changePasswordRepo();

@@ -30,7 +30,7 @@ class CommonButton extends StatelessWidget {
       this.titleSize = 18,
       this.buttonRadius = 10,
       this.titleWeight = FontWeight.w600,
-      this.buttonHeight = 48,
+      this.buttonHeight = 58,
       this.borderWidth = 1,
       this.isLoading = false,
       this.buttonWidth = double.infinity,

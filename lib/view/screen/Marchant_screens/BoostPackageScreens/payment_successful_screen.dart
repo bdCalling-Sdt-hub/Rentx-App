@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:rentx/core/app_routes.dart';
@@ -17,20 +16,28 @@ class PaymentSuccessfulScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: CommonText(text: ""),
+        title: const CommonText(text: ""),
       ),
       body: Padding(
-        padding: EdgeInsets.symmetric(horizontal: 20.0, vertical: 20.0),
+        padding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 20.0),
         child: Column(
           children: [
             100.height,
-            CommonImage(imageSrc: AppImages.paymentSuccessful, imageType: ImageType.png, width: Get.width, height: 300,),
+            CommonImage(
+              imageSrc: AppImages.paymentSuccessful,
+              imageType: ImageType.png,
+              width: Get.width,
+              height: 300,
+            ),
             40.height,
-            CommonText(text: AppString.paymentSuccessful, fontSize: 24, fontWeight: FontWeight.w700,),
+            const CommonText(
+              text: AppString.paymentSuccessful,
+              fontSize: 24,
+              fontWeight: FontWeight.w700,
+            ),
             54.height,
             CommonButton(
-              buttonHeight: 48,
-              onTap: () => Get.toNamed(AppRoutes.homeScreenMarch),
+                onTap: () => Get.toNamed(AppRoutes.homeScreenMarch),
                 titleText: AppString.backToHome)
           ],
         ),

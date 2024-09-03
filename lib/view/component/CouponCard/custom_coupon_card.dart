@@ -34,8 +34,7 @@ class CustomCouponCard extends StatelessWidget {
             top: 0,
             left: couponWidth * 0.32,
             child: Container(
-              padding: const EdgeInsets.symmetric(vertical: 5),
-              height: couponHeight,
+              height: 80,
               child: CustomPaint(
                 painter: DottedLinePainter(
                     orientation: LineOrientation.vertical,
@@ -57,8 +56,8 @@ class CustomCouponCard extends StatelessWidget {
             ),
           ),
           Positioned(
-            top: 10,
-            left: couponWidth * 0.4,
+            top: 5,
+            left: couponWidth * 0.38,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -99,10 +98,11 @@ class CustomCouponCard extends StatelessWidget {
                 const CommonText(
                     text: "Valid until 01 October 2024.",
                     color: AppColors.b300,
-                    fontSize: 10)
+                    fontSize: 10),
+                50.height,
               ],
             ),
-          )
+          ),
         ],
       ),
     );

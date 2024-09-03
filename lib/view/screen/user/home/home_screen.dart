@@ -19,8 +19,6 @@ import '../../../component/bottom_nav_bar/common_bottom_bar.dart';
 class HomeScreen extends StatelessWidget {
   HomeScreen({super.key});
 
-
-
   @override
   Widget build(BuildContext context) {
     return GetBuilder<HomeController>(
@@ -40,112 +38,118 @@ class HomeScreen extends StatelessWidget {
                   16.width,
                 ],
               ),
-              body: Column(
-                children: [
-                  Container(
-                    color: AppColors.background,
-                    padding: EdgeInsets.symmetric(
-                      horizontal: 20.w,
-                      vertical: 8.h,
-                    ),
-                    child: Column(
-                      children: [
-                        const CommonText(
-                          text: AppString.welcome,
-                          color: AppColors.p50,
-                        ).start,
-                        const CommonText(
-                          text: "Mr. Mushtaq",
-                          fontSize: 20,
-                          fontWeight: FontWeight.bold,
-                        ).start,
-                        const CommonText(
-                          text: AppString.youHome,
-                          color: AppColors.p50,
-                        ).start,
-                        const CommonText(
-                          text: "Central Park Palace",
-                          fontSize: 20,
-                          fontWeight: FontWeight.bold,
-                        ).start,
-                        Container(
-                          padding: const EdgeInsets.symmetric(
-                              horizontal: 4, vertical: 2),
-                          decoration: const BoxDecoration(
-                              color: AppColors.s900,
-                              borderRadius:
-                                  BorderRadius.all(Radius.circular(4))),
-                          child: const CommonText(
-                            text: "RentX. Rewards Alliance",
-                            fontSize: 12,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ).start,
-                        8.height,
-                      ],
-                    ),
-                  ),
-                  12.height,
-                  RewardItem(
-                    onTap: () {
-                      BottomNavbarController.instance.onItemTapped(2);
-                      Get.to(() => CommonBottomNavBar());
-                    },
-                    text: AppString.dueRent,
-                    buttonText: AppString.payNow,
-                    amount: "৳16,000",
-                    date: "06 Days-12 Hours left",
-                  ),
-                  12.height,
-                  RewardItem(
-                    onTap: () {
-                      BottomNavbarController.instance.onItemTapped(1);
-                      Get.to(() => CommonBottomNavBar());
-                    },
-                    amount: "2000",
-                  ),
-                  12.height,
-                  Expanded(
-                    child: Container(
-                      width: Get.width,
-                      decoration: const BoxDecoration(
-                        image: DecorationImage(fit: BoxFit.fill,image: AssetImage(AppImages.rentxDayChallenge)),
-                        borderRadius: BorderRadius.all(Radius.circular(12))
+              body: SingleChildScrollView(
+                child: Column(
+                  children: [
+                    Container(
+                      color: AppColors.background,
+                      padding: EdgeInsets.symmetric(
+                        horizontal: 20.w,
+                        vertical: 8.h,
                       ),
+                      child: Column(
+                        children: [
+                          const CommonText(
+                            text: AppString.welcome,
+                            color: AppColors.p50,
+                          ).start,
+                          const CommonText(
+                            text: "Mr. Mushtaq",
+                            fontSize: 20,
+                            fontWeight: FontWeight.bold,
+                          ).start,
+                          const CommonText(
+                            text: AppString.youHome,
+                            color: AppColors.p50,
+                          ).start,
+                          const CommonText(
+                            text: "Central Park Palace",
+                            fontSize: 20,
+                            fontWeight: FontWeight.bold,
+                          ).start,
+                          Container(
+                            padding: const EdgeInsets.symmetric(
+                                horizontal: 4, vertical: 2),
+                            decoration: const BoxDecoration(
+                                color: AppColors.s900,
+                                borderRadius:
+                                    BorderRadius.all(Radius.circular(4))),
+                            child: const CommonText(
+                              text: "RentX. Rewards Alliance",
+                              fontSize: 12,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ).start,
+                          8.height,
+                        ],
+                      ),
+                    ),
+                    12.height,
+                    RewardItem(
+                      onTap: () {
+                        BottomNavbarController.instance.onItemTapped(2);
+                        Get.to(() => CommonBottomNavBar());
+                      },
+                      text: AppString.dueRent,
+                      buttonText: AppString.payNow,
+                      amount: "৳16,000",
+                      date: "06 Days-12 Hours left",
+                    ),
+                    12.height,
+                    RewardItem(
+                      onTap: () {
+                        BottomNavbarController.instance.onItemTapped(1);
+                        Get.to(() => CommonBottomNavBar());
+                      },
+                      amount: "2000",
+                    ),
+                    12.height,
+                    Container(
+                      width: Get.width,
+                      height: 290.h,
+                      margin: EdgeInsets.only(bottom: 40),
+                      decoration: const BoxDecoration(
+                          image: DecorationImage(
+                              fit: BoxFit.fill,
+                              image: AssetImage(AppImages.rentxDayChallenge)),
+                          borderRadius: BorderRadius.all(Radius.circular(12))),
                       child: Padding(
-                        padding: EdgeInsets.symmetric(horizontal: 20, vertical: 24),
+                        padding:
+                            EdgeInsets.symmetric(horizontal: 20, vertical: 24),
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Container(
-                              padding: EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+                              padding: EdgeInsets.symmetric(
+                                  horizontal: 16, vertical: 8),
                               decoration: BoxDecoration(
                                   color: AppColors.white,
-                                borderRadius: BorderRadius.circular(12)
+                                  borderRadius: BorderRadius.circular(12)),
+                              child: CommonText(
+                                text: 'February" 24',
+                                color: AppColors.black,
                               ),
-                              child: CommonText(text: 'February" 24', color: AppColors.black,),
                             ),
-                            Spacer(),
                             const CommonText(
                               textAlign: TextAlign.left,
                               maxLines: 2,
-                                text: AppString.getRentxDayChallenge,
+                              text: AppString.getRentxDayChallenge,
                               fontWeight: FontWeight.w600,
                               fontSize: 18,
                             ),
                             const CommonText(
                               textAlign: TextAlign.left,
-                                maxLines: 2,
-                                text: AppString.everyoneWhoSolves,
+                              maxLines: 2,
+                              text: AppString.everyoneWhoSolves,
                               fontSize: 12,
                             )
                           ],
                         ),
                       ),
                     ),
-                  ),
-                  50.height
-                ],
+                    50.height
+                  ],
+                ),
               ),
               // bottomNavigationBar: const CommonBottomNavBar(
               //   currentIndex: 0,

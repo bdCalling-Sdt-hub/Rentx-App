@@ -28,13 +28,14 @@ class HomeScreenMarch extends StatelessWidget {
         title: CommonText(text: ""),
         actions: [
           GestureDetector(
-            onTap: () => Get.toNamed(AppRoutes.notifications),
+              onTap: () => Get.toNamed(AppRoutes.notifications),
               child: CommonImage(imageSrc: AppIcons.notifyIcon)),
           12.width,
           InkWell(
-            onTap: () {
-              Get.toNamed(AppRoutes.boostPackageScreen, parameters: {"name" : AppString.boostedPackage});
-            },
+              onTap: () {
+                Get.toNamed(AppRoutes.boostPackageScreen,
+                    parameters: {"name": AppString.boostedPackage});
+              },
               child: CommonImage(imageSrc: AppIcons.boostPackage)),
           20.width
         ],
@@ -89,19 +90,20 @@ class HomeScreenMarch extends StatelessWidget {
                     icon: AppIcons.couponDiscount,
                     points: "97",
                     text: AppString.coupons,
-                  count: 2
-                ),
+                    count: 2),
               ],
             ),
             12.height,
             Container(
               height: 170.h,
               width: Get.width,
-              decoration: BoxDecoration(color: AppColors.offWhite, borderRadius: BorderRadius.circular(6.r)),
+              decoration: BoxDecoration(
+                  color: AppColors.offWhite,
+                  borderRadius: BorderRadius.circular(6.r)),
               child: Stack(
                 children: [
                   Padding(
-                    padding:  EdgeInsets.only(left: 20.0, top: 20),
+                    padding: EdgeInsets.only(left: 20.0, top: 20),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
@@ -129,8 +131,7 @@ class HomeScreenMarch extends StatelessWidget {
                             width: 110.w,
                             decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(8.r),
-                                color: AppColors.s500
-                            ),
+                                color: AppColors.s500),
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.start,
                               children: [
@@ -142,7 +143,11 @@ class HomeScreenMarch extends StatelessWidget {
                                   fontWeight: FontWeight.w400,
                                 ),
                                 8.width,
-                                CommonImage(imageSrc: AppIcons.arrowUp, height: 16, width: 16,)
+                                CommonImage(
+                                  imageSrc: AppIcons.arrowUp,
+                                  height: 16,
+                                  width: 16,
+                                )
                               ],
                             ),
                           ),
@@ -151,31 +156,43 @@ class HomeScreenMarch extends StatelessWidget {
                     ),
                   ),
                   Positioned(
-                    bottom: 0,
-                    right: Get.width * 0.1 ,
-                      child: CommonImage(imageSrc: AppImages.couponBadge, imageType: ImageType.png, height: 110, width: 85,))
+                      bottom: 0,
+                      right: Get.width * 0.1,
+                      child: CommonImage(
+                        imageSrc: AppImages.couponBadge,
+                        imageType: ImageType.png,
+                        height: 110,
+                        width: 85,
+                      ))
                 ],
               ),
             ),
             12.height,
-            const Row(
+            Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                CommonText(text: AppString.myCoupons, color: AppColors.p500),
-                Icon(Icons.add, color: AppColors.p500)
+                const CommonText(
+                    text: AppString.myCoupons, color: AppColors.p500),
+                IconButton(
+                    onPressed: () =>
+                        Get.toNamed(AppRoutes.voucherRequestScreen),
+                    icon: const Icon(Icons.add, color: AppColors.p500))
               ],
             ),
             12.height,
             Column(
-              children: List.generate(5, (index) {
-                return CustomCouponCard(
-                  couponWidth: Get.width,
-                  couponHeight: 100,
-                  onTap: () {
-                    Get.toNamed(AppRoutes.couponDetailsScreen);
-                  },
-                    couponImage: AppImages.pizzaHut);
-              },),
+              children: List.generate(
+                5,
+                (index) {
+                  return CustomCouponCard(
+                      couponWidth: Get.width,
+                      couponHeight: 100,
+                      onTap: () {
+                        Get.toNamed(AppRoutes.couponDetailsScreen);
+                      },
+                      couponImage: AppImages.pizzaHut);
+                },
+              ),
             ),
           ],
         ),
@@ -183,13 +200,13 @@ class HomeScreenMarch extends StatelessWidget {
     );
   }
 
-  Container CommonContainer(
-      {required Color containerColor,
-      required String icon,
-      required String points,
-      required String text,
-        int count = 1,
-      }) {
+  Container CommonContainer({
+    required Color containerColor,
+    required String icon,
+    required String points,
+    required String text,
+    int count = 1,
+  }) {
     return Container(
       height: 110.h,
       width: Get.width * 0.42,
@@ -198,18 +215,22 @@ class HomeScreenMarch extends StatelessWidget {
       child: Column(
         children: [
           8.height,
-          CommonImage(imageSrc: icon, height: 36.h, width: 36.w,),
+          CommonImage(
+            imageSrc: icon,
+            height: 36.h,
+            width: 36.w,
+          ),
           CommonText(
             text: points,
             fontSize: 24,
             fontWeight: FontWeight.w500,
-            color: count == 1? AppColors.black : AppColors.p500,
+            color: count == 1 ? AppColors.black : AppColors.p500,
           ),
           CommonText(
             text: text,
             fontSize: 12,
             fontWeight: FontWeight.w400,
-            color: count == 1? AppColors.b400 : AppColors.p500,
+            color: count == 1 ? AppColors.b400 : AppColors.p500,
           ),
         ],
       ),

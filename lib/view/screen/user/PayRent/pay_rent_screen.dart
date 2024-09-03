@@ -24,7 +24,7 @@ class PayRentScreen extends StatelessWidget {
       appBar: AppBar(
         automaticallyImplyLeading: false,
         centerTitle: true,
-        title: CommonText(
+        title: const CommonText(
           text: "Pay Rent",
           fontSize: 20,
           fontWeight: FontWeight.w700,
@@ -37,131 +37,141 @@ class PayRentScreen extends StatelessWidget {
               items: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              CommonText(
+              const CommonText(
                 text: "YOUR HOME",
                 fontSize: 16,
               ),
-              CommonText(
+              const CommonText(
                 text: "Central Park Palace",
                 fontWeight: FontWeight.w700,
                 fontSize: 20,
               ),
               Container(
-                padding: EdgeInsets.symmetric(
+                padding: const EdgeInsets.symmetric(
                   horizontal: 16,
                   vertical: 4,
                 ),
                 decoration: BoxDecoration(
                     color: AppColors.s900,
                     borderRadius: BorderRadius.circular(12)),
-                child: CommonText(text: "RentX. Rewards Alliance"),
+                child: const CommonText(text: "RentX. Rewards Alliance"),
               )
             ],
           )),
-          12.height,
-          customContainer(
-            items: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                CommonText(text: AppString.currentRentDue, fontSize: 18),
-                CommonText(
-                  text: "৳16,000",
-                  fontSize: 26,
-                  fontWeight: FontWeight.w700,
-                )
-              ],
-            ),
-          ),
-          InkWell(
-            onTap: () => Get.toNamed(AppRoutes.payRentAdditionalScreen),
-            child: Container(
-              padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 12),
-              decoration: const BoxDecoration(
-                color: AppColors.s500,
-              ),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  CommonText(
-                    text: "Pay Now",
-                    color: AppColors.black,
-                    fontSize: 18,
-                    fontWeight: FontWeight.w700,
-                  ),
-                  8.width,
-                  Icon(Icons.arrow_forward)
-                ],
-              ),
-            ),
-          ),
-          customContainer(
-              items: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Row(
-                children: [
-                  CommonImage(imageSrc: AppIcons.autoPayIcon),
-                  6.width,
-                  CommonText(
-                      text: AppString.autoPayForRent,
-                      fontWeight: FontWeight.w600,
-                      fontSize: 18),
-                  Spacer(),
-                  AdvancedSwitch(
-                    initialValue: PrefsHelper.isAutoPayRent,
-                    onChanged: (value) {},
-                    // thumb: ValueListenableBuilder(
-                    //   valueListenable: autoPayRentController,
-                    //   builder: (_, value, __) {
-                    //     return Icon(
-                    //       value? Icons.circle : Icons.circle_outlined,
-                    //       size: 22,
-                    //     );
-                    //   },
-                    // ),
-                    controller: autoPayRentController,
-                    activeColor: AppColors.s600,
-                    inactiveColor: AppColors.b200,
-                    borderRadius: BorderRadius.all(const Radius.circular(15)),
-                    width: 40.0,
-                    height: 22.0,
-                    enabled: true,
-                    disabledOpacity: 0.5,
-                  ),
-                ],
-              ),
-              8.height,
-              CommonText(
-                  textAlign: TextAlign.left,
-                  maxLines: 3,
-                  text: AppString.setUpAutomaticRent)
-            ],
-          )),
-          12.height,
           Expanded(
-            child: customContainer(
-              items: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
+            child: SingleChildScrollView(
+              physics: const BouncingScrollPhysics(),
+              child: Column(
                 children: [
-                  const CommonText(
-                    textAlign: TextAlign.left,
-                    fontSize: 18,
-                    text: AppString.recentRentHistory,
-                    textDecoration: TextDecoration.underline,
+                  customContainer(
+                    items: const Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        CommonText(
+                            text: AppString.currentRentDue, fontSize: 18),
+                        CommonText(
+                          text: "৳16,000",
+                          fontSize: 26,
+                          fontWeight: FontWeight.w700,
+                        )
+                      ],
+                    ),
                   ),
-                  Expanded(
-                    child: ListView.builder(
-                      itemCount: 2,
-                      itemBuilder: (context, index) => const HistoryItem(
-                        text: "Paid the rent of house “Daisy Garden”.",
-                        horizontalPadding: 0,
+                  12.height,
+                  InkWell(
+                    onTap: () => Get.toNamed(AppRoutes.payRentAdditionalScreen),
+                    child: Container(
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 30, vertical: 12),
+                      decoration: const BoxDecoration(
+                        color: AppColors.s500,
                       ),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          const CommonText(
+                            text: "Pay Now",
+                            color: AppColors.black,
+                            fontSize: 18,
+                            fontWeight: FontWeight.w700,
+                          ),
+                          8.width,
+                          const Icon(Icons.arrow_forward)
+                        ],
+                      ),
+                    ),
+                  ),
+                  customContainer(
+                      items: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Row(
+                        children: [
+                          CommonImage(imageSrc: AppIcons.autoPayIcon),
+                          6.width,
+                          const CommonText(
+                              text: AppString.autoPayForRent,
+                              fontWeight: FontWeight.w600,
+                              fontSize: 18),
+                          const Spacer(),
+                          AdvancedSwitch(
+                            initialValue: PrefsHelper.isAutoPayRent,
+                            onChanged: (value) {},
+                            // thumb: ValueListenableBuilder(
+                            //   valueListenable: autoPayRentController,
+                            //   builder: (_, value, __) {
+                            //     return Icon(
+                            //       value? Icons.circle : Icons.circle_outlined,
+                            //       size: 22,
+                            //     );
+                            //   },
+                            // ),
+                            controller: autoPayRentController,
+                            activeColor: AppColors.s600,
+                            inactiveColor: AppColors.b200,
+                            borderRadius:
+                                const BorderRadius.all(Radius.circular(15)),
+                            width: 40.0,
+                            height: 22.0,
+                            enabled: true,
+                            disabledOpacity: 0.5,
+                          ),
+                        ],
+                      ),
+                      8.height,
+                      const CommonText(
+                          textAlign: TextAlign.left,
+                          maxLines: 3,
+                          text: AppString.setUpAutomaticRent)
+                    ],
+                  )),
+                  12.height,
+                  customContainer(
+                    items: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        const CommonText(
+                          textAlign: TextAlign.left,
+                          fontSize: 18,
+                          text: AppString.recentRentHistory,
+                          textDecoration: TextDecoration.underline,
+                        ),
+                        ListView.builder(
+                          itemCount: 2,
+                          shrinkWrap: true,
+                          physics: const NeverScrollableScrollPhysics(),
+                          itemBuilder: (context, index) => const HistoryItem(
+                            text: "Paid the rent of house “Daisy Garden”.",
+                            horizontalPadding: 0,
+                          ),
+                        )
+                      ],
                     ),
                   )
                 ],
               ),
             ),
-          )
+          ),
         ],
       ),
       // bottomNavigationBar: CommonBottomNavBar(currentIndex: 2),
@@ -170,9 +180,9 @@ class PayRentScreen extends StatelessWidget {
 
   Container customContainer({required Widget items}) {
     return Container(
-      padding: EdgeInsets.symmetric(horizontal: 20, vertical: 24),
+      padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 24),
       width: Get.width,
-      decoration: BoxDecoration(
+      decoration: const BoxDecoration(
         color: AppColors.background,
       ),
       child: items,
